@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/klaaz0r/storytime-frontend/issues"
   },
-  "homepage": "https://github.com/klaaz0r/storytime-frontend#readme"
+  "homepage": "https://github.com/klaaz0r/storytime-frontend#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-nodemon": "^2.0.6"
+  }
 }

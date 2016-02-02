@@ -3,13 +3,12 @@
   "description": "Social story time application",
   "main": "app.js",
   "authors": [
-    "klaas <klaas.foppen@gmail.com>"
+    "klaas"
   ],
   "dependencies": {
     "font-awesome": "latest",
     "jquery": "latest",
-    "angular": "latest"
-  },
+    "angular": "latest"},
   "license": "GPL-3.0",
   "homepage": "https://github.com/klaaz0r/storytime-frontend",
   "moduleType": [

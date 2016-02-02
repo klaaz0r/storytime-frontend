@@ -11,5 +11,5 @@ app.use(morgan(':remote-addr :method :url'));
 
 //start server
 app.listen(port, function() {
-  console.log('app is running on port: ' + port);
+  console.log('app is running on port: ' + port + '\n- - - - - - - - - - - - - - - ');
 });

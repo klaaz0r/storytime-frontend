@@ -6,9 +6,8 @@
     "klaas"
   ],
   "dependencies": {
-    "font-awesome": "latest",
-    "jquery": "latest",
-    "angular": "latest"},
+
+  },
   "license": "GPL-3.0",
   "homepage": "https://github.com/klaaz0r/storytime-frontend",
   "moduleType": [
@@ -19,7 +18,17 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "source",
+    "spec",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md"
   ],
   "install": {
     "path": "public/libs"

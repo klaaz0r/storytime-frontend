@@ -6,7 +6,8 @@
     "klaas"
   ],
   "dependencies": {
-
+    "angular": "^1.4.9",
+    "jquery": "^2.2.0"
   },
   "license": "GPL-3.0",
   "homepage": "https://github.com/klaaz0r/storytime-frontend",

@@ -3,10 +3,11 @@ var gulp = require('gulp'),
   gutil = require('gulp-util'),
   sass = require('gulp-sass'),
   nodemon = require('gulp-nodemon'),
-  jshint = require('gulp-jshint');
+  jshint = require('gulp-jshint'),
+  env = require('gulp-env');
 
 //compiling and moving sass files
-gulp.task('default', ['watch', 'develop']);
+gulp.task('default', ['env', 'watch', 'develop']);
 
 gulp.task('build-css', function() {
   return gulp.src('source/scss/**/*.scss')
@@ -23,13 +24,24 @@ gulp.task('lint', function() {
 //reload nodemon on changes
 gulp.task('develop', function() {
   nodemon({
-      script: 'app.js',
+      script: 'server.js',
       ext: 'html js css',
       tasks: ['lint']
     })
     .on('restart', function() {
       console.log('restarted!')
     })
+})
+
+//reload nodemon on changes
+gulp.task('env', function() {
+  env({
+    file: '.env.json',
+    vars: {
+      PORT: 8080
+    }
+  });
+
 })
 
 //watch scss and create css files

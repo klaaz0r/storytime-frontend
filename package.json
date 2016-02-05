@@ -2,7 +2,7 @@
   "name": "storytime",
   "version": "1.0.0",
   "description": "Social story time application",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "postinstall": "bower install"
   },
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/klaaz0r/storytime-frontend#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-env": "^0.4.0",
     "gulp-jshint": "^2.0.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-sass": "^2.1.1",

@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/klaaz0r/storytime-frontend.git"
   },
+  "scripts": {
+    "postinstall": "bower install"
+  },
   "author": "",
   "license": "GPL-3.0",
   "bugs": {

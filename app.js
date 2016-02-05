@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var morgan = require('morgan');
 
-var port = 80;
+var port = 8080;
 //serving the public folder
 app.use(express.static(__dirname + '/public'));
 

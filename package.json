@@ -19,6 +19,12 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-jshint": "^2.0.0",
-    "gulp-nodemon": "^2.0.6"
+    "gulp-nodemon": "^2.0.6",
+    "gulp-sass": "^2.1.1",
+    "gulp-util": "^3.0.7"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "morgan": "^1.6.1"
   }
 }

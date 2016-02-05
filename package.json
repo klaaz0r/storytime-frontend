@@ -6,9 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "4.1.1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/klaaz0r/storytime-frontend.git"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "bower install"
   },
   "author": "",
   "license": "GPL-3.0",

@@ -1,6 +1,9 @@
-# storytime-frontend
+![storytime logo](https://raw.githubusercontent.com/klaaz0r/storytime-frontend/master/public/images/logos/logo_width.png)
+---
+#Intrudoction
 Frontend voor de social story time app
 
+#Installation
 install node, gulp and bower and run
 
 `npm install`

@@ -4,7 +4,6 @@
 Frontend voor de social story time app
 
 #Installation
----
 install node, gulp and bower and run
 
 `npm install`

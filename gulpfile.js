@@ -9,7 +9,7 @@ var gulp = require('gulp'),
   connect = require('gulp-connect');
 
 //default task "GULP" use this for development
-gulp.task('default', ['server-develop', 'node-env']);
+gulp.task('default', ['server-develop', 'node-env-develop']);
 //build tasks create and minifies our build to the dist/ folder
 gulp.task('build', ['compress', 'build-css', 'vendor', 'node-env-build', 'minify', 'move-images', 'connect']);
 
@@ -29,6 +29,10 @@ gulp.task('server-develop', function() {
 });
 
 //THIS IS ONLY FOR TESTING
+gulp.task('node-env-develop', function() {
+  return process.env.NODE_ENV = 'development';
+});
+
 gulp.task('node-env-build', function() {
   return process.env.NODE_ENV = 'production';
 });

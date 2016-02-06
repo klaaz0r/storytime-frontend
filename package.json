@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower install && gulp build"
+    "postinstall": "bower cache clean && bower install"
   },
   "engines": {
-    "node": "4.1.1"
+    "node": "*"
   },
   "repository": {
     "type": "git",

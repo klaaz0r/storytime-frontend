@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 //default task "GULP" use this for development
 gulp.task('default', ['server-develop', 'node-env-develop']);
 //build tasks create and minifies our build to the dist/ folder
-gulp.task('build', ['compress', 'build-css', 'vendor', 'node-env-build', 'minify', 'move-images', 'connect']);
+gulp.task('build', ['compress', 'build-css', 'vendor', 'node-env-build', 'minify', 'move-images']);
 
 //reload nodemon on changes
 gulp.task('server-develop', function() {
@@ -35,14 +35,6 @@ gulp.task('node-env-develop', function() {
 
 gulp.task('node-env-build', function() {
   return process.env.NODE_ENV = 'production';
-});
-
-//connect starts the server
-gulp.task('connect', function() {
-  connect.server({
-    root: 'dist',
-    livereload: false
-  });
 });
 
 //lint js

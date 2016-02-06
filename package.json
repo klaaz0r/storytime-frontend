@@ -36,7 +36,6 @@
     "express": "^4.13.4",
     "morgan": "^1.6.1",
     "node-sass-middleware": "^0.9.7",
-    "path": "^0.12.7",
-    "gulp": "^3.9.0"
+    "path": "^0.12.7"
   }
 }

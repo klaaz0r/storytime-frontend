@@ -32,6 +32,6 @@
     "README.md"
   ],
   "install": {
-    "path": "public/libs"
+    "path": "src/assets/libs"
   }
 }

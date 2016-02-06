@@ -4,47 +4,82 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   nodemon = require('gulp-nodemon'),
   jshint = require('gulp-jshint'),
-  env = require('gulp-env');
+  uglify = require('gulp-uglify'),
+  htmlmin = require('gulp-htmlmin'),
+  connect = require('gulp-connect');
 
-//compiling and moving sass files
-gulp.task('default', ['env', 'watch', 'develop']);
+//default task "GULP" use this for development
+gulp.task('default', ['server-develop', 'node-env']);
+//build tasks create and minifies our build to the dist/ folder
+gulp.task('build', ['compress', 'build-css', 'vendor', 'node-env-build', 'minify', 'move-images', 'server-production', 'connect']);
 
-gulp.task('build-css', function() {
-  return gulp.src('source/scss/**/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('public/styles/'))
+//reload nodemon on changes
+gulp.task('server-develop', function() {
+  nodemon({
+      script: 'server.js',
+      ext: 'html js css',
+      env: {
+        'NODE_ENV': 'development'
+      },
+      tasks: ['lint']
+    })
+    .on('restart', function() {
+      console.log(':: server restarted ::')
+    })
+});
+
+//THIS IS ONLY FOR TESTING
+gulp.task('node-env-build', function() {
+  return process.env.NODE_ENV = 'production';
+});
+
+//connect starts the server
+gulp.task('connect', function() {
+  connect.server({
+    root: 'dist',
+    livereload: false
+  });
 });
 
 //lint js
 gulp.task('lint', function() {
-  gulp.src('public/js/*.js')
+  gulp.src('src/assets/js/*.js')
     .pipe(jshint())
-})
+});
 
-//reload nodemon on changes
-gulp.task('develop', function() {
-  nodemon({
-      script: 'server.js',
-      ext: 'html js css',
-      tasks: ['lint']
-    })
-    .on('restart', function() {
-      console.log('restarted!')
-    })
-})
+/*
+COMPILING TASKS
+run "GULP BUILD" before your commit to git!
+*/
 
-//reload nodemon on changes
-gulp.task('env', function() {
-  env({
-    file: '.env.json',
-    vars: {
-      PORT: 8080
-    }
-  });
+//compress the js files for the production
+gulp.task('compress', function() {
+  return gulp.src('src/assets/js/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/assets/js'));
+});
 
-})
+//compile the sass to css for the production
+gulp.task('build-css', function() {
+  return gulp.src('src/assets/css/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('dist/assets/css/'))
+});
 
-//watch scss and create css files
-gulp.task('watch', function() {
-  gulp.watch('source/scss/**/*.scss', ['build-css']);
+gulp.task('minify', function() {
+  return gulp.src('src/*.html')
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
+    .pipe(gulp.dest('dist'))
+});
+
+gulp.task('vendor', function() {
+  gulp.src(['src/assets/libs/**/*'])
+    .pipe(gulp.dest('dist/assets/libs/'));
+});
+
+gulp.task('move-images', function() {
+  gulp.src(['src/assets/img/**/*'])
+    .pipe(gulp.dest('dist/assets/img/'));
 });

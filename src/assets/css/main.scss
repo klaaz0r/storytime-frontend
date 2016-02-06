@@ -1,0 +1,16 @@
+.test {
+  background-color: red;
+  width: 500px;
+
+  .test2 {
+    width: 800px;
+
+    .test3 {
+      background-color: red;
+    }
+  }
+}
+
+h1 {
+  background-color: red;
+}

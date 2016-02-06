@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower cache clean && bower install"
+    "postinstall": "bower cache clean && bower install && gulp build"
   },
   "engines": {
     "node": "*"

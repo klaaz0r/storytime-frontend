@@ -4,7 +4,8 @@
   "description": "Social story time application",
   "main": "server.js",
   "scripts": {
-    "postinstall": "bower install && gulp build"  },
+    "postinstall": "bower install && gulp build"
+  },
   "engines": {
     "node": "4.1.1"
   },

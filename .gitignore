@@ -2,3 +2,4 @@ node_modules/
 public/libs/
 dist/
 public/
+npm-debug.log

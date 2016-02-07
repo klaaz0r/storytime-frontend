@@ -4,14 +4,17 @@
 Frontend voor de social story time app
 
 #Installation
-install node, gulp and bower and run
+install node
 
 `npm install`
 
-`bower install`
+this runs and updates all the vendor files. 
 
-to start running the project use `gulp` command. You can work in de source/scss folder and on save gulp will save and compile the code and nodemon will restart the server on change (html, js and css).
+`bower install && gulp build` 
 
+to start running the project use `gulp` command for working in development. LiveReload is working and we compile scss with node-sass-middleware in development instead of compiling it with gulp! this does create a `public/` folder at this point! 
+
+#File structure
 
 ```
 ├── Procfile        <-- settings for heroku

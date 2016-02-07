@@ -13,7 +13,8 @@ install node, gulp and bower and run
 to start running the project use `gulp` command. You can work in de source/scss folder and on save gulp will save and compile the code and nodemon will restart the server on change (html, js and css).
 
 
-``├── LICENSE
+```
+├── LICENSE
 ├── Procfile
 ├── README.md
 ├── bower.json
@@ -154,4 +155,5 @@ to start running the project use `gulp` command. You can work in de source/scss 
     │   ├── img
     │   ├── js
     │   └── libs
-    └── index.html``
+    └── index.html
+```

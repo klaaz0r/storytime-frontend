@@ -5,7 +5,7 @@ var sass = require('node-sass-middleware');
 var path = require('path');
 var util = require('util');
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8081;
 //logging
 if (process.env.NODE_ENV == "development") {
   util.log("Running in development mode");

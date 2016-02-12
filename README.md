@@ -1,6 +1,6 @@
 ![storytime logo](https://github.com/klaaz0r/storytime-frontend/blob/master/src/assets/img/logos/logo_width.png?raw=true)
 ---
-#Intrudoction
+#Introduction
 Frontend voor de social story time app
 
 #Installation

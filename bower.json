@@ -7,7 +7,7 @@
   ],
   "dependencies": {
     "angular": "^1.4.9",
-    "jquery": "^2.2.0"
+    "reset-css": "^2.0.2011012603"
   },
   "license": "GPL-3.0",
   "homepage": "https://github.com/klaaz0r/storytime-frontend",
@@ -32,6 +32,6 @@
     "README.md"
   ],
   "install": {
-    "path": "src/assets/libs"
+    "path": "public/assets/libs"
   }
 }

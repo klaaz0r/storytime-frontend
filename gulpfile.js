@@ -6,6 +6,7 @@ var gulp = require('gulp'),
   sourcemaps = require('gulp-sourcemaps'),
   livereload = require('gulp-livereload'),
   nodemon = require('gulp-nodemon'),
+  htmlmin = require('gulp-htmlmin'),
   //input files to work with
   input = {
     // **/*.extension gets all nested files

@@ -1,3 +1,4 @@
+//dependencies
 var gulp = require('gulp'),
   gutil = require('gulp-util'),
   jshint = require('gulp-jshint'),
@@ -7,14 +8,15 @@ var gulp = require('gulp'),
   livereload = require('gulp-livereload'),
   nodemon = require('gulp-nodemon'),
   htmlmin = require('gulp-htmlmin'),
-  //input files to work with
+
+  //input files to work with, this keeps everything organised
   input = {
     // **/*.extension gets all nested files
     'sass': 'source/scss/**/*.scss',
     'javascript': 'source/js/**/*.js',
     'html': 'source/**/*.html'
   },
-
+  //where we save the files to once gulp is done with them
   output = {
     'stylesheets': 'public/assets/css',
     'javascript': 'public/assets/js',
@@ -24,9 +26,10 @@ var gulp = require('gulp'),
 /* run the watch task when gulp is called without arguments */
 gulp.task('default', ['watch', 'start-server']);
 
-/* this tasks runs on the server and creates all the files (and makes 'em look like brem) */
+/* this tasks runs on the server and creates all the files */
 gulp.task('deploy', ['build-css', 'minify-html', 'build-js']);
 
+//starting express with the server.js file
 gulp.task('start-server', function() {
   nodemon({
     script: 'server.js'
@@ -48,6 +51,7 @@ gulp.task('build-css', function() {
     .pipe(sass())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(output.stylesheets))
+    //livereload
     .pipe(livereload());
 });
 
@@ -63,12 +67,14 @@ gulp.task('build-js', function() {
     .pipe(livereload());
 });
 
+/* basic build html for development*/
 gulp.task('build-html', function() {
   return gulp.src(input.html)
     .pipe(gulp.dest(output.html))
     .pipe(livereload());
 });
 
+/* minify the html for deployment */
 gulp.task('minify-html', function() {
   return gulp.src(input.html)
     .pipe(htmlmin({

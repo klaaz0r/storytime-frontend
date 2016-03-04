@@ -14,7 +14,9 @@ var gulp = require('gulp'),
     // **/*.extension gets all nested files
     'sass': 'source/scss/**/*.scss',
     'javascript': 'source/js/**/*.js',
-    'html': 'source/**/*.html'
+    'html': 'source/**/*.html',
+    'materialCss': 'source/material/**/*.scss',
+    'materialJs': 'source/material/js/**/*.js'
   },
   //where we save the files to once gulp is done with them
   output = {
@@ -28,6 +30,9 @@ gulp.task('default', ['watch', 'start-server']);
 
 /* this tasks runs on the server and creates all the files */
 gulp.task('deploy', ['build-css', 'minify-html', 'build-js']);
+
+/* run the watch task when gulp is called without arguments */
+gulp.task('material', ['build-material-css']);
 
 //starting express with the server.js file
 gulp.task('start-server', function() {
@@ -54,6 +59,19 @@ gulp.task('build-css', function() {
     //livereload
     .pipe(livereload());
 });
+
+
+/* compile scss from material! files */
+gulp.task('build-material-css', function() {
+  return gulp.src(input.materialCss)
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(output.stylesheets))
+    //livereload
+    .pipe(livereload());
+});
+
 
 /* concat javascript files, minify if --type production */
 gulp.task('build-js', function() {

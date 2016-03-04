@@ -1,12 +1,23 @@
 body {
-  background-color: lightblue;
+  background-color: white;
   color: white;
+}
+
+.logo-navbar {
+  width: 70px;
+  margin-top: 10px;
 }
 
 .main-container {
   color: black;
-  background-color: white;
+  //  background-color: white;
   padding: 15px;
-  margin: 0 auto ;
+  margin: 0 auto;
   width: 80%;
+}
+
+.center-image {
+  img {
+    margin: auto 0;
+  }
 }

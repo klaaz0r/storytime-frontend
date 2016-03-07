@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "bower cache clean && bower install && gulp deploy"
+    "postinstall": "gulp deploy"
   },
   "engines": {
     "node": "*"
@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/klaaz0r/storytime-frontend#readme",
   "dependencies": {
-    "bower": "^1.7.7",
     "express": "^4.13.4",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",

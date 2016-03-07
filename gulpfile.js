@@ -12,17 +12,21 @@ var gulp = require('gulp'),
   //input files to work with, this keeps everything organised
   input = {
     // **/*.extension gets all nested files
-    'sass': 'source/scss/**/*.scss',
-    'javascript': 'source/js/**/*.js',
+    'sass': 'source/assets/scss/**/*.scss',
+    'javascript': 'source/assets/js/**/*.js',
     'html': 'source/**/*.html',
+    'angular': 'source/**/*.js',
+
+    //seperate inputs for material css these are only compiled once eddited
     'materialCss': 'source/material/**/*.scss',
     'materialJs': 'source/material/js/**/*.js'
   },
+
   //where we save the files to once gulp is done with them
   output = {
     'stylesheets': 'public/assets/css',
     'javascript': 'public/assets/js',
-    'html': 'public'
+    'root': 'public'
   };
 
 /* run the watch task when gulp is called without arguments */
@@ -30,9 +34,6 @@ gulp.task('default', ['watch', 'start-server']);
 
 /* this tasks runs on the server and creates all the files */
 gulp.task('deploy', ['build-css', 'minify-html', 'build-js']);
-
-/* run the watch task when gulp is called without arguments */
-gulp.task('material', ['build-material-css']);
 
 //starting express with the server.js file
 gulp.task('start-server', function() {
@@ -60,19 +61,6 @@ gulp.task('build-css', function() {
     .pipe(livereload());
 });
 
-
-/* compile scss from material! files */
-gulp.task('build-material-css', function() {
-  return gulp.src(input.materialCss)
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(output.stylesheets))
-    //livereload
-    .pipe(livereload());
-});
-
-
 /* concat javascript files, minify if --type production */
 gulp.task('build-js', function() {
   return gulp.src(input.javascript)
@@ -82,13 +70,21 @@ gulp.task('build-js', function() {
     .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(output.javascript))
+    //reload
     .pipe(livereload());
 });
 
 /* basic build html for development*/
 gulp.task('build-html', function() {
   return gulp.src(input.html)
-    .pipe(gulp.dest(output.html))
+    .pipe(gulp.dest(output.root))
+    .pipe(livereload());
+});
+
+/* build angular file*/
+gulp.task('build-angular', function() {
+  return gulp.src(input.angular)
+    .pipe(gulp.dest(output.root))
     .pipe(livereload());
 });
 
@@ -98,7 +94,7 @@ gulp.task('minify-html', function() {
     .pipe(htmlmin({
       collapseWhitespace: true
     }))
-    .pipe(gulp.dest(output.html))
+    .pipe(gulp.dest(output.root))
 });
 
 /* Watch these files for changes and run the task on update */
@@ -107,4 +103,5 @@ gulp.task('watch', function() {
   gulp.watch(input.javascript, ['jshint', 'build-js']);
   gulp.watch(input.sass, ['build-css']);
   gulp.watch(input.html, ['build-html']);
+  gulp.watch(input.angular, ['build-angular']);
 });

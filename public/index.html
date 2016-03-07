@@ -1,5 +1,6 @@
 <!doctype html>
-<html>
+<!--start app -->
+<html ng-app="app">
 
 <head>
   <title>Story time</title>
@@ -7,62 +8,77 @@
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
   <!--Import Google Icon Font-->
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-  <!-- materialize.css-->
-  <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen,projection" />
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen,projection" /> -->
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.2/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.1.2/material.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 </head>
 
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <img src="assets/img/storytime_logo_klein_trans.png" class="logo-navbar" />
-      <a href="#" class="brand-logo">Storytime</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Over ons</a></li>
-        <li><a href="badges.html">Contact</a></li>
-        <li><a href="collapsible.html">Login</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="main-container ">
-    <h1>Social story</h1>
-    <p>
-      Er komt een digitaal maatje voor autistische kinderen. Het kind kan zijn dagelijkse activiteiten delen met zijn maatje. Vervolgens kan het maatje simpele gesprekken aangaan met het kind en op basis niveau advies geven en/of communiceren. Wanneer het maatje
-      “denkt” dat het te gecompliceerd wordt, speelt hij de informatie door naar de begeleider, mits het kind toestemming geeft. Anders voelt het kind zich bedrogen.Tijdens het instellen van de web-applicatie kan de begeleider zijn gegevens invoeren.
-      Deze gegevens worden gebruikt door het maatje zodat het kind verder geholpen kan worden. De buddy heeft een neutrale/dergelijke vormgeving. Dit maakt de stap naar communicatie voor het kind iets makkelijker in een vertrouwelijke omgeving.
-    </p>
-    <img src="assets/img/teamfoto.png " class="center-image" />
-  </div>
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Over ons</h5>
-          <p class="grey-text text-lighten-4">Team van studenten van de hogeschool Utrecht die een buddy systeem voor autistische kinderen ontwikkelen samen met Tweakers en Sogeti</p>
+  <!-- root scope -->
+  <div ng-controller="rootCtrl">
+
+    <div class="st-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+      <!-- loading navigation (had access to the root scope) -->
+      <div ng-include src="'navigation.html'"></div>
+      <!-- container -->
+
+
+      <!--view-->
+      <div ng-view></div>
+
+
+      <div class="st-ribbon"></div>
+
+      <main class="st-main mdl-layout__content">
+        <div class="st-container mdl-grid">
+          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+          <div class="st-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+            <h3>Social buddy</h3>
+            <p>
+              Er komt een digitaal maatje voor autistische kinderen. Het kind kan zijn dagelijkse activiteiten delen met zijn maatje. Vervolgens kan het maatje simpele gesprekken aangaan met het kind en op basis niveau advies geven en/of communiceren. Wanneer het maatje
+              “denkt” dat het te gecompliceerd wordt, speelt hij de informatie door naar de begeleider, mits het kind toestemming geeft. Anders voelt het kind zich bedrogen.Tijdens het instellen van de web-applicatie kan de begeleider zijn gegevens invoeren.
+              Deze gegevens worden gebruikt door het maatje zodat het kind verder geholpen kan worden. De buddy heeft een neutrale/dergelijke vormgeving. Dit maakt de stap naar communicatie voor het kind iets makkelijker in een vertrouwelijke omgeving.
+            </p>
+
+
+          </div>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Social</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="https://twitter.com/tellastorytime">Twitter</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://tweakers.net/acties/projectb/StoryTime">Tweakers</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://github.com/klaaz0r/storytime-frontend">Github</a></li>
-          </ul>
-        </div>
-      </div>
+
+
+        <!-- loading footer-->
+        <div ng-include src="'footer.html'"></div>
+      </main>
+      <!-- Close controller-->
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-        © 2016 Copyright storytime
-      </div>
-    </div>
-  </footer>
 </body>
 
 </html>
+
+<!-- cdn-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="assets/libs/angular/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+<!--material js -->
 <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+
+<!-- angular index-->
+<script type="text/javascript" src="app/app.js"></script>
+
+<!-- controllers -->
+<script type="text/javascript" src="app/components/home/home.controller.js"></script>
+<script type="text/javascript" src="app/components/chat/chat.controller.js"></script>
+<script type="text/javascript" src="app/components/quiz/quiz.controller.js"></script>
+
+<!-- custom js for design -->
 <script type="text/javascript" src="assets/js/bundle.js"></script>

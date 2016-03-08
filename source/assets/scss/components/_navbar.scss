@@ -1,0 +1,12 @@
+.mdl-navigation__link {
+  &:hover {
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+  }
+}
+
+.active {
+  background-color: #303F9F;
+  box-sizing: border-box;
+  border-bottom: 2px solid white;
+}

@@ -1,0 +1,12 @@
+.fixed-bottem {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .fixed-bottem {
+    position: relative;
+    width: 100%;
+  }
+}

@@ -29,11 +29,12 @@
       <!-- container -->
 
       <!-- Always shows a header, even in smaller screens. -->
+
       <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
           <div class="mdl-layout__header-row">
             <!-- Title -->
-            <span class="mdl-layout-title">Story Time</span>
+            <div class="mdl-logo logo"><img src="assets/img/storytime_logo_header.png"></div>
             <!-- Add spacer, to align navigation to the right -->
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation. We hide it in small screens. -->
@@ -45,7 +46,7 @@
           </div>
         </header>
         <div class="mdl-layout__drawer">
-          <span class="mdl-layout-title">Title</span>
+          <span class="mdl-layout-title">StoryTime</span>
           <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="">Link</a>
             <a class="mdl-navigation__link" href="">Link</a>
@@ -59,39 +60,24 @@
           </div>
         </main>
       </div>
-
-
       <!--view-->
-      <!-- <div ng-view></div> -->
+      <div ng-view></div>
+      <!-- loading footer-->
 
-
-      <div class="st-ribbon"></div>
-
-      <main class="st-main mdl-layout__content">
-        <div class="st-container mdl-grid">
-          <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-          <div class="st-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
-            <h3>Social buddy</h3>
-            <p>
-              Er komt een digitaal maatje voor autistische kinderen. Het kind kan zijn dagelijkse activiteiten delen met zijn maatje. Vervolgens kan het maatje simpele gesprekken aangaan met het kind en op basis niveau advies geven en/of communiceren. Wanneer het maatje
-              “denkt” dat het te gecompliceerd wordt, speelt hij de informatie door naar de begeleider, mits het kind toestemming geeft. Anders voelt het kind zich bedrogen.Tijdens het instellen van de web-applicatie kan de begeleider zijn gegevens invoeren.
-              Deze gegevens worden gebruikt door het maatje zodat het kind verder geholpen kan worden. De buddy heeft een neutrale/dergelijke vormgeving. Dit maakt de stap naar communicatie voor het kind iets makkelijker in een vertrouwelijke omgeving.
-            </p>
-          </div>
+      <footer class="mdl-mini-footer fixed-bottem">
+        <div class="mdl-mini-footer__left-section">
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
 
-
-        <!-- loading footer-->
-
-        <footer class="mdl-mini-footer fixed-bottem">
-          <div class="mdl-mini-footer__left-section">
-            <div class="mdl-logo">StoryTime</div>
-            <ul class="mdl-mini-footer__link-list">
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-        </footer>
+        <div class="mdl-mini-footer__right-section">
+          <div class="mdl-logo">In samenwerking met</div>
+          <div class="mdl-logo"><img src="https://www.sogeti.nl/sites/all/themes/sogeti/logo-screen.png"></div>
+          <div class="mdl-logo"><img src="http://tweakimg.net/g/if/v3/framework/tweakers_logo_v2_x1.png"></div>
+        </div>
+      </footer>
       </main>
 
 

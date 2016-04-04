@@ -1,40 +1,36 @@
-![storytime logo](https://github.com/klaaz0r/storytime-frontend/blob/master/public/assets/img/storytime_logo_width.png?raw=true)
----
 #Introduction
-Frontend voor de social story time app
+Frontend voor de social story time app https://story.social
 
 #Installation
-install node
 
 `npm install`
 
-this runs and updates all the vendor files. 
+this runs gulp build and creates a public folder from the sources
 
-`bower install && gulp deploy` 
+`gulp` is the default task that wachtes files for changes and rebuilds the project + reloads the browser if livereload is installed
 
-to start running the project use `gulp` command for working in development. LiveReload is working and we compile scss with node-sass-middleware in development instead of compiling it with gulp! this does create a `public/` folder at this point! 
+`gulp build` create the project public folder
+
+`gulp clean` simple clean up the public folder for a reset in development
 
 #File structure
 
 ```
+.storytime
 ├── LICENSE
-├── Procfile            <-- proc for heroku
+├── Procfile
 ├── README.md
-├── bower.json
 ├── gulpfile.js
-├── node_modules 
-├── package.json
-├── public              <-- do not work in this
-│   ├── assets
-│   │   ├── css
-│   │   ├── js
-│   │   └── libs
-│   └── index.html
-├── server.js           <-- main server
-└── source              <-- working folder
-    ├── index.html
-    ├── js
-    │   └── test.js
-    └── scss
-        └── main.scss
+├── node_modules
+├── server.js
+└── src
+    ├── app
+    │   ├── app.js
+    │   └── components
+    ├── assets
+    │   ├── images
+    │   ├── js
+    │   ├── scss
+    │   └── theme
+    └── index.html
 ```

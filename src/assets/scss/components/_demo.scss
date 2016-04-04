@@ -1,0 +1,242 @@
+.masthead {
+  background: #FAD46B;
+  padding: 100px 0;
+  position: relative;
+  z-index: 2; }
+  .masthead img {
+    position: relative;
+    bottom: 75px;
+    left: 5px; }
+  .masthead .masthead-title {
+    font-family: "SourceSansProExtraLight", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    line-height: 1.2;
+    color: white; }
+    .masthead .masthead-title small {
+      color: white;
+      font-family: "SourceSansProBold", Helvetica, Arial, sans-serif;
+      display: block;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding-left: 4px; }
+
+.demo-section-title {
+  color: #364347;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 10px; }
+  .demo-section-title:first-child {
+    margin-top: 0; }
+
+.demo-componant-title {
+  color: #B2C6CD;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-top: 30px; }
+
+.componant-section {
+  border-bottom: 1px solid #D6E1E5;
+  padding: 40px 0 70px 0;
+  margin: 0 0 40px 0; }
+
+.container-type {
+  background: #364347;
+  padding-bottom: 100px; }
+  .container-type .col-md-9 {
+    padding-left: 62px; }
+  .container-type .demo-componant-title {
+    color: #5E6969; }
+  .container-type .demo-type {
+    color: white;
+    text-align: justify; }
+    .container-type .demo-type span span {
+      color: #FAD46B; }
+    .container-type .demo-type.demo-type-sourcesanspro {
+      font-size: 16px;
+      line-height: 1.7; }
+    .container-type .demo-type.demo-type-merriweather {
+      font-size: 14px;
+      line-height: 1.9; }
+  .container-type .demo-type-heading {
+    font-size: 40px;
+    color: white; }
+    .container-type .demo-type-heading.demo-type-merriweather {
+      font-family: MerriweatherLight; }
+    .container-type .demo-type-heading.demo-type-sourcesanspro {
+      font-family: SourceSansProExtraLight; }
+  .container-type .demo-type-sourcesanspro .demo-type-extra-light {
+    font-family: "SourceSansProExtraLight"; }
+  .container-type .demo-type-sourcesanspro .demo-type-regular {
+    font-family: "SourceSansPro"; }
+  .container-type .demo-type-sourcesanspro .demo-type-semi-bold {
+    font-family: "SourceSansProSemiBold"; }
+  .container-type .demo-type-sourcesanspro .demo-type-bold {
+    font-family: "SourceSansProBold"; }
+  .container-type .demo-type-merriweather .demo-type-extra-light {
+    font-family: "MerriweatherLight"; }
+  .container-type .demo-type-merriweather .demo-type-regular {
+    font-family: "Merriweather"; }
+  .container-type .demo-type-merriweather .demo-type-semi-bold {
+    font-family: "MerriweatherBold"; }
+  .container-type .demo-type-merriweather .demo-type-bold {
+    font-family: "MerriweatherHeavy"; }
+
+.container-icons {
+  background: #02BAF2;
+  padding-top: 110px;
+  padding-bottom: 170px; }
+  .container-icons .col-md-3 {
+    width: 22%; }
+  .container-icons .table-responsive {
+    border: 0; }
+    .container-icons .table-responsive > tr > td {
+      border: 0; }
+  .container-icons h2, .container-icons h3, .container-icons h5 {
+    color: white; }
+  .container-icons h2 {
+    margin-bottom: 50px; }
+  .container-icons h3 {
+    margin-bottom: 5px; }
+  .container-icons h5 {
+    font-size: 25px; }
+  .container-icons p {
+    color: white;
+    margin-bottom: 25px; }
+  .container-icons td {
+    padding: 10px; }
+  .container-icons tr:first-child td {
+    padding-top: 0; }
+  .container-icons td > i {
+    font-size: 26px;
+    color: white;
+    opacity: 0.5; }
+  .container-icons .icon-table {
+    margin-left: 40px; }
+
+.sidebar {
+  top: 20px;
+  z-index: 1; }
+  .sidebar ul {
+    width: 100%;
+    border: 1px solid #B2C6CD;
+    border-radius: 6px; }
+  .sidebar li > a {
+    font-size: 16px;
+    padding: 3px 15px;
+    color: #5E6969; }
+    .sidebar li > a:hover {
+      background: #02BAF2;
+      color: white; }
+  .sidebar li.active > a {
+    background: #02BAF2;
+    color: white; }
+  .sidebar li:first-child.active > a,
+  .sidebar li:first-child > a:hover {
+    border-top-left-radius: 5px; }
+  .sidebar li:last-child.active > a,
+  .sidebar li:last-child > a:hover {
+    border-bottom-left-radius: 5px; }
+
+.demo-button-sizes button {
+  vertical-align: top;
+  margin-right: 20px; }
+
+.btn-toolbar {
+  margin: 20px 0; }
+
+.componant-dropdowns .row + .row {
+  margin-top: 30px; }
+
+.demo-switches .clearfix {
+  margin-bottom: 15px; }
+
+.demo-labels h1 {
+  margin-bottom: 20px; }
+.demo-labels h2 {
+  margin-bottom: 25px; }
+.demo-labels h3 {
+  margin-bottom: 30px; }
+.demo-labels h4 {
+  margin-bottom: 30px; }
+.demo-labels h5 {
+  margin-bottom: 35px; }
+.demo-labels span {
+  margin-right: 10px; }
+
+.pagination {
+  margin-top: 0;
+  margin-bottom: 20px; }
+
+.componant-buttons .btn,
+.componant-dropdowns .btn-group {
+  margin: 10px 0; }
+
+.componant-buttons .col-xs-4 {
+  padding: 0 5px; }
+
+.jumbotron {
+  border-radius: 0; }
+  .jumbotron .demo-section-title {
+    color: white; }
+
+.btn-group .btn-group-dropdown .dropdown-toggle,
+.btn-group-vertical .btn-group-dropdown .dropdown-toggle {
+  min-width: 140px; }
+
+.btn-group-dropdown .btn-dropdown {
+  min-width: 170px; }
+
+.componant-dropdowns [class^="col-md-"] {
+  padding: 0px 10px; }
+
+@media (min-width: 1000px) {
+  .container {
+    width: 1170px; }
+
+  .masthead {
+    padding: 265px 0; }
+    .masthead .masthead-title {
+      font-size: 80px; }
+      .masthead .masthead-title small {
+        font-size: 30px; }
+
+  .demo-section-title {
+    font-size: 30px;
+    margin-bottom: 30px; }
+
+  .demo-type-heading {
+    font-size: 60px; }
+
+  .demo-type {
+    font-size: 24px; }
+
+  .btn-group-dropdown .dropdown-toggle {
+    min-width: 210px; }
+
+  .table > thead > tr > th, .table > thead > tr > td,
+  .table > tbody > tr > th,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > th,
+  .table > tfoot > tr > td {
+    padding: 14px 20px;
+    border-top: 1px solid #D6E1E5; }
+
+  .sidebar li > a {
+    font-size: 14px; } }
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .btn-group-justified.btn-group .btn-group-dropdown .dropdown-toggle {
+    min-width: 100px; }
+
+  .container-icons {
+    padding-bottom: 30px;
+    padding-top: 30px; }
+    .container-icons td {
+      padding: 9px; }
+    .container-icons td > i {
+      font-size: 15px; }
+    .container-icons .col-xs-6 {
+      width: 100%; }
+      .container-icons .col-xs-6.icon-table {
+        margin: 0; } }

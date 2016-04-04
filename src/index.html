@@ -1,0 +1,116 @@
+<!doctype html>
+<!--
+|  |__   ____ |  | |  |   ____
+|  |  \_/ __ \|  | |  |  /  _ \
+|   Y  \  ___/|  |_|  |_(  <_> )
+|___|  /\___  >____/____/\____/
+     \/     \/
+                                            __
+______   ____ _____    ___________    _____/  |_
+\____ \_/ __ \\__  \  /  ___/\__  \  /    \   __\
+|  |_> >  ___/ / __ \_\___ \  / __ \|   |  \  |
+|   __/ \___  >____  /____  >(____  /___|  /__|
+|__|        \/     \/     \/      \/     \/
+
+dus je wil zien wat we doen?
+bekijk anders lekker de repo
+
+https://github.com/klaaz0r/storytime-frontend
+
+kun je misschien wat leren..
+ -->
+
+<!--start app (angular) -->
+<html ng-app="app">
+
+<head>
+  <title>Story time</title>
+  <meta charset="utf-8">
+  <base href="/">
+  <meta name="theme-color" content="#3F51B5">
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- parrot theme-->
+  <link rel="stylesheet" type="text/css" href="assets/css/drunken-parrot.css">
+
+  <!-- custom css-->
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+</head>
+
+<body>
+  <!-- root scope -->
+  <div ng-controller="rootCtrl">
+
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-4"><span class="ss-menu"></span></button>
+          <img class="navbar-brand-img" src="images/logo-dark@2x.png" alt="" width="101">
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-4">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#fakeLink">Help mee</a></li>
+            <li><a href="#fakeLink">Over ons</a></li>
+          </ul>
+
+          <form class="navbar-form" role="search" action="#fakeLink">
+            <div class="navbar-right">
+              <button type="submit" class="btn btn-primary">Account maken</button>
+              <button type="submit" class="btn btn-inverse">Login</button>
+            </div>
+          </form>
+
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+
+
+    <!--view-->
+    <div ng-view></div>
+    <!-- loading footer-->
+
+
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">Example courtesy <a href="http://martinbean.co.uk">Martin Bean</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
+      </div>
+    </div>
+    <!-- Close controller-->
+  </div>
+</body>
+
+</html>
+
+<!-- cdn-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+
+<!-- angular index-->
+<script type="text/javascript" src="app/app.js"></script>
+
+<!-- controllers -->
+<script type="text/javascript" src="app/components/home/home.controller.js"></script>
+<script type="text/javascript" src="app/components/chat/chat.controller.js"></script>
+<script type="text/javascript" src="app/components/login/login.controller.js"></script>
+
+<!-- custom js for design -->
+
+
+<script src="assets/js/checkbox.js"></script>
+<script src="assets/js/radio.js"></script>
+<script src="assets/js/bootstrap-switch.js"></script>
+<script src="assets/js/toolbar.js"></script>
+<script src="assets/js/classie.js"></script>
+<script src="assets/js/application.js"></script>

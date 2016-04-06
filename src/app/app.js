@@ -15,6 +15,14 @@ app.config(function($routeProvider) {
       templateUrl: '../app/components/login/login.view.html',
       controller: 'loginCtrl'
     })
+    .when('/chat', {
+      templateUrl: '../app/components/chat/chat.view.html',
+      controller: 'chatCtrl'
+    })
+    .when('/about', {
+      templateUrl: '../app/components/about/about.view.html',
+      controller: 'chatCtrl'
+    })
     .when('/styleguide', {
       templateUrl: '../assets/css/styleguide.html',
     })

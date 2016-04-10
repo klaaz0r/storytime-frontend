@@ -149,13 +149,18 @@ gulp.task('images', function() {
 });
 
 /* clean task is for development!! remove the complete public folder */
-gulp.task('clean', function() {
+gulp.task('clean', function(cb) {
   return gulp.src('public/', {
       read: false
     })
     .pipe(clean());
+  cb(err);
 });
 
+/* deploy task is only for server use, it first cleans the public folder */
+gulp.task('deploy', ['clean'], function() {
+  gulp.start('build');
+});
 /* Watch these files for changes and run the task on update */
 gulp.task('watch', function() {
   livereload.listen();

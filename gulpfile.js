@@ -11,7 +11,8 @@ var gulp = require('gulp'),
   clean = require('gulp-clean'),
   image = require('gulp-image'),
   concat = require('gulp-concat'),
-  bower = require('gulp-bower');
+  bower = require('gulp-bower'),
+  iife = require("gulp-iife");
 
 //input files to work with, this keeps everything organised
 input = {
@@ -118,6 +119,7 @@ WARNING: minify and uglify do not work atm! ONLY CONCAT TO ONE FILE!
 gulp.task('angular', function() {
   return gulp.src(input.angular)
     .pipe(concat('app.js'))
+    .pipe(iife())
     .pipe(gulp.dest(output.app))
     .pipe(livereload());
 });

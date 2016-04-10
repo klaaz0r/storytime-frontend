@@ -1,0 +1,25 @@
+{
+  "name": "storytime",
+  "description": "Social story time application",
+  "main": "server.js",
+  "authors": [
+    "klaas <klaas.foppen@gmail.com>"
+  ],
+  "license": "GPL-3.0",
+  "homepage": "https://github.com/klaaz0r/storytime-frontend",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "angular": "1.x",
+    "angular-route": "^1.5.3",
+    "bootstrap": "^3.3.6"
+  }
+}

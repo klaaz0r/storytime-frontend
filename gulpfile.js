@@ -9,26 +9,27 @@ var gulp = require('gulp'),
   cssmin = require('gulp-cssmin'),
   uglify = require('gulp-uglify'),
   clean = require('gulp-clean'),
-  image = require('gulp-image');
+  image = require('gulp-image'),
+  concat = require('gulp-concat'),
+  bower = require('gulp-bower');
 
 //input files to work with, this keeps everything organised
 input = {
     // **/*.extension gets all nested files
     'sass': 'src/assets/scss/**/*.scss',
     'javascript': 'src/assets/js/**/*.js',
-    //for the index html!!
+    //for the index html
     'html': 'src/*.html',
     //the complete angular app
-    'angular': 'src/app/**/*',
-
-    //seperate inputs for material css these are only compiled once eddited
-    'materialCss': 'src/material/**/*.scss',
-    'materialJs': 'src/material/js/**/*.js',
-
+    'angular': 'src/app/**/*.js',
+    //angular html views
+    'angular_views': 'src/app/components/**/*.html',
     //theme files are compresed and can be eddited
-    'theme': 'src/assets/theme/**/*',
-
-
+    'theme_css': 'src/assets/theme/**/*.css',
+    'theme_fonts': 'src/assets/theme/fonts/**/*',
+    //bower components are moved (only the minjs files )
+    'vendor': 'bower_components/**/*.min.js',
+    //image folder
     'images': 'src/assets/images/**/*'
   },
 
@@ -38,20 +39,35 @@ input = {
     'javascript': 'public/assets/js',
     'images': 'public/images',
     'root': 'public',
-    'app': 'public/app'
+    'app': 'public/app',
+    'app_views': 'public/app/components',
+    'vendor': 'public/vendor',
+    'theme_fonts': 'public/assets/css/fonts',
   };
 
 /* run the watch task when gulp is called without arguments */
 gulp.task('default', ['watch', 'start-server']);
 
 /* this tasks runs on the server and creates all the files */
-gulp.task('build', ['css', 'javascript', 'theme', 'angular', 'html', 'images']);
+gulp.task('build', ['bower', 'css', 'javascript', 'theme_fonts', 'theme_css', 'angular', 'html', 'images', 'angular_views']);
 
 //starting express with the server.js file
 gulp.task('start-server', function() {
   nodemon({
     script: 'server.js'
   })
+});
+
+/* Run "bower install" */
+gulp.task('bower_install', function(cb) {
+  return bower();
+  cb(err);
+});
+/* sync bower functions*/
+gulp.task('bower', ['bower_install'], function() {
+  return gulp.src(input.vendor)
+    .pipe(gulp.dest(output.vendor))
+    .pipe(livereload());
 });
 
 /* run javascript through jshint */
@@ -89,27 +105,40 @@ gulp.task('html', function() {
     .pipe(livereload());
 });
 
+/*Angular views  NO MINIFY YET*/
+gulp.task('angular_views', function() {
+  return gulp.src(input.angular_views)
+    .pipe(gulp.dest(output.app_views))
+    .pipe(livereload());
+});
+
 /* build angular file
-WARNING: minify and uglify do not work atm!
+WARNING: minify and uglify do not work atm! ONLY CONCAT TO ONE FILE!
 */
 gulp.task('angular', function() {
   return gulp.src(input.angular)
-    // .pipe(uglify())
-    // .pipe(htmlmin({
-    //   collapseWhitespace: true
-    // }))
+    .pipe(concat('app.js'))
     .pipe(gulp.dest(output.app))
     .pipe(livereload());
 });
 
 /* basic theme if you made changes */
-gulp.task('theme', function() {
-  return gulp.src(input.theme)
+gulp.task('theme_css', function() {
+  return gulp.src(input.theme_css)
     .pipe(cssmin())
     .pipe(gulp.dest(output.stylesheets))
     .pipe(livereload());
 });
 
+/* moving all the fonts */
+gulp.task('theme_fonts', function() {
+  return gulp.src(input.theme_fonts)
+    .pipe(gulp.dest(output.theme_fonts))
+    .pipe(livereload());
+});
+
+
+/* moving all the images to public*/
 gulp.task('images', function() {
   return gulp.src(input.images)
     .pipe(image())
@@ -117,6 +146,7 @@ gulp.task('images', function() {
     .pipe(livereload());
 });
 
+/* clean task is for development!! remove the complete public folder */
 gulp.task('clean', function() {
   return gulp.src('public/', {
       read: false

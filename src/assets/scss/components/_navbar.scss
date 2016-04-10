@@ -4,3 +4,10 @@
   border-radius: 0;
   margin-bottom: 0;
 }
+
+@media screen and (max-width: 400px) {
+  .navbar-brand-img {
+    width: 190px;
+    margin-right: 0px;
+  }
+}

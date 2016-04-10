@@ -1,0 +1,39 @@
+.promo {
+  margin-bottom: 40px;
+}
+
+.promo-block {
+  margin-bottom: 25px;
+}
+
+.promo-image {
+  width: 250px;
+}
+
+.samenwerking {
+  h2 {
+    text-align: center;
+  }
+
+  .row {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .promo-image {
+    display: none;
+  }
+
+  img {
+    margin: 0 auto 25px;
+    width: 100%;
+  }
+
+  .samenwerking {
+    .row {
+      margin-bottom: 10px;
+    }
+  }
+}

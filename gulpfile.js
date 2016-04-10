@@ -164,5 +164,6 @@ gulp.task('watch', function() {
   gulp.watch(input.html, ['html']);
   gulp.watch(input.theme, ['theme']);
   gulp.watch(input.angular, ['angular']);
+  gulp.watch(input.angular_views, ['angular_views']);
   gulp.watch(input.images, ['images']);
 });

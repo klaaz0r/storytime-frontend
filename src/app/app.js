@@ -1,11 +1,6 @@
 var app = angular.module("app", ['ngRoute']);
 
-
-app.controller('rootCtrl', ['$scope', function($scope) {
-  $scope.greeting = 'Hola!';
-}]);
-
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: '../app/components/home/home.view.html',
@@ -28,4 +23,6 @@ app.config(function($routeProvider) {
     .otherwise({
       redirectTo: '/'
     });
+
+  $locationProvider.html5Mode(true);
 });

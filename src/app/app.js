@@ -1,28 +1,30 @@
-var app = angular.module("app", ['ngRoute']);
+var app = angular.module("app", ['ui.router']);
 
-app.config(function($routeProvider, $locationProvider) {
-  $routeProvider
-    .when('/', {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $stateProvider
+    .state('home', {
+      url: '/',
       templateUrl: '../app/components/home/home.view.html',
       controller: 'homeController',
     })
-    .when('/login', {
+    .state('login', {
+      url: '/login',
       templateUrl: '../app/components/login/login.view.html',
       controller: 'LoginController'
     })
-    .when('/chat', {
+    .state('chat', {
+      url: '/chat',
       templateUrl: '../app/components/chat/chat.view.html',
       controller: 'chatController'
     })
-    .when('/about', {
+    .state('about', {
+      url: '/about',
       templateUrl: '../app/components/about/about.view.html'
     })
-    .when('/styleguide', {
+    .state('styleguide', {
+      url: '/styleguide',
       templateUrl: '../assets/css/styleguide.html',
     })
-    .otherwise({
-      redirectTo: '/'
-    });
-
-  $locationProvider.html5Mode(true);
+  $urlRouterProvider.otherwise("/");
+  // $locationProvider.html5Mode(true);
 });

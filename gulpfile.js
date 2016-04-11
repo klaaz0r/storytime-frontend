@@ -1,4 +1,3 @@
-//dependencies
 var gulp = require('gulp'),
   gutil = require('gulp-util'),
   jshint = require('gulp-jshint'),
@@ -104,9 +103,6 @@ gulp.task('javascript', function() {
 /* basic build html for development*/
 gulp.task('html', function() {
   return gulp.src(input.html)
-    // .pipe(htmlmin({
-    //   collapseWhitespace: true
-    // }))
     .pipe(gulp.dest(output.root))
     .pipe(livereload());
 });
@@ -123,7 +119,7 @@ WARNING: minify and uglify do not work atm! ONLY CONCAT TO ONE FILE!
 */
 gulp.task('angular', function() {
   return gulp.src(input.angular)
-    .pipe(gutil.env.type === 'development' ? addStream.obj(devConfig()) : addStream.obj(deployConfig()))
+    .pipe(gutil.env.type === 'production' ? addStream.obj(deployConfig()) : addStream.obj(devConfig()))
     .pipe(concat('app.js'))
     .pipe(iife())
     .pipe(gulp.dest(output.app))

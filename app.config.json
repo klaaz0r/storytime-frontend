@@ -1,8 +1,8 @@
 {
   "production": {
-    "url": "https://dev.story.social/"
+    "API_URL": "https://api.story.social"
   },
   "development": {
-    "url": "localhost:8080/"
+    "API_URL": "localhost:8080"
   }
 }

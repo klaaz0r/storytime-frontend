@@ -4,5 +4,6 @@ var app = express();
 var port = process.env.PORT || 8081;
 
 app.use(express.static(__dirname + '/public'));
+console.log(process.env.NODE_ENV);
 //start server
 app.listen(port);

@@ -5,7 +5,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('home', {
       url: '/',
       templateUrl: '../app/components/home/home.view.html',
-      controller: 'homeController',
+      controller: 'HomeController',
     })
     .state('login', {
       url: '/login',
@@ -15,7 +15,12 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('chat', {
       url: '/chat',
       templateUrl: '../app/components/chat/chat.view.html',
-      controller: 'chatController'
+      controller: 'ChatController'
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: '../app/components/register/register.view.html',
+      controller: 'RegisterController'
     })
     .state('about', {
       url: '/about',
@@ -23,8 +28,16 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('styleguide', {
       url: '/styleguide',
-      templateUrl: '../assets/css/styleguide.html',
+      templateUrl: '../styleguide.html',
     })
   $urlRouterProvider.otherwise("/");
-  // $locationProvider.html5Mode(true);
+
 });
+
+app.constant('USER_ROLES', {
+  all: '*',
+  admin: 'admin',
+  mentor: 'mentor',
+  child: 'child',
+  guest: 'guest'
+})

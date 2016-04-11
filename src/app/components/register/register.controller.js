@@ -1,4 +1,4 @@
-angular.module('app').controller('LoginController', function($scope, loginService) {
+angular.module('app').controller('RegisterController', function($scope, loginService) {
   $scope.credentials = {
     username: '',
     password: ''

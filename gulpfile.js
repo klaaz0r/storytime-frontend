@@ -99,9 +99,9 @@ gulp.task('javascript', function() {
 /* basic build html for development*/
 gulp.task('html', function() {
   return gulp.src(input.html)
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
+    // .pipe(htmlmin({
+    //   collapseWhitespace: true
+    // }))
     .pipe(gulp.dest(output.root))
     .pipe(livereload());
 });

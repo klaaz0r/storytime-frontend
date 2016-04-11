@@ -1,3 +1,3 @@
-angular.module('app').controller('chatCtrl', ['$scope', function($scope) {
+angular.module('app').controller('ChatController', ['$scope', function($scope) {
   $scope.home = 'test home controller';
 }]);

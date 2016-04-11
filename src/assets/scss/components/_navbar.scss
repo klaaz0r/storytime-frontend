@@ -5,6 +5,10 @@
   margin-bottom: 0;
 }
 
+.navbar-brand-img{
+  cursor: pointer;
+}
+
 @media screen and (max-width: 400px) {
   .navbar-brand-img {
     width: 190px;

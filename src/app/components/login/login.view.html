@@ -1,18 +1,18 @@
-<div ng-controller="LoginController" />
 
+<form novalidate/>
 <div class="login-box">
   <div class="tile tile-login">
     <h1 class="login-heading">inloggen</h1>
     <div class="input-icon">
       <span class="ss-user"></span>
-      <input type="text" class="form-control" placeholder="Gebruikersnaam">
+      <input type="text" ng-model="credentials.username" class="form-control" placeholder="Gebruikersnaam" required>
     </div>
     <div class="input-icon">
       <span class="ss-lock"></span>
-      <input type="password" class="form-control" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;">
+      <input type="password" ng-model="credentials.password" class="form-control" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required>
     </div>
 
-    <a href="#fakeLink" class="btn btn-block btn-primary">Log in</a>
+    <a ng-click="login(credentials)" class="btn btn-block btn-primary">Log in</a>
 
     <div class="login-action clearfix">
       <a href="#fakeLink">wachtwoord vergeten?</a>
@@ -20,4 +20,4 @@
   </div>
 </div>
 
-</div>
+</form>

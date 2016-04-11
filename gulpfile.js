@@ -12,7 +12,9 @@ var gulp = require('gulp'),
   image = require('gulp-image'),
   concat = require('gulp-concat'),
   bower = require('gulp-bower'),
-  iife = require("gulp-iife");
+  iife = require("gulp-iife"),
+  addStream = require('add-stream'),
+  gulpNgConfig = require('gulp-ng-config');
 
 //input files to work with, this keeps everything organised
 input = {
@@ -47,7 +49,7 @@ input = {
   };
 
 /* run the watch task when gulp is called without arguments */
-gulp.task('default', ['watch', 'start-server']);
+gulp.task('default', ['watch', 'start-server', 'angular']);
 
 /* this tasks runs on the server and creates all the files */
 gulp.task('build', ['bower', 'css', 'javascript', 'theme_fonts', 'theme_css', 'angular', 'html', 'images', 'angular_views']);
@@ -55,7 +57,10 @@ gulp.task('build', ['bower', 'css', 'javascript', 'theme_fonts', 'theme_css', 'a
 //starting express with the server.js file
 gulp.task('start-server', function() {
   nodemon({
-    script: 'server.js'
+    script: 'server.js',
+    env: {
+      'NODE_ENV': 'development'
+    }
   })
 });
 
@@ -118,6 +123,7 @@ WARNING: minify and uglify do not work atm! ONLY CONCAT TO ONE FILE!
 */
 gulp.task('angular', function() {
   return gulp.src(input.angular)
+    .pipe(gutil.env.type === 'development' ? addStream.obj(devConfig()) : addStream.obj(deployConfig()))
     .pipe(concat('app.js'))
     .pipe(iife())
     .pipe(gulp.dest(output.app))
@@ -161,6 +167,20 @@ gulp.task('clean', function(cb) {
 gulp.task('deploy', ['clean'], function() {
   gulp.start('build');
 });
+
+function devConfig() {
+  return gulp.src('./app.config.json')
+    .pipe(gulpNgConfig('app.config', {
+      environment: 'development' // or maybe use process.env.NODE_ENV here
+    }));
+}
+
+function deployConfig() {
+  return gulp.src('./app.config.json')
+    .pipe(gulpNgConfig('app.config', {
+      environment: 'production' // or maybe use process.env.NODE_ENV here
+    }));
+}
 /* Watch these files for changes and run the task on update */
 gulp.task('watch', function() {
   livereload.listen();

@@ -1,0 +1,8 @@
+{
+  "production": {
+    "url": "https://dev.story.social/"
+  },
+  "development": {
+    "url": "localhost:8080/"
+  }
+}

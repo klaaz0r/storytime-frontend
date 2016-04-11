@@ -119,7 +119,7 @@ WARNING: minify and uglify do not work atm! ONLY CONCAT TO ONE FILE!
 */
 gulp.task('angular', function() {
   return gulp.src(input.angular)
-    .pipe(gutil.env.type === 'production' ? addStream.obj(deployConfig()) : addStream.obj(devConfig()))
+    .pipe(process.env.NODE_ENV === 'production' ? addStream.obj(deployConfig()) : addStream.obj(devConfig()))
     .pipe(concat('app.js'))
     .pipe(iife())
     .pipe(gulp.dest(output.app))

@@ -5,7 +5,35 @@ body {
   height: 100%;
 }
 
-.container {
-  min-height: 100%;
-  /* equal to footer height */
+.text-nav-helper {
+  color: #B2C6CD;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.center-element {
+  position: relative;
+  margin-top: 150px;
+  margin-bottom: 170px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 400px) {
+  .center-element {
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .center-element {
+    margin-top: 90px;
+    margin-bottom: 120px;
+  }
 }

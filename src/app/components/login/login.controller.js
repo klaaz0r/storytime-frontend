@@ -6,7 +6,7 @@ angular.module('app').controller('LoginController', function($scope, $rootScope,
 
   $scope.login = function(credentials) {
     AuthService.login(credentials).then(function(user) {
-
+      
     });
   };
 });

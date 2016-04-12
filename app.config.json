@@ -3,6 +3,6 @@
     "API_URL": "https://api.story.social"
   },
   "development": {
-    "API_URL": "localhost:8080"
+    "API_URL": "http://localhost:8080"
   }
 }

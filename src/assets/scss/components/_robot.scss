@@ -2,14 +2,14 @@
   height: 500px;
   width: 300px;
   margin-right: 0px;
-}
+  }
 
 .robot svg {
   position: relative;
-  left: 50%;
+  left: 52%;
   display: block;
   top: -150px;
-  margin: -200px auto 0 -300px;
+  margin: -180px auto 0 -300px;
   transform: scale(0.6);
   transform-origin: center;
   height: 800px;
@@ -18,6 +18,20 @@
 
 .robot-padding-top {
     padding-top: 43px;
+}
+
+@media screen and (max-width: 500px){
+  
+  .demo-section-title {
+    text-align: center;
+  }
+  
+  .robot {
+    margin-top: 20px;
+    height: 500px;
+    width: 300px;
+    margin-right: 0px;
+  }      
 }
 
 @-webkit-keyframes robot_bounce {

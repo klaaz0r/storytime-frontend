@@ -5,13 +5,18 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
     return $http
       .post(API_URL + '/user/login', credentials)
       .then(function(res) {
-        //create sessions
-        Session.create(res.data.id, res.data.user.id,
-          res.data.user.role);
+        if(res.data.STATE === "SUCCESS"){
+          //create sessions
+          Session.create(res.data.id, res.data.user.id,
+            res.data.user.role);
 
-        //store the token
-        CookieFactory.setToken(res.data.token);
-        return res.data.user;
+          //store the token
+          CookieFactory.setToken(res.data.token);
+          return res.data.user;
+        }
+    else {
+      
+    }
       });
   };
 

@@ -4,8 +4,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: '../app/components/home/home.view.html',
-      controller: 'HomeController',
+      templateUrl: '../app/components/static/home.view.html',
       data: {
         authorizedRoles: [USER_ROLES.all]
       }
@@ -41,7 +40,14 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
     })
     .state('about', {
       url: '/about',
-      templateUrl: '../app/components/about/about.view.html',
+      templateUrl: '../app/components/static/about.view.html',
+      data: {
+        authorizedRoles: [USER_ROLES.all]
+      }
+    })
+    .state('helpmee', {
+      url: '/helpmee',
+      templateUrl: '../app/components/static/helpmee.view.html',
       data: {
         authorizedRoles: [USER_ROLES.all]
       }

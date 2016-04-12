@@ -1,10 +1,15 @@
 angular.module('app').controller('RegisterController', function($scope, AuthService) {
   $scope.credentials = {
     username: '',
-    password: ''
+    password: '',
+    email: '',
+    name: ''
   };
 
-  $scope.login = function(credentials) {
-    console.log('logging in')
+  $scope.register = function(credentials) {
+    console.log(credentials);
+    AuthService.register(credentials).then(function(data) {
+      console.log(data);
+    })
   };
 });

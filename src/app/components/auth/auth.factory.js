@@ -18,6 +18,19 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
       });
   };
 
+  authService.register = function(credentials) {
+    return $http({
+        method: 'POST',
+        url: API_URL,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(function(res) {
+        return res.data;
+      });
+  };
+
   authService.isAuthenticated = function() {
     return !!Session.userId;
   };

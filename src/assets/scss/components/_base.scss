@@ -24,6 +24,11 @@ body {
   left: 0;
 }
 
+q {
+  padding-top: 5px;
+  border-left: 2px solid black;
+}
+
 @media screen and (max-width: 400px) {
   .center-element {
     margin-top: 30px;

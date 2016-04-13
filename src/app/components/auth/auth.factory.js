@@ -21,9 +21,16 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
   authService.register = function(credentials) {
     return $http({
         method: 'POST',
-        url: API_URL,
+        url: API_URL + "/user/register",
+        dataType: "json",
         headers: {
           'Content-Type': 'application/json'
+        },
+        data: {
+          username: credentials.username,
+          password: credentials.password,
+          email: credentials.email,
+          name: credentials.name
         }
       })
       .then(function(res) {

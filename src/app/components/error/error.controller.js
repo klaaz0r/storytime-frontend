@@ -4,7 +4,7 @@ angular.module('app').controller('ErrorController', ['$scope', function($scope) 
 
   $scope.$on('SUCCESS', function(event, message) {
     $scope.successDialog = true;
-    $scope.succesMessage = message;
+    $scope.successMessage = message;
   });
 
 

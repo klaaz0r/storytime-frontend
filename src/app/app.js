@@ -28,7 +28,10 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
     .state('dashboard', {
       url: '/dashboard',
       templateUrl: '../app/components/dashboard/dashboard.view.html',
-      controller: 'DashboardController'
+      controller: 'DashboardController',
+      data: {
+        authorizedRoles: [USER_ROLES.all]
+      }
     })
     .state('register', {
       url: '/register',

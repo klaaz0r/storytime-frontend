@@ -1,7 +1,7 @@
 angular.module('app').factory('CookieFactory', function($http, Session, $cookies) {
   var cookieService = {};
   cookieService.getToken = function() {
-    return document.cookie = "token=" + token;
+    return $cookies.get('token');
   };
 
   cookieService.setToken = function(token) {

@@ -22,6 +22,26 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
       });
   };
 
+  authService.userinfo = function() {
+    var userToken = CookieFactory.getToken();
+    console.log(userToken);
+    return $http({
+        method: 'GET',
+        url: API_URL + "/user/info",
+        dataType: "json",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          token: userToken
+        }
+      })
+      .then(function(res) {
+        console.log(res);
+        return res.data;
+      });
+  };
+
   authService.register = function(credentials) {
     return $http({
         method: 'POST',

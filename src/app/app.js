@@ -78,6 +78,9 @@ app.run(function($rootScope, AuthService) {
     var authorizedRoles = next.data.authorizedRoles;
     // if (!AuthService.isAuthorized(authorizedRoles)) {
     //   event.preventDefault();
+    //   console.log("AUTH SERVICE:");
+    //   console.log(next.data);
+    //   console.log(authorizedRoles);
     //   if (AuthService.isAuthenticated()) {
     //     // user is not allowed
     //

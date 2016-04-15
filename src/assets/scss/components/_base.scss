@@ -5,6 +5,20 @@ body {
   height: 100%;
 }
 
+.promo-heads {
+  margin-bottom: 30px;
+}
+
+#main-container {
+  min-height: 100%;
+  position: relative;
+}
+
+#main-content {
+  padding-bottom: 60px;
+  /* Height of the footer */
+}
+
 .text-nav-helper {
   color: #B2C6CD;
   font-size: 16px;
@@ -16,8 +30,6 @@ body {
 
 .center-element {
   position: relative;
-  margin-top: 150px;
-  margin-bottom: 170px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -31,6 +43,7 @@ blockquote {
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
 }
+
 blockquote:before {
   color: #ccc;
   content: open-quote;
@@ -39,6 +52,7 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
 blockquote p {
   display: inline;
 }

@@ -43,15 +43,16 @@ kun je misschien wat leren..
 </head>
 
 <body ng-controller="MainController">
-  <!-- navbar directive -->
-  <navbar></navbar>
-  <!--view-->
-  <div ui-view></div>
-  <!-- loading footer-->
-
-  <div id="footer">
-    <div class="container">
-      <p class="text-muted credit">Ontwikkelt door team <a href="https://tweakers.net/acties/projectb/StoryTime">StoryTime</a></p>
+  <div id="main-container">
+    <!-- navbar directive -->
+    <navbar></navbar>
+    <!--view-->
+    <div id="main-content">
+      <div ui-view></div>
+    </div>
+    <!-- loading footer-->
+    <div id="footer">
+      <footer></footer>
     </div>
   </div>
 

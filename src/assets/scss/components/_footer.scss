@@ -1,10 +1,10 @@
 #footer {
-  margin-top: 25px;
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  padding-top: 25px;
-  height: 80px;
+  height: 60px;
+  /* Height of the footer */
+  padding-top: 20px;
+  // height: 80px;
   background-color: rgb(237, 237, 237);
-  display: block;
 }

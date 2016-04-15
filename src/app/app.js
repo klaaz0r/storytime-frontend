@@ -1,4 +1,4 @@
-var app = angular.module("app", ['ui.router', 'app.config', 'ngCookies']);
+var app = angular.module("app", ['ui.router', 'app.config', 'ngCookies', 'ngAnimate']);
 
 app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
   $stateProvider
@@ -22,7 +22,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       templateUrl: '../app/components/chat/chat.view.html',
       controller: 'ChatController',
       data: {
-        authorizedRoles: [USER_ROLES.child, USER_ROLES.admin, USER_ROLES.all]
+        authorizedRoles: [USER_ROLES.child]
       }
     })
     .state('dashboard', {
@@ -30,7 +30,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       templateUrl: '../app/components/dashboard/dashboard.view.html',
       controller: 'DashboardController',
       data: {
-        authorizedRoles: [USER_ROLES.all]
+        authorizedRoles: [USER_ROLES.mentor]
       }
     })
     .state('register', {
@@ -68,7 +68,6 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
 
 app.constant('USER_ROLES', {
   all: '*',
-  admin: 'admin',
   mentor: 'mentor',
   child: 'child'
 });

@@ -4232,6 +4232,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   padding: 35px 25px 40px 25px;
   position: relative;
   text-align: center;
+  height: 300px;
 }
 
 .tile-profile {

@@ -22,6 +22,8 @@
     "bootstrap": "^3.3.6",
     "angular-ui-router": "^0.2.18",
     "angular-cookies": "^1.5.3",
-    "ng-file-upload": "^12.0.4"
+    "ng-file-upload": "^12.0.4",
+    "flip": "^1.0.20",
+    "angular-animate": "^1.5.3"
   }
 }

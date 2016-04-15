@@ -22,7 +22,7 @@
       <div class="col-md-4 col-sm-6 about-picture promo-tile">
         <div class="tile tile-profile" style="background-color:#f3bc65">
 
-          <div id="card">
+          <div class="card">
             <div class="front">
               <img src="images/sjoerd.png" alt="">
               <h4>Sjoerd Meester</h4>
@@ -39,7 +39,7 @@
       <div class="col-md-4 col-sm-6 about-picture">
         <div class="tile tile-profile" style="background-color:#cc0000">
 
-          <div id="card-2">
+          <div class="card">
             <div class="front">
               <img src="images/lars.jpeg" alt="">
               <h4>Lars Timmerman</h4>
@@ -90,18 +90,11 @@
 <!-- moet hier nog iets voor bedenken-->
 <script type="text/javascript">
   $(function() {
-    $("#card").flip({
+    $(".card").flip({
       axis: "y", // y or x
       reverse: false, // true and false
       trigger: "hover", // click or hover
       speed: 500
     });
-    $("#card-2").flip({
-      axis: "y", // y or x
-      reverse: false, // true and false
-      trigger: "hover", // click or hover
-      speed: 500
-    });
-
   });
 </script>

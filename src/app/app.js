@@ -41,6 +41,14 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
         authorizedRoles: [USER_ROLES.all]
       }
     })
+    .state('forgetpassword', {
+      url: '/forgetpassword',
+      templateUrl: '../app/components/forgetpassword/forgetpassword.view.html',
+      controller: 'ForgetPasswordController',
+      data: {
+        authorizedRoles: [USER_ROLES.all]
+      }
+    })
     .state('about', {
       url: '/about',
       templateUrl: '../app/components/static/about.view.html',

@@ -107,6 +107,7 @@ gulp.task('html', function() {
     .pipe(livereload());
 });
 
+
 /*Angular views  NO MINIFY YET*/
 gulp.task('angular_views', function() {
   return gulp.src(input.angular_views)

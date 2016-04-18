@@ -78,23 +78,33 @@
         </div>
       </div>
       <div class="col-md-4 col-sm-6 about-picture">
+
         <div class="tile tile-profile" style="background-color:#28948c">
-          <img src="images/klaas.jpeg" alt="">
-          <h4>Klaas Foppen</h4>
-          <p>UI Designer & Developer</p>
+          <div class="card">
+            <div class="front">
+              <img src="images/klaas.jpeg" alt="">
+              <h4>Klaas Foppen</h4>
+              <p>UI Designer & Developer</p>
+            </div>
+            <div class="back">
+              <h4>Je kunt mij vinden op</h4>
+              <a href="https://www.linkedin.com/in/klaas-foppen-35b33245"><i class="fa fa-linkedin" aria-hidden="true"></i>/klaas-foppen</a>
+              <a href="https://www.linkedin.com/in/klaas-foppen-35b33245"><i class="fa fa-twitter" aria-hidden="true"></i>/klaaz0r</a>
+              <a href="https://www.linkedin.com/in/klaas-foppen-35b33245"><i class="fa fa-github" aria-hidden="true"></i>/klaaz0r</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- moet hier nog iets voor bedenken-->
-<script type="text/javascript">
-  $(function() {
-    $(".card").flip({
-      axis: "y", // y or x
-      reverse: false, // true and false
-      trigger: "hover", // click or hover
-      speed: 500
+  <!-- moet hier nog iets voor bedenken-->
+  <script type="text/javascript">
+    $(function() {
+      $(".card").flip({
+        axis: "y", // y or x
+        reverse: false, // true and false
+        trigger: "hover", // click or hover
+        speed: 500
+      });
     });
-  });
-</script>
+  </script>

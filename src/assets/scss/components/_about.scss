@@ -1,8 +1,18 @@
 .about-picture {
-    padding-top: 25px;
+  padding-top: 25px;
 
-    img {
-      height: 128px;
-      width: 128px;
+  a {
+    font-size: 26px;
+    display: block;
+    color: rgb(105, 201, 255);
+
+    &:hover {
+      color: rgb(43, 114, 198);
     }
+  }
+
+  img {
+    height: 128px;
+    width: 128px;
+  }
 }

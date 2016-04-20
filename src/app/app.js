@@ -76,25 +76,28 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
 
 app.constant('USER_ROLES', {
   all: '*',
-  mentor: 'mentor',
-  child: 'child'
+  mentor: 'MENTOR',
+  child: 'CHILD'
 });
 
-app.run(function($rootScope, AuthService) {
+app.run(function($rootScope, AuthService, $state, ErrorFactory) {
   $rootScope.$on('$stateChangeStart', function(event, next) {
     var authorizedRoles = next.data.authorizedRoles;
-    // if (!AuthService.isAuthorized(authorizedRoles)) {
-    //   event.preventDefault();
-    //   console.log("AUTH SERVICE:");
-    //   console.log(next.data);
-    //   console.log(authorizedRoles);
-    //   if (AuthService.isAuthenticated()) {
-    //     // user is not allowed
-    //
-    //   } else {
-    //     // user is not logged in
-    //
-    //   }
-    // }
+    if (!AuthService.isAuthorized(authorizedRoles)) {
+
+      event.preventDefault();
+
+      if (AuthService.isAuthenticated()) {
+        // user is not allowed
+        ErrorFactory.setError('U bent niet ingelogd');
+        $state.go("login");
+        console.log('user is not allowed');
+      } else {
+        // user is not logged in
+        ErrorFactory.setError('U bent niet ingelogd');
+        $stateProvider.go("login");
+        console.log('user is not logged in');
+      }
+    }
   });
 });

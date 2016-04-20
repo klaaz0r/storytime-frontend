@@ -16,15 +16,18 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
       })
       .then(function(res) {
         if (res.data.STATE === "SUCCEEDED") {
-          CookieFactory.setToken(res.data.MESSAGE);
+          //setting the token
+          CookieFactory.setToken(res.data.MESSAGE.Token);
+          //creating the sesion
+          Session.create(res.data.MESSAGE.Username, res.data.MESSAGE.Type.toUpperCase());
         }
         return res.data;
       });
   };
-
+  
+  //get userinfo based on token
   authService.userinfo = function() {
     var userToken = CookieFactory.getToken();
-    console.log(userToken);
     return $http({
         method: 'GET',
         url: API_URL + "/user/info",
@@ -37,7 +40,6 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
         }
       })
       .then(function(res) {
-        console.log(res);
         return res.data;
       });
   };
@@ -79,14 +81,17 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
       });
   };
 
+  //check is a username is set in the session
   authService.isAuthenticated = function() {
-    return !!Session.userId;
+    return !!Session.userName;
   };
 
   authService.isAuthorized = function(authorizedRoles) {
+
     if (!angular.isArray(authorizedRoles)) {
       authorizedRoles = [authorizedRoles];
     }
+
     return (authService.isAuthenticated() &&
       authorizedRoles.indexOf(Session.userRole) !== -1);
   };
@@ -96,12 +101,12 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
 
 //create a session
 angular.module('app').service('Session', function() {
-  this.create = function(sessionId, userId, userRole) {
-    this.userId = userId;
+  this.create = function(userName, userRole) {
     this.userRole = userRole;
+    this.userName = userName;
   };
   this.destroy = function() {
-    this.userId = null;
     this.userRole = null;
+    this.userName = null;
   };
 });

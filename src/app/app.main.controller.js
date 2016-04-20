@@ -1,11 +1,15 @@
-angular.module('app').controller('MainController', function($scope,
-  USER_ROLES,
-  AuthService) {
-  $scope.currentUser = USER_ROLES.all;
-  $scope.userRoles = USER_ROLES;
-  $scope.isAuthorized = AuthService.isAuthorized;
+angular.module('app').controller('MainController', function($scope, Session, CookieFactory) {
+  //create a default guest user
+  Session.create('guest', '*');
 
-  $scope.setCurrentUser = function(user) {
-    $scope.currentUser = user;
-  };
-})
+  $scope.acceptCookies = function() {
+    CookieFactory.setCookiesOk();
+    $scope.cookiesoke = false;
+  }
+
+  if (CookieFactory.getCookiesOke()) {
+    $scope.cookiesoke = false;
+  } else {
+    $scope.cookiesoke = true;
+  }
+});

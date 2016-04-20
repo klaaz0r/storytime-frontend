@@ -6,7 +6,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       url: '/',
       templateUrl: '../app/components/static/home.view.html',
       data: {
-        authorizedRoles: [USER_ROLES.all]
+        authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }
     })
     .state('login', {
@@ -14,7 +14,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       templateUrl: '../app/components/login/login.view.html',
       controller: 'LoginController',
       data: {
-        authorizedRoles: [USER_ROLES.all]
+        authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }
     })
     .state('chat', {
@@ -38,7 +38,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       templateUrl: '../app/components/register/register.view.html',
       controller: 'RegisterController',
       data: {
-        authorizedRoles: [USER_ROLES.all]
+        authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }
     })
     .state('forgetpassword', {
@@ -46,28 +46,28 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       templateUrl: '../app/components/forgetpassword/forgetpassword.view.html',
       controller: 'ForgetPasswordController',
       data: {
-        authorizedRoles: [USER_ROLES.all]
+        authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }
     })
     .state('about', {
       url: '/about',
       templateUrl: '../app/components/static/about.view.html',
       data: {
-        authorizedRoles: [USER_ROLES.all]
+        authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }
     })
     .state('helpmee', {
       url: '/helpmee',
       templateUrl: '../app/components/static/helpmee.view.html',
       data: {
-        authorizedRoles: [USER_ROLES.all]
+        authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }
     })
     .state('styleguide', {
       url: '/styleguide',
       templateUrl: '../styleguide.html',
       data: {
-        authorizedRoles: [USER_ROLES.all]
+        authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }
     })
   $urlRouterProvider.otherwise("/");
@@ -91,12 +91,10 @@ app.run(function($rootScope, AuthService, $state, ErrorFactory) {
         // user is not allowed
         ErrorFactory.setError('U bent niet ingelogd');
         $state.go("login");
-        console.log('user is not allowed');
       } else {
         // user is not logged in
         ErrorFactory.setError('U bent niet ingelogd');
         $stateProvider.go("login");
-        console.log('user is not logged in');
       }
     }
   });

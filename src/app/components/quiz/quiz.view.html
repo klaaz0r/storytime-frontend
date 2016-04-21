@@ -1,0 +1,41 @@
+<div class="container">
+  <h3 class="text-nav-helper">Quiz / overzicht</h3>  
+  <div ng-controller="QuizController">
+    <div class="container quizes">
+    <div class="row row-centrered">
+        <div class="col-xs-6 quizesOverview">
+            <h4>
+                Mijn Quizes
+            </h4>
+            <hr>
+            <ul class="list-group list-group-collapse">
+                <li class="list-group-item" ng-repeat="quiz in quizes">
+                    <p ng-click="toggleQuiz()">
+                        {{quiz.name}}
+                    </p>
+                    
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="question in quiz.question " ng-hide="showQuestion" ng-click="toggleQuestion()">
+                            <p class="question-text">
+                                {{question.name}}
+                            </p>
+                            
+                            <ul class="list-group" ng-hide="showAnswer">
+                                <li class="list-group-item" ng-repeat="answer in question.answer">
+                                  <p class="answer-text">
+                                    {{answer.name}}
+                                  </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <button type="button" class="btn btn-block btn-primary">Voeg quiz toe</button>
+        </div>
+    </div>
+</div>
+         
+  </div>
+  <error></error> 
+</div>    

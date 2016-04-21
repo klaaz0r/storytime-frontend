@@ -70,6 +70,14 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
         authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }
     })
+    .state('quiz', {
+      url: '/quiz',
+      templateUrl: '../app/components/quiz/quiz.view.html',
+      data: {
+        authorizedRoles: [USER_ROLES.all]
+      }
+    })
+  $urlRouterProvider.otherwise("/");
   $urlRouterProvider.otherwise("/");
 
 });

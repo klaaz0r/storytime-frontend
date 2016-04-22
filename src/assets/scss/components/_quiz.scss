@@ -37,3 +37,20 @@
      }
 }
 
+.hide {
+display: none;
+}
+
+.show > ul {
+    display: block;
+}
+
+ul {
+  display: none;
+}
+
+ul.list-group {
+  display: block;
+  }
+
+

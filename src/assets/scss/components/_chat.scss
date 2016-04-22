@@ -1,0 +1,119 @@
+#main-container,
+#main-content,
+.full-height {
+	height: 100%;
+}
+
+.ChatContainer {
+	height: 100%;
+    padding: 2%;
+    background: #fff;
+}
+
+.RobotHolder {
+    display: block;
+    float: left;
+    width: 30%;
+    height: 90%;
+    margin-top: 5%;
+}
+
+.ChatHolder {
+    border-radius: 20px;
+    background: #FAD46B;
+    height: 100%;
+}
+
+.ChatHolder .Messages {
+	height: 80%;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    overflow-y: scroll;
+}
+
+.Messages .Message {
+	position: relative;
+	display: inline-block;
+	width: 90%;
+}
+
+.Message.Send {
+    float: right;
+    text-align: right;
+}
+
+.Message.Recieved:before,
+.Message.Send:before {
+    top: 2px;
+	border: solid transparent;
+	content: " ";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: #fff solid 15px;
+	border-color: #fff transparent transparent transparent;
+}
+
+.Message.Recieved:before {
+    left: -13px;
+}
+
+.Message.Send:before {
+    right: -13px;
+}
+
+.Message.Recieved:after,
+.Message.Send:after {
+    top: 4px;
+	border: solid transparent;
+	content: " ";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: #fff solid 12px;
+	border-color: #5e696d transparent transparent transparent;
+}
+
+.Message.Recieved:after {
+    left: -8px;
+}
+
+.Message.Send:after {
+    right: -8px;
+}
+
+.Message p {
+    display: inline-block;
+    padding: 1%;
+    margin: 2px;
+    border: #fff solid 2px;
+	background: #5e696d;
+    text-align: left;
+    font-size: small;
+    font-weight: bold;
+	letter-spacing: 1px;
+    white-space: pre-line;
+    line-height: 1.2em;
+    word-break: break-all;
+}
+
+.Message.Send p {
+	-webkit-border-radius: 10px 0 10px;
+	-moz-border-radius: 10px 0 10px;
+	border-radius: 10px 0 10px 10px;
+}
+
+.Message.Recieved p {
+	-webkit-border-radius: 0 10px 10px;
+	-moz-border-radius: 0 10px 10px;
+	border-radius: 0 10px 10px;
+}
+
+.MessageHolder {
+    margin-top: 2%;
+}
+
+.ButtonOptions {
+	display: block;
+	float: left;
+}

@@ -1,52 +1,50 @@
-.quizes{
-  width: 100%; 
-  h4{
-  	text-align: center
+.quizes {
+  width: 100%;
+
+  h4 {
+    text-align: center;
   }
-  
+
   .quizesOverview {
-    
     margin: 0 auto;
-    width: 100%; 
+    width: 100%;
     padding-left: 20%;
-	padding-right: 20%;    
+    padding-right: 20%;
+
     .list-group-collapse li > ul li:first-child {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      
+
       .question-text {
-        padding-left: 15px;     
+        padding-left: 15px;
       }
     }
-    
-    .list-group{
-     cursor: pointer;
+
+    .list-group {
+      cursor: pointer;
     }
 
     .list-group-collapse li > ul {
       margin-left: -16px;
       margin-right: -16px;
       margin-bottom: -11px;
-      
-     .answer-text{
-	  padding-left: 25px;     
-     }
-     .itemHidden {
-       display: none;
-     }
+
+      .answer-text {
+        padding-left: 25px;
+      }
+
+      .itemHidden {
+        display: none;
+      }
+    }
   }
- }
- .btn-primary {
-	  width: auto;
-	  float: right;
-     }
-}
- {
-  display: none;
+
+  .btn-primary {
+    width: auto;
+    float: right;
+  }
 }
 
 ul.list-group {
   display: block;
-  }
-
-
+}

@@ -5,7 +5,7 @@
   }
   
   .quizesOverview {
-    cursor: default;
+    
     margin: 0 auto;
     width: 100%; 
     padding-left: 20%;
@@ -18,6 +18,10 @@
         padding-left: 15px;     
       }
     }
+    
+    .list-group{
+     cursor: pointer;
+    }
 
     .list-group-collapse li > ul {
       margin-left: -16px;
@@ -27,25 +31,17 @@
      .answer-text{
 	  padding-left: 25px;     
      }
-     
-     
+     .itemHidden {
+       display: none;
+     }
   }
  }
  .btn-primary {
-	  width: 20%;
-	  float: right;    
+	  width: auto;
+	  float: right;
      }
 }
-
-.hide {
-display: none;
-}
-
-.show > ul {
-    display: block;
-}
-
-ul {
+ {
   display: none;
 }
 

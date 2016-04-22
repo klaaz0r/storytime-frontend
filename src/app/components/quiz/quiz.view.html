@@ -1,35 +1,41 @@
 <div class="container">
-	<h3 class="text-nav-helper">Quiz / overzicht</h3>
-	<div ng-app="app" ng-controller="QuizController">
-		<div class="container quizes">
-			<div class="row row-centrered">
-				<div class="col-xs-6 quizesOverview">
-					<h4>Mijn Quizes</h4>
-					<hr>
-					<ul class="list-group list-group-collapse">
-						<li toggle-info class="list-group-item" ng-repeat="quiz in quizes">
-							<p>{{quiz.name}}</p>
-
-							<ul class="list-group">
-								<li toggle-info class="list-group-item hide"
-									ng-repeat="question in quiz.question">
-									<p class="question-text">{{question.name}}</p>
-
-									<ul class="list-group">
-										<li class="list-group-item hide"
-											ng-repeat="answer in question.answer">
-											<p class="answer-text">{{answer.name}}</p>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-					<button type="button" class="btn btn-block btn-primary">Voeg
-						quiz toe</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<error></error>
+  <h3 class="text-nav-helper">Quiz / overzicht</h3>  
+  <div ng-controller="QuizController">
+    <div class="container quizes">
+    <div class="row row-centrered">
+        <div class="col-xs-6 quizesOverview">
+            <h4>
+                Mijn Quizes
+            </h4>
+            <hr>
+            <ul class="list-group list-group-collapse">
+                <li class="list-group-item quizItem" ng-repeat="quiz in quizes">
+                    <p onclick="toggleQuiz(this)">
+                        {{quiz.name}}
+                    </p>
+                    
+                    <ul class="list-group">
+                        <li class="list-group-item quizQuestion itemHidden" ng-repeat="question in quiz.question">
+                            <p class="question-text" onclick="toggleQuestion(this)">
+                                {{question.name}}
+                            </p>
+                            
+                            <ul class="list-group">
+                                <li class="list-group-item questionAnswer itemHidden" ng-repeat="answer in question.answer">
+                                  <p class="answer-text">
+                                    {{answer.name}}
+                                  </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <button ui-sref="login" class="btn btn-block btn-primary" href="#/login">Voeg quiz toe</button>
+        </div>
+    </div>
 </div>
+       
+  </div>
+  <error></error> 
+</div>    

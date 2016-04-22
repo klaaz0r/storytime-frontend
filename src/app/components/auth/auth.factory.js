@@ -24,7 +24,7 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
         return res.data;
       });
   };
-  
+
   //get userinfo based on token
   authService.userinfo = function() {
     var userToken = CookieFactory.getToken();
@@ -101,6 +101,7 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
 
 //create a session
 angular.module('app').service('Session', function() {
+
   this.create = function(userName, userRole) {
     this.userRole = userRole;
     this.userName = userName;

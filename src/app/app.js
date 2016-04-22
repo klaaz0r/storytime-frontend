@@ -88,9 +88,10 @@ app.constant('USER_ROLES', {
   child: 'CHILD'
 });
 
-app.run(function($rootScope, AuthService, $state, ErrorFactory) {
+app.run(function($rootScope, AuthService, $state, ErrorFactory, Session) {
   $rootScope.$on('$stateChangeStart', function(event, next) {
     var authorizedRoles = next.data.authorizedRoles;
+
     if (!AuthService.isAuthorized(authorizedRoles)) {
 
       event.preventDefault();

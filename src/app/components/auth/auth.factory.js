@@ -80,6 +80,24 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
         return res.data;
       });
   };
+  authService.newpassword = function(credentials) {
+    return $http({
+        method: 'POST',
+        url: API_URL + "/user/updatepassword",
+        dataType: "json",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          email: credentials.email,
+          token: credentials.token,
+          password: credentials.password
+        }
+      })
+      .then(function(res) {
+        return res.data;
+      });
+  };
 
   //check is a username is set in the session
   authService.isAuthenticated = function() {

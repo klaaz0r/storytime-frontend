@@ -49,6 +49,14 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
         authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }
     })
+    .state('newpassword', {
+      url: '/newpassword/:tokenId/:email',
+      templateUrl: '../app/components/forgetpassword/newpassword.view.html',
+      controller: 'NewPasswordController',
+      data: {
+        authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
+      }
+    })
     .state('about', {
       url: '/about',
       templateUrl: '../app/components/static/about.view.html',

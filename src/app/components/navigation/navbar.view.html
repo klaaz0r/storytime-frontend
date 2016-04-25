@@ -1,24 +1,74 @@
 <nav class="navbar navbar-inverse" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-4"><span class="ss-menu"></span></button>
-      <img ui-sref="home" class="navbar-brand-img" src="images/logo-storytime.png" alt="" width="251"><span class="label label-primary">Beta</span>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse-4">
-      <ul class="nav navbar-nav">
-        <li><a ui-sref="helpmee">Help mee</a></li>
-        <li><a ui-sref="about">Over ons</a></li>
-      </ul>
 
-      <form class="navbar-form" role="search" action="#login">
-        <div class="navbar-right">
-          <button ui-sref="register" class="btn btn-primary">Aanmelden</button>
-          <button ui-sref="login" class="btn btn-inverse">Login</button>
+    <!--
+GUEST MENU START
+  -->
+    <div ng-show="$root.userRole=='*'" class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-4"><span class="ss-menu"></span></button>
+            <img ui-sref="home" class="navbar-brand-img" src="images/logo-storytime.png" alt="" width="251"><span class="label label-primary">Beta</span>
         </div>
-      </form>
+        <div class="collapse navbar-collapse" id="navbar-collapse-4">
+            <ul class="nav navbar-nav">
+                <li><a ui-sref="helpmee">Help mee</a></li>
+                <li><a ui-sref="about">Over ons</a></li>
+            </ul>
 
+            <form class="navbar-form" role="search" action="#login">
+                <div class="navbar-right">
+                    <button ui-sref="register" class="btn btn-primary">Aanmelden</button>
+                    <button ui-sref="login" class="btn btn-inverse">Login</button>
+                </div>
+            </form>
+
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-    <!-- /.navbar-collapse -->
-  </div>
-  <!-- /.container-fluid -->
+    <!-- /.container-fluid -->
+
+
+      <!--
+  MENTOR MENU START
+    -->
+    <nav ng-show="$root.userRole=='Mentor'" class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-4"><span class="ss-menu"></span></button>
+            <img ui-sref="home" class="navbar-brand-img" src="images/logo-storytime.png" alt="" width="251"><span class="label label-primary">Beta</span>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-collapse-2">
+          <ul class="nav navbar-nav">
+            <li><a ui-sref="helpmee">Help mee</a></li>
+            <li><a ui-sref="about">Over ons</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right navbar-icons">
+            <li>
+              <a href="#fakelink">
+                <span class="ss-user"></span><span class="hidden-lg">Mijn account</span>
+              </a>
+            </li>
+            <li>
+              <a href="#fakelink">
+                <span class="ss-notifications"></span><span class="hidden-lg">Berichten</span>
+                <span class="navbar-new"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#fakelink">
+                <span class="ss-settings"></span><span class="hidden-lg">Settings</span>
+              </a>
+            </li>
+          </ul>
+          <p class="navbar-text navbar-right">Welkom, <a href="#fakeLink" class="navbar-link">{{$root.userName}}</a></p>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+
+
+      <!--
+END NAV HOLDER
+    -->
 </nav>

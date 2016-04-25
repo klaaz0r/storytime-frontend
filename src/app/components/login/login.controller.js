@@ -6,14 +6,15 @@ angular.module('app').controller('LoginController', function($scope, $rootScope,
 
   $scope.login = function(credentials) {
     AuthService.login(credentials).then(function(res) {
-      console.log(res);
       if (res.STATE === "SUCCEEDED") {
-        //updating the rootscope with role
+        //updating the rootscope with role and  username, DONT PLACE TO MUCH IN THE ROOT!
+
         $rootScope.userRole = res.MESSAGE.Type;
-        //redirect
+        $rootScope.userName = res.MESSAGE.Name;
+        //redirect < - should be made based on mentor / child
         $state.go("dashboard");
       } else {
-
+        //throw error
       }
     });
   };

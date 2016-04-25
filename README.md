@@ -16,21 +16,23 @@ this runs gulp build and creates a public folder from the sources
 #File structure
 
 ```
-.storytime
-├── LICENSE
-├── Procfile
-├── README.md
-├── gulpfile.js
-├── node_modules
-├── server.js
 └── src
     ├── app
     │   ├── app.js
+    │   ├── app.main.controller.js
     │   └── components
+    │       ├── auth
+    │       ├── login
+    │       ├── navigation
+    │       ├── register
+    │       └── static
     ├── assets
     │   ├── images
+    │   │   └── main_title.png
     │   ├── js
-    │   ├── scss
-    │   └── theme
+    │   │   └── base.js
+    │   └── scss
+    │       ├── components
+    │       └── main.scss
     └── index.html
 ```

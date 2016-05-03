@@ -1,58 +1,106 @@
-<div ng-controller="ChatController" />
-<div class="container palette palette-primary palette-banana">
-	<div class="pull-left">
-		<robot></robot>
+<div ng-controller="ChatController" class="container-fluid"></div>
+
+<div class="ChatContainer container-fluid ng-scope">
+	
+	<div class="RobotWrapper">
+		<div class="RobotContainer">
+			<div class="col-md-4">
+				<robot></robot>
+			</div>
+		</div>
 	</div>
-	<!-- <div class="progress">
-		<div class="progress-bar progress-bar-success" role="progressbar"
-			style="width: 20%;"></div>
-	</div> -->
 
-	<!-- <div id="ChatBox">
-		
-	    float: left;
-    	width: 80%;
-   	
-		<div class="recieved pull-left">
-			<span class="label label-primary">Hallo</span>
+	<div class="ChatWrapper col-md-8">
+		<div id="Messages" class="container-fluid">
+			<div class="Message Recieved">
+				<p class="label">Hallo<em>13:35</em></p>
+			</div>
+			<div class="Message Recieved">
+				<p class="label">Ik ben Robin<em>13:35</em></p>
+			</div>
+			<div class="Message Send">
+				<p class="label">Ik ben een test bericht<em>13:35</em></p>
+			</div>
+			<div class="Message Recieved">
+				<p class="label">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+					ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat. Duis aute irure dolor in
+					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+					culpa qui officia deserunt mollit anim id est laborum<em>13:35</em></p>
+			</div>
+			<div class="Message Send">
+				<p class="label">Response<em>13:36</em></p>
+			</div>
+			<div class="Message Recieved">
+				<p class="label">Hallo<em>13:36</em></p>
+			</div>
+			<div class="Message Recieved">
+				<p class="label">A<em>13:36</em></p>
+			</div>
+			<div class="Message Send">
+				<p class="label">Ik ben een test bericht<em>13:36</em></p>
+			</div>
+			<div class="Message Recieved">
+				<p class="label">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+					ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+					aliquip ex ea commodo consequat. Duis aute irure dolor in
+					reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+					pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+					culpa qui officia deserunt mollit anim id est laborum<em>13:36</em></p>
+			</div>
+			<div class="Message Send">
+				<p class="label">Response<em>13:37</em></p>
+			</div>
+			<div class="Message Send">
+				<p class="label">Loremipsumdolorsitamet,consecteturadipiscingelit,seddoeiusmodtemporincididuntutlaboreetdoloremagnaaliqua.Utenimadminimveniam,quisnostrudexercitationullamcolaborisnisiutaliquipexeacommodoconsequat.Diauteiruredolorinreprehenderitinvoluptatevelitessecillumdoloreeufugiatnullapariatur.Excepteursintoccaecatcupidatatnonproident,suntinculpaquiofficiadeseruntmollitanimidestlaborum<em>13:37</em></p>
+			</div>
+			<div class="Message Recieved">
+				<p class="label">Loremipsumdolorsitamet,consecteturadipiscingelit,seddoeiusmodtemporincididuntutlaboreetdoloremagnaaliqua.Utenimadminimveniam,quisnostrudexercitationullamcolaborisnisiutaliquipexeacommodoconsequat.Diauteiruredolorinreprehenderitinvoluptatevelitessecillumdoloreeufugiatnullapariatur.Excepteursintoccaecatcupidatatnonproident,suntinculpaquiofficiadeseruntmollitanimidestlaborum<em>13:37</em></p>
+			</div>
+			<div class="Message Send">
+				<p class="label">Response<em>13:37</em></p>
+			</div>
+			<div class="Message Recieved">
+				<p class="label">Wat wil je doen?<em>13:37</em></p>
+			</div>
 		</div>
-		<div class="recieved pull-left">
-			<span class="label label-primary">ik ben Robin</span>
-		</div>
-		<div class="recieved pull-right">
-			<span class="label label-primary">Ik ben een test bericht</span>
-		</div>
-		<div class="recieved pull-left">
-			<span class="label label-primary">Lorem ipsum dolor sit amet,
-				consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-				exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-				esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-				cupidatat non proident, sunt in culpa qui officia deserunt mollit
-				anim id est laborum</span>
-		</div>
-		<div class="recieved pull-right">
-			<span class="label label-primary">Response</span>
-		</div>
-	</div> -->
 
-	<div class="form-group">
-		<div class="col-sm-9">
-			<div class="input-group ">
-				<input type="text" class="form-control" placeholder="Chat met Robin">
+		<div class="MessageHolder container-fluid form-group">
+			<!-- 
+			<div class="btn-group btn-group-justified">
+				<a class="btn btn-default">Left</a> <a class="btn btn-default">Middle</a>
+				<a class="btn btn-default">Right</a>
+			</div>
+			-->
+
+			<div class="ButtonOptions input-group">
 				<div class="input-group-btn">
-					<button type="button" class="btn btn-default dropdown-toggle"
-						data-toggle="dropdown">
-						Opties <span class="ss-navigatedown"></span>
+					<button class="btn btn-default" type="submit">Spelen</button>
+					<button class="btn btn-default" type="submit">Doorpraten</button>
+					<button class="btn btn-default" type="submit">Hulp vragen</button>
+					<button class="btn btn-default" type="submit">Stoppen</button>
+				</div>
+			</div>
+
+			<div class="input-group">
+				<input ng-model="message.text" type="text" class="form-control" placeholder="Chat met Robin">
+				<div class="input-group-btn">
+					<button ng-click="sendMessage(message)" type="submit" class="btn btn-primary">Stuur</button>
+					<!-- <button type="button" class="btn btn-default dropdown-toggle"
+						data-toggle="dropdown" tabindex="-1">
+						<span class="ss-navigatedown"></span> <span class="sr-only">Toggle
+							Dropdown</span>
 					</button>
 					<ul class="dropdown-menu" role="menu">
 						<div class="arrow top"></div>
+						<li><a href="#fakeLink">Trofeeënkast</a></li>
 						<li><a href="#fakeLink">Vraag hulp</a></li>
-						<li><a href="#fakeLink">Iets</a></li>
 						<li class="divider"></li>
 						<li><a href="#fakeLink">Stop met chatten</a></li>
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 		</div>

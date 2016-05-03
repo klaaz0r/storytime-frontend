@@ -22,7 +22,8 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       templateUrl: '../app/components/chat/chat.view.html',
       controller: 'ChatController',
       data: {
-        authorizedRoles: [USER_ROLES.child]
+       // authorizedRoles: [USER_ROLES.child]
+    	  authorizedRoles: [USER_ROLES.all]
       }
     })
     .state('dashboard', {

@@ -86,7 +86,6 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       }
     })
   $urlRouterProvider.otherwise("/");
-  $urlRouterProvider.otherwise("/");
 
 });
 

@@ -36,6 +36,7 @@
     "gulp-jshint": "^2.0.0",
     "gulp-livereload": "^3.8.1",
     "gulp-ng-config": "^1.2.1",
+    "gulp-ngmin": "^0.3.0",
     "gulp-nodemon": "^2.0.6",
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.6.0",

@@ -13,46 +13,40 @@ var gulp = require('gulp'),
     bower = require('gulp-bower'),
     iife = require("gulp-iife"),
     addStream = require('add-stream'),
-    gulpNgConfig = require('gulp-ng-config'),
-    ngmin = require('gulp-ngmin');
+    gulpNgConfig = require('gulp-ng-config');
 
 //input files to work with, this keeps everything organised
 input = {
-        // **/*.extension gets all nested files
-        'sass': 'src/assets/scss/**/*.scss',
-        'javascript': 'src/assets/js/**/*.js',
-        //for the index html
-        'html': 'src/*.html',
-        //the complete angular app
-        'angular': 'src/app/**/*.js',
-        //angular html views
-        'angular_views': 'src/app/components/**/*.html',
-        //theme files are compresed and can be eddited
-        'theme_css': 'src/assets/theme/**/*.css',
-        'theme_fonts': 'src/assets/theme/fonts/**/*',
-        //bower components are moved (only the minjs files )
-        'vendor': 'bower_components/**/*.min.js',
-        //image folder
-        'images': 'src/assets/images/**/*'
-    },
+    // **/*.extension gets all nested files
+    'sass': 'src/assets/scss/**/*.scss',
+    //all the js for design
+    'javascript': 'src/assets/js/**/*.js',
+    //for the html views
+    'html': 'src/**/*.html',
+    //the complete angular app'angular': 'src/app/**/*.js',
+    //bower components are moved (only the minjs files )
+    'vendor': 'bower_components/**/*.min.js',
+    //angular source
+    'angular': 'src/app/**/*.js',
+    //image folder
+    'images': 'src/assets/images/**/*'
+};
 
-    //where we save the files to once gulp is done with them
-    output = {
-        'stylesheets': 'public/assets/css',
-        'javascript': 'public/assets/js',
-        'images': 'public/images',
-        'root': 'public',
-        'app': 'public/app',
-        'app_views': 'public/app/components',
-        'vendor': 'public/vendor',
-        'theme_fonts': 'public/assets/css/fonts',
-    };
+//where we save the files to once gulp is done with them
+output = {
+    'stylesheets': 'public/assets/css',
+    'javascript': 'public/assets/js',
+    'images': 'public/images',
+    'root': 'public',
+    'app': 'public/app',
+    'vendor': 'public/vendor'
+};
 
 /* run the watch task when gulp is called without arguments */
-gulp.task('default', ['watch', 'start-server', 'angular']);
+gulp.task('default', ['watch', 'start-server']);
 
 /* this tasks runs on the server and creates all the files */
-gulp.task('build', ['bower', 'css', 'javascript', 'theme_fonts', 'theme_css', 'angular', 'html', 'images', 'angular_views']);
+gulp.task('build', ['bower', 'css', 'javascript', 'angular', 'html', 'images']);
 
 //starting express with the server.js file
 gulp.task('start-server', function() {
@@ -93,7 +87,7 @@ gulp.task('css', function() {
 });
 
 
-/* basic build html for development*/
+/* this is not angular! this is only js for design*/
 gulp.task('javascript', function() {
     return gulp.src(input.javascript)
         .pipe(uglify())
@@ -104,15 +98,8 @@ gulp.task('javascript', function() {
 /* basic build html for development*/
 gulp.task('html', function() {
     return gulp.src(input.html)
-        .pipe(gulp.dest(output.root))
-        .pipe(livereload());
-});
 
-
-/*Angular views  NO MINIFY YET*/
-gulp.task('angular_views', function() {
-    return gulp.src(input.angular_views)
-        .pipe(gulp.dest(output.app_views))
+    .pipe(gulp.dest(output.root))
         .pipe(livereload());
 });
 
@@ -121,31 +108,12 @@ WARNING: minify and uglify do not work atm! ONLY CONCAT TO ONE FILE!
 */
 gulp.task('angular', function() {
     return gulp.src(input.angular)
-        .pipe(process.env.NODE_ENV === 'production' ? addStream.obj(deployConfig()) : addStream.obj(devConfig()))
+        .pipe(process.env.NODE_ENV === 'production' ? addStream.obj(config('production')) : addStream.obj(config('development')))
         .pipe(concat('app.js'))
-        .pipe(ngmin({
-            dynamic: false
-        }))
         .pipe(iife())
         .pipe(gulp.dest(output.app))
         .pipe(livereload());
 });
-
-/* basic theme if you made changes */
-gulp.task('theme_css', function() {
-    return gulp.src(input.theme_css)
-        .pipe(cssmin())
-        .pipe(gulp.dest(output.stylesheets))
-        .pipe(livereload());
-});
-
-/* moving all the fonts */
-gulp.task('theme_fonts', function() {
-    return gulp.src(input.theme_fonts)
-        .pipe(gulp.dest(output.theme_fonts))
-        .pipe(livereload());
-});
-
 
 /* moving all the images to public*/
 gulp.task('images', function() {
@@ -169,17 +137,12 @@ gulp.task('deploy', ['clean'], function() {
     gulp.start('build');
 });
 
-function devConfig() {
-    return gulp.src('./app.config.json')
-        .pipe(gulpNgConfig('app.config', {
-            environment: 'development' // or maybe use process.env.NODE_ENV here
-        }));
-}
 
-function deployConfig() {
+//setup the correct settings
+function config(state) {
     return gulp.src('./app.config.json')
         .pipe(gulpNgConfig('app.config', {
-            environment: 'production' // or maybe use process.env.NODE_ENV here
+            environment: state
         }));
 }
 /* Watch these files for changes and run the task on update */
@@ -188,8 +151,6 @@ gulp.task('watch', function() {
     gulp.watch(input.javascript, ['jshint', 'javascript']);
     gulp.watch(input.sass, ['css']);
     gulp.watch(input.html, ['html']);
-    gulp.watch(input.theme, ['theme']);
     gulp.watch(input.angular, ['angular']);
-    gulp.watch(input.angular_views, ['angular_views']);
     gulp.watch(input.images, ['images']);
 });

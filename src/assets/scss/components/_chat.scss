@@ -1,129 +1,45 @@
-.ChatContainer {
-  height: 100%;
-  padding: 2%;
-  background: #fff;
-}
+.chat-container {
 
-.RobotWrapper {
-    height: 100%;
-    width: 30%;
-    float: left;
 }
-
-.RobotContainer {
-    margin-top: 50%;
+.chat {
+    width: 100%;
 }
-
-.ChatWrapper {
-    border-radius: 20px;
-    background: #EFF1EE;
-    height: 80%;
+.bubble {
+    background-color: rgb(29, 194, 255);
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    // vertical-align: top;
+    clear: both;
 }
-
-.ChatWrapper #Messages {
-  /*
-  height: 80%;
-  */
-  height: 500px;
-  margin-top: 15px;
-  padding-bottom: 15px;
-  overflow-y: scroll;
-}
-
-#Messages .Message {
-  position: relative;
-  display: inline-block;
-  width: 90%;
-  margin-top: 2px;
-}
-
-.Message.Send {
-  float: right;
-  text-align: right;
-}
-
-.Message.Recieved:before,
-.Message.Send:before {
-	top: 2px;
-    content: " ";
+.bubble::before {
+    // background-color: #F2F2F2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
     position: absolute;
-    width: 0;
-    height: 0;
-    border: 11px solid #CCCDCB;
-    border-color: #CCCDCB transparent transparent;
+    top: 11px;
+    background-color: rgb(29, 194, 255);
+    transform: rotate( 29deg ) skew( -35deg );
+    -moz-transform: rotate( 29deg ) skew( -35deg );
+    -ms-transform: rotate( 29deg ) skew( -35deg );
+    -o-transform: rotate( 29deg ) skew( -35deg );
+    -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width: 20px;
 }
-
-.Message.Recieved:before {
-   left: -8px;
+.me {
+    float: left;
+    margin: 5px 45px 5px 20px;
 }
-
-.Message.Send:before {
-  right: -10px;
+.me::before {
+    left: -9px;
 }
-
-.Message.Recieved:after,
-.Message.Send:after {
-  top: 4px;
-  border: solid transparent;
-  content: " ";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border: #fff solid 12px;
-  border-color: #fff transparent transparent transparent;
-}
-
-.Message.Recieved:after {
-	left: -4px;
-}
-
-.Message.Send:after {
-  right: -6px;
-}
-
-.Message p {
-	display: inline-block;
-    padding: 1% 1% 1% 2%;
-    margin: 2px;
-    border: 2px solid #CCCDCB;
-    border-bottom: 0;
-    font-weight: normal;
-    border-right: 0;
-    color: #393C3C;
-    background: #fff;
-    text-align: left;
-    font-size: small;
-    white-space: pre-line;
-    line-height: 1.2em;
-    word-break: break-all;
-    -webkit-box-shadow: 2px 2px 0 1px rgba(0,0,0,.2);
-    -moz-box-shadow: 2px 2px 0 1px rgba(0,0,0,.2);
-    box-shadow: 2px 2px 0 1px rgba(0,0,0,.15);
-}
-
-.Message.Send p {
-  -webkit-border-radius: 10px 0 10px;
-  -moz-border-radius: 10px 0 10px;
-  border-radius: 10px 0 10px 10px;
-}
-
-.Message.Recieved p {
-  -webkit-border-radius: 0 10px 10px;
-  -moz-border-radius: 0 10px 10px;
-  border-radius: 0 10px 10px;
-}
-
-.Message p em {
+.you {
     float: right;
-    margin: 0 5px;
-    color: #676F6F;
-    font-size: smaller;
-    line-height: 17px;
+    margin: 5px 20px 5px 45px;
 }
-
-.MessageHolder {
-}
-
-.ButtonOptions {
-	padding-bottom: 1%;
+.you::before {
+    right: -9px;
 }

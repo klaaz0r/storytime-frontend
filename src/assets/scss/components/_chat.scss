@@ -1,8 +1,10 @@
-.chat-container {
-
-}
+.chat-container {}
 .chat {
     width: 100%;
+    height: 450px;
+}
+.chat-input {
+    bottom: 0;
 }
 .bubble {
     background-color: rgb(29, 194, 255);
@@ -12,6 +14,17 @@
     padding: 10px 18px;
     position: relative;
     // vertical-align: top;
+    clear: both;
+}
+.quiz-bubble {
+    background-color: white;
+    color: black;
+    border: 3px solid #54be3f;
+    width: 100%;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
     clear: both;
 }
 .bubble::before {

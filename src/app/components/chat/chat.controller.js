@@ -1,4 +1,4 @@
-angular.module('app').controller('ChatController', ['$scope', function($scope) {
+angular.module('app').controller('ChatController', ['$scope', function($scope, ngEnter) {
 
     //init van een message, wat het kind stuurt is altijd basic plain tekst
     $scope.message = {
@@ -30,8 +30,6 @@ angular.module('app').controller('ChatController', ['$scope', function($scope) {
         //setten van de values
         message.text = text;
         message.author = 'child';
-
-        console.log(message);
         //hier tussen moet nog een service komen voor het versturen naar de server
         //push de message in de array zodat hij ook op het scherm getoond word
         $scope.messages.push(message);

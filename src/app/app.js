@@ -33,6 +33,14 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
         authorizedRoles: [USER_ROLES.mentor]
       }
     })
+    .state('newchild', {
+      url: '/nieuwkind',
+      templateUrl: '../app/components/dashboard/newchild.view.html',
+      controller: 'DashboardController',
+      data: {
+        authorizedRoles: [USER_ROLES.mentor]
+      }
+    })
     .state('register', {
       url: '/register',
       templateUrl: '../app/components/register/register.view.html',

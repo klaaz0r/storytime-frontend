@@ -64,6 +64,28 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
       });
   };
 
+  authService.registerChild = function(credentials) {
+    return $http({
+        method: 'POST',
+        url: API_URL + "/user/registerchild",
+        dataType: "json",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: {
+          username: credentials.username,
+          password: credentials.password,
+          name: credentials.name,
+          gender: credentials.gender,
+          dateofbirth: credentials.dateofbirth,
+          mentorname: credentials.mentorname
+        }
+      })
+      .then(function(res) {
+        return res.data;
+      });
+  };
+
   authService.forgetpassword = function(credentials) {
     return $http({
         method: 'POST',

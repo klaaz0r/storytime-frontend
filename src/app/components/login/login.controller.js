@@ -10,7 +10,8 @@ angular.module('app').controller('LoginController', function($scope, $rootScope,
         //updating the rootscope with role and  username, DONT PLACE TO MUCH IN THE ROOT!
 
         $rootScope.userRole = res.MESSAGE.Type;
-        $rootScope.userName = res.MESSAGE.Name;
+        $rootScope.userName = res.MESSAGE.Username;
+        $rootScope.name = res.MESSAGE.Name;
         //redirect < - should be made based on mentor / child
         $state.go("dashboard");
       } else {

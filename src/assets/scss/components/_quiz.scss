@@ -43,8 +43,19 @@
     width: auto;
     float: right;
   }
+  
+  .edit-link{
+  float: right;
+}
 }
 
 ul.list-group {
   display: block;
+}
+
+.create-quiz{
+  margin: 16px auto;
+}
+.vraag-toevoegen{
+	margin-bottom: 10px;
 }

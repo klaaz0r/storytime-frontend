@@ -84,6 +84,12 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       data: {
         authorizedRoles: [USER_ROLES.all]
       }
+    }).state('makeQuiz', {
+      url: '/quiz/maken',
+      templateUrl: '../app/components/quiz/makeQuiz.view.html',
+      data: {
+        authorizedRoles: [USER_ROLES.all]
+      }
     })
   $urlRouterProvider.otherwise("/");
 

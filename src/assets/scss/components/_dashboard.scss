@@ -1,0 +1,13 @@
+.dashboard-nav {
+    margin-top: 5px;
+    li {
+        cursor: pointer;
+    }
+    .dropdown-menu {
+        padding: 5px;
+        a:hover {
+            color: white;
+            background-color: #02BAF2;
+        }
+    }
+}

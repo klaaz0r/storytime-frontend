@@ -70,7 +70,8 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
         url: API_URL + "/user/registerchild",
         dataType: "json",
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'token' : CookieFactory.getToken()
         },
         data: {
           username: credentials.username,

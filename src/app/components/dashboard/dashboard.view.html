@@ -12,13 +12,10 @@
 	<div class="row">
 		<div class="col-md-4 col-sm-6">
 			<h3>Mijn kinderen</h3>
-			<div class="list-group">
-				<a href="#fakeLink" class="list-group-item">Kind 1</a>
-				<a href="#fakeLink" class="list-group-item active">Kind 2</a>
-				<a href="#fakeLink" class="list-group-item">Kind 3</a>
-				<a href="#fakeLink" class="list-group-item">Kind 4</a>
-				<a href="#fakeLink" class="list-group-item">Kind 5</a>
+			<div ng-app ng-controller="DashboardController" ng-init="loadChilds()" class="list-group">
+				<a href="#fakelink" ng-repeat="child in childs">{{child.name}}</a>
 			</div>
+
 		</div>
 	</div>
 

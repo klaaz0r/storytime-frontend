@@ -87,6 +87,23 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
       });
   };
 
+  authService.loadChilds = function() {
+    return $http({
+        method: 'POST',
+        url: API_URL + "/user/loadchilds",
+        dataType: "json",
+        headers: {
+          'Content-Type': 'application/json',
+          'token' : CookieFactory.getToken()
+        },
+        data: {
+        }
+      })
+      .then(function(res) {
+        return res.data;
+      });
+  };
+
   authService.forgetpassword = function(credentials) {
     return $http({
         method: 'POST',

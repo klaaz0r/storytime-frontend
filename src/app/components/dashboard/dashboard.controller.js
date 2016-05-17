@@ -2,6 +2,7 @@ angular.module('app').controller('DashboardController' , function($scope, $rootS
   $scope.credentials = {
     mentorname: $rootScope.userName
   };
+  $scope.childs = {};
 
   $scope.register = function(credentials) {
     console.log(credentials);
@@ -12,6 +13,12 @@ angular.module('app').controller('DashboardController' , function($scope, $rootS
       } else if (data.STATE === "ERROR") {
         ErrorFactory.setError(data.MESSAGE);
       }
+    })
+  };
+
+  $scope.loadChilds = function() {
+    AuthService.loadChilds().then(function(data) {
+      $scope.childs = data;
     })
   };
 });

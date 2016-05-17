@@ -1,10 +1,5 @@
 angular.module('app').controller('DashboardController' , function($scope, $rootScope, AuthService, ErrorFactory, $state) {
   $scope.credentials = {
-    username: '',
-    password: '',
-    name: '',
-    gender: '',
-    dateofbirth: '',
     mentorname: $rootScope.userName
   };
 

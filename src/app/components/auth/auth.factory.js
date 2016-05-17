@@ -78,8 +78,8 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
           password: credentials.password,
           name: credentials.name,
           gender: credentials.gender,
-          dateofbirth: credentials.dateofbirth,
-          mentorname: credentials.mentorname
+          dateOfBirth: credentials.dateofbirth,
+          mentorName: credentials.mentorname
         }
       })
       .then(function(res) {

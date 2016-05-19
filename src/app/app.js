@@ -73,8 +73,8 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
       }
     })
     .state('helpmee', {
-      url: '/helpmee',
-      templateUrl: '../app/components/static/helpmee.view.html',
+      url: '/helpus',
+      templateUrl: '../app/components/static/helpus.view.html',
       data: {
         authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
       }

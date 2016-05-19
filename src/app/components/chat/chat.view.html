@@ -1,37 +1,42 @@
 <div class="container">
 
 	<div class="row">
-		<div class="col-md-3">
-			<robot></robot>
+		<div class="col-md-4">
+			<div class="robotcontainer">
+				<div>
+					<robot></robot>
+				</div>
+			</div>
 		</div>
 
-
-		<div class="col-md-9">
-			<div class="chat-container">
-				<div class="chat">
-					<div ng-repeat="message in messages">
-						<div ng-if="message.author=='robin'" class="bubble me">{{message.text}}</div>
-						<div ng-if="message.author=='child'" class="bubble you">{{message.text}}</div>
-						<div class="quiz-bubble me">Verjaardag vieren</div>
-					</div>
-
-
+		<div class="col-md-8">
+			<div class="chat">
+				<div class="chat-holder" ng-repeat="message in messages">
+					<div ng-if="message.author=='robin'" class="bubble me">{{message.text}}</div>
+					<div ng-if="message.author=='child'" class="bubble you">{{message.text}}</div>
+					<div class="quiz-bubble me">Verjaardag vieren</div>
 				</div>
-
-				<div class="chat-input">
-					<div class="form-group">
-						<div class="col-sm-12">
-							<div class="input-group">
-								<input type="text" ng-model="text" class="form-control">
-								<span class="input-group-btn">
-									<button class="btn btn-default" ng-click="sendMessage(text)" ng-enter="sendMessage(text)" 	type="button">versturen</button>
-								</span>
-							</div>
-							<!-- /input-group -->
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-8">
+			<div class="chat-input">
+				<div class="form-group">
+					<div class="col-sm-12">
+						<div class="input-group">
+							<input type="text" ng-model="text" class="form-control">
+							<span class="input-group-btn">
+								<button class="btn btn-default" ng-click="sendMessage(text)"
+									ng-enter="sendMessage(text)" type="button">Send</button>
+							</span>
 						</div>
+						<!-- /input-group -->
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>

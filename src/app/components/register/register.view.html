@@ -8,29 +8,41 @@
         <div class="form-group">
           <label class="col-sm-3 control-label">Naam</label>
           <div class="col-sm-9">
+          <div class="input-icon">
+				<span class="ss-user"></span>
             <input type="text" class="form-control" ng-model="credentials.name" placeholder="Mark" required />
+            </div>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-3 control-label">Gebruikersnaam</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" ng-model="credentials.username" placeholder="ex. Mark" required />
+          <div class="input-icon">
+				<span class="ss-user"></span>
+            <input type="text" class="form-control" ng-model="credentials.username" placeholder="Mark" required />
+          </div>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-3 control-label">Wachtwoord</label>
           <div class="col-sm-9">
-            <input type="password" class="form-control" ng-model="credentials.password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required>
+          <div class="input-icon">
+				<span class="ss-lock"></span>
+	            <input type="password" class="form-control" ng-model="credentials.password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" required>
+			</div>
           </div>
         </div>
 
         <div class="form-group">
           <label class="col-sm-3 control-label">Email</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control" ng-model="credentials.email" required placeholder="Mark@gmail.com" required>
+          <div class="input-icon">
+				<span class="ss-mail"></span>
+            <input type="text" class="form-control" ng-model="credentials.email" required placeholder="mark@gmail.com" required>
             <span></span>
+            </div>
           </div>
         </div>
 

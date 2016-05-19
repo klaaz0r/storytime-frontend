@@ -36,15 +36,15 @@
 
 .logo-samenwerking {
   img {
-    -webkit-filter: grayscale(60%);
-    filter:grayscale(60%);
+    -webkit-filter: grayscale(0%);
+    filter:grayscale(0%);
   }
 }
 
 .logo-samenwerking:hover {
   img {
-    -webkit-filter: grayscale(0%);
-    filter:grayscale(0%);
+    -webkit-filter: grayscale(30%);
+    filter:grayscale(30%);
   }
 }
 

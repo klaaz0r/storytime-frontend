@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container chat-container">
 
 	<div class="row">
 		<div class="col-md-4">
@@ -14,13 +14,24 @@
 				<div class="chat-holder" ng-repeat="message in messages">
 					<div ng-if="message.author=='robin'" class="bubble me">{{message.text}}</div>
 					<div ng-if="message.author=='child'" class="bubble you">{{message.text}}</div>
-					<div class="quiz-bubble me">Verjaardag vieren</div>
+					<div ng-if="message.quiz">
+						<div class="quiz-bubble me">
+							<div class="quiz-info">
+								<h1>{{message.quiz.title}}</h1>
+								<p>
+									{{message.quiz.description}}
+								</p>
+							</div>
+							<img src="{{message.quiz.image}}" />
+
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-8">

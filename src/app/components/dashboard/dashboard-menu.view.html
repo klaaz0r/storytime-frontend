@@ -1,21 +1,27 @@
 <ul class="dashboard-nav nav nav-tabs">
-    <li class="active"><a ui-sref="dashboard">Dashboard</a></li>
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">
-        Beheer kind <span class="ss-navigatedown"></span>
-      </a>
-        <ul class="dropdown-menu" role="menu">
-            <li><a ui-sref="newchild">Kind toevoegen</a></li>
-            <li class="active"><a href="#fakeLink">kind overzicht</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">
-        Content toevoegen <span class="ss-navigatedown"></span>
-      </a>
-        <ul class="dropdown-menu" role="menu">
-            <li><a href="#fakeLink">quiz toevoegen</a></li>
-            <li class="active"><a href="#fakeLink">Stappenplan toevoegen</a></li>
-        </ul>
-    </li>
+	<li class="active"><a ui-sref="dashboard">Dashboard</a></li>
+
+	<li class="dropdown"><a class="dropdown-toggle"
+		data-toggle="dropdown">Kind <span class="ss-navigatedown"></span>
+	</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a ui-sref="childNew">Toevoegen</a></li>
+			<li><a ui-sref="childView">Overzicht</a></li>
+		</ul></li>
+
+	<li class="dropdown"><a class="dropdown-toggle"
+		data-toggle="dropdown">Quizzen<span class="ss-navigatedown"></span>
+	</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a ui-sref="quizNew">Toevoegen</a></li>
+			<li><a ui-sref="quizView">Overzicht</a></li>
+		</ul></li>
+
+	<li class="dropdown"><a class="dropdown-toggle"
+		data-toggle="dropdown">Stappenplan<span class="ss-navigatedown"></span>
+	</a>
+		<ul class="dropdown-menu" role="menu">
+			<li><a ui-sref="roadmapNew">Toevoegen</a></li>
+			<!-- <li><a ui-sref="#roadmapView">Overzicht</a></li> -->
+		</ul></li>
 </ul>

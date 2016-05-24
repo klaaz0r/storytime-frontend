@@ -1,41 +1,43 @@
 <div class="container">
-  <h3 class="text-nav-helper">Quiz / overzicht</h3>  
-  <div ng-controller="QuizController">
-    <div class="container quizes">
-    <div class="row row-centrered">
-        <div class="col-xs-6 quizesOverview">
-            <h4>
-                Mijn Quizes
-            </h4>
-            <ul class="list-group list-group-collapse">
-                <li class="list-group-item quizItem" ng-repeat="quiz in quizes">
-                    <p onclick="toggleQuiz(this)">
-                        {{quiz.name}}
-                        <a class="edit-link">aanpassen</a>
-                    </p>
-                    
-                    <ul class="list-group">
-                        <li class="list-group-item quizQuestion itemHidden" ng-repeat="question in quiz.question">
-                            <p class="question-text" onclick="toggleQuestion(this)">
-                                {{question.name}}
-                            </p>
-                            
-                            <ul class="list-group">
-                                <li class="list-group-item questionAnswer itemHidden" ng-repeat="answer in question.answer">
-                                  <p class="answer-text">
-                                    {{answer.name}}
-                                  </p>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            <button ui-sref="makeQuiz" class="btn btn-block btn-primary" href="#/quiz/maken">Quiz maken</button>
-        </div>
-    </div>
+	<ng-include src="'app/components/dashboard/dashboard-menu.view.html'"></ng-include>
+	<error></error>
+	<div style="padding-bottom: 20px;"
+		class="col-md-12 typography-container">
+		<p class="demo-type-heading">Quizzen</p>
+		<p>Welkom bij het quizzen van Robin. Druk op een quiz om meer
+			informatie er over te zien.</p>
+	</div>
+	<div ng-controller="QuizController">
+		<div class="container quizes">
+			<div class="row row-centrered">
+				<div class="col-md-12 quizesOverview">
+					<h4>Mijn Quizes</h4>
+					<ul class="list-group list-group-collapse">
+						<li class="list-group-item quizItem" ng-repeat="quiz in quizes">
+							<p onclick="toggleQuiz(this)">
+								{{quiz.name}} <a class="edit-link">Aanpassen</a>
+							</p>
+
+							<ul class="list-group">
+								<li class="list-group-item quizQuestion itemHidden"
+									ng-repeat="question in quiz.question">
+									<p class="question-text" onclick="toggleQuestion(this)">
+										{{question.name}}</p>
+
+									<ul class="list-group">
+										<li class="list-group-item questionAnswer itemHidden"
+											ng-repeat="answer in question.answer">
+											<p class="answer-text">{{answer.name}}</p>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<button class="btn btn-block btn-primary" ui-sref="quizNew">Quiz
+						maken</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-       
-  </div>
-  <error></error> 
-</div>    

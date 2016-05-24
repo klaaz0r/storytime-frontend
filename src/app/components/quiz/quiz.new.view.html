@@ -1,0 +1,92 @@
+<div class="container">
+	<ng-include src="'app/components/dashboard/dashboard-menu.view.html'"></ng-include>
+	<error></error>
+	<div style="padding-bottom: 20px;"
+		class="col-md-12 typography-container">
+		<p class="demo-type-heading">Quiz toevoegen</p>
+		<p>Hier kan een quiz worden toegevoegd.</p>
+	</div>
+	
+	<div class="col-md-12 create-quiz">
+		<form class="form-horizontal quiz-maken-form" role="form" novalidate>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Quiz</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control"
+						placeholder="Appel valt niet ver van de boom" required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Vraag</label>
+				<div class="col-sm-10">
+					<div class="input-icon">
+						<span class="ss-help"></span><input type="text"
+							class="form-control"
+							placeholder="Wat betekent de appel valt niet ver van de boom?"
+							required />
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Correct antwoord</label>
+				<div class="col-sm-10">
+					<div class="input-icon">
+						<span class="ss-check"></span> <input type="text"
+							class="form-control"
+							placeholder="Je lijkt op je vader en/of moeder." required>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Foutief antwoord</label>
+				<div class="col-sm-10">
+					<div class="input-icon">
+						<span class="ss-delete"></span><input type="text"
+							class="form-control" required
+							placeholder="Een appel ligt altijd dicht bij de boom." required>
+						<span></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Foutief antwoord</label>
+				<div class="col-sm-10">
+					<div class="input-icon">
+						<span class="ss-delete"></span><input type="text"
+							class="form-control" required
+							placeholder="De appel kan niet weg rollen van de boom." required>
+						<span></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Foutief antwoord</label>
+				<div class="col-sm-10">
+					<div class="input-icon">
+						<span class="ss-delete"></span><input type="text"
+							class="form-control" required
+							placeholder="Alle mensen lijken op elkaar." required> <span></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label"></label>
+				<div class="col-sm-5">
+					<button class="btn btn-block btn-primary vraag-toevoegen">Vraag
+						toevoegen</button>
+					<span></span>
+				</div>
+				<div class="col-sm-5">
+					<button class="btn btn-block btn-primary">Quiz opslaan</button>
+					<span></span>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

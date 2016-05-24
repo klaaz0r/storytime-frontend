@@ -33,9 +33,17 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                 authorizedRoles: [USER_ROLES.mentor]
             }
         })
-        .state('newchild', {
-            url: '/nieuwkind',
-            templateUrl: '../app/components/dashboard/newchild.view.html',
+        .state('childNew', {
+            url: '/child/new',
+            templateUrl: '../app/components/dashboard/child.new.view.html',
+            controller: 'DashboardController',
+            data: {
+                authorizedRoles: [USER_ROLES.mentor]
+            }
+        })
+        .state('childView', {
+            url: '/child/',
+            templateUrl: '../app/components/dashboard/child.view.html',
             controller: 'DashboardController',
             data: {
                 authorizedRoles: [USER_ROLES.mentor]
@@ -72,7 +80,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                 authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
             }
         })
-        .state('helpmee', {
+        .state('helpus', {
             url: '/helpus',
             templateUrl: '../app/components/static/helpus.view.html',
             data: {
@@ -86,21 +94,21 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                 authorizedRoles: [USER_ROLES.all, USER_ROLES.mentor, USER_ROLES.child]
             }
         })
-        .state('quiz', {
+        .state('quizView', {
             url: '/quiz',
             templateUrl: '../app/components/quiz/quiz.view.html',
             data: {
-                authorizedRoles: [USER_ROLES.all]
+                authorizedRoles: [USER_ROLES.mentor]
             }
-        }).state('makeQuiz', {
-            url: '/quiz/maken',
-            templateUrl: '../app/components/quiz/makeQuiz.view.html',
+        }).state('quizNew', {
+            url: '/quiz/new',
+            templateUrl: '../app/components/quiz/quiz.new.view.html',
+            controller: 'DashboardController',
             data: {
-                authorizedRoles: [USER_ROLES.all]
+                authorizedRoles: [USER_ROLES.mentor]
             }
         })
     $urlRouterProvider.otherwise("/");
-
 });
 
 app.constant('USER_ROLES', {
@@ -114,15 +122,13 @@ app.run(function($rootScope, AuthService, $state, ErrorFactory, Session) {
         var authorizedRoles = next.data.authorizedRoles;
 
         if (!AuthService.isAuthorized(authorizedRoles)) {
-
             event.preventDefault();
-
             if (AuthService.isAuthenticated()) {
-                // user is not allowed
+                // User is not allowed
                 ErrorFactory.setError('U bent niet ingelogd');
                 $state.go("login");
             } else {
-                // user is not logged in
+                // User is not logged in
                 ErrorFactory.setError('U bent niet ingelogd');
                 $stateProvider.go("login");
             }

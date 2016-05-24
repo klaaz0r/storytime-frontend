@@ -1,11 +1,20 @@
-<div class="container">
-	<ng-include src="'app/components/dashboard/dashboard-menu.view.html'"></ng-include>
-	<error></error>
-	<div style="padding-bottom: 20px;" class="col-md-12 typography-container">
-		<p class="demo-type-heading">Dashboard</p>
-		<p>Welkom bij het dashboard van Robin. Hier kunt u uw gekoppelde kinderen als begeleider vinden. binnenkort nieuwe functionaliteiten!
-		</p>
-		<h3>Quizzen</h3>
-		<quiz-show-directive></quiz-show-directive>
-	</div>
+<div class="container dashboard-container">
+    <uib-tabset active="active">
+        <uib-tab index="0" heading="Nieuwe quiz">
+            <div ui-view="new-quiz"></div>
+        </uib-tab>
+
+        <uib-tab index="1" heading="Quiz overzicht">
+            <div ui-view="quiz-overview"></div>
+        </uib-tab>
+
+        <uib-tab index="2" heading="Kind toevoegen">
+            <div ui-view="new-child"></div>
+        </uib-tab>
+
+        <uib-tab index="3" heading="Kinderen overzicht">
+            <div ui-view="children-overview"></div>
+        </uib-tab>
+
+    </uib-tabset>
 </div>

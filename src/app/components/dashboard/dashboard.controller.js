@@ -4,6 +4,17 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     };
     $scope.childs = {};
 
+    $scope.tabs = [{
+        title: 'Nieuwe quiz',
+        route: 'dashboard.new-quiz'
+    }, {
+        title: 'Quizzen',
+        content: 'Dynamic content 2'
+    }, {
+        title: 'Stappenplan',
+        content: 'Dynamic content 2'
+    }];
+
     $scope.register = function(credentials) {
         console.log(credentials);
         ChildService.registerChild(credentials).then(function(data) {
@@ -19,6 +30,7 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.loadChilds = function() {
         ChildService.loadChilds().then(function(data) {
             $scope.childs = data;
+            console.log(data);
         })
     };
 });

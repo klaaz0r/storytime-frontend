@@ -31,7 +31,7 @@ input = {
         'theme_css': 'src/assets/theme/**/*.css',
         'theme_fonts': 'src/assets/theme/fonts/**/*',
         //bower components are moved (only the minjs files )
-        'vendor': 'bower_components/**/*.min.js',
+        'vendor': 'bower_components/**/*.js',
         //image folder
         'images': 'src/assets/images/**/*'
     },

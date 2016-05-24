@@ -23,28 +23,35 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                 authorizedRoles: [USER_ROLES.all]
             }
         })
+        //nested views
         .state('dashboard', {
             url: '/dashboard',
-            templateUrl: '../app/components/dashboard/dashboard.view.html',
             controller: 'DashboardController',
             data: {
                 authorizedRoles: [USER_ROLES.mentor, USER_ROLES.all]
             },
-        })
-        .state('childNew', {
-            url: '/child/new',
-            templateUrl: '../app/components/dashboard/child.new.view.html',
-            controller: 'DashboardController',
-            data: {
-                authorizedRoles: [USER_ROLES.mentor]
-            }
-        })
-        .state('childView', {
-            url: '/child/',
-            templateUrl: '../app/components/dashboard/child.view.html',
-            controller: 'DashboardController',
-            data: {
-                authorizedRoles: [USER_ROLES.mentor]
+            views: {
+                // the main template will be placed here (relatively named)
+                '': {
+                    templateUrl: '../app/components/dashboard/dashboard.view.html',
+                    controller: 'DashboardController'
+                },
+                'quiz-overview@dashboard': {
+                    templateUrl: '../app/components/dashboard/quizzes/quiz.overview.view.html',
+                    controller: ''
+                },
+                'new-quiz@dashboard': {
+                    templateUrl: '../app/components/dashboard/quizzes/new.quiz.view.html',
+                    controller: ''
+                },
+                'children-overview@dashboard': {
+                    templateUrl: '../app/components/dashboard/children/children.view.html',
+                    controller: ''
+                },
+                'new-child@dashboard': {
+                    templateUrl: '../app/components/dashboard/children/child.new.view.html',
+                    controller: ''
+                }
             }
         })
         .state('register', {
@@ -98,19 +105,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
             data: {
                 authorizedRoles: [USER_ROLES.mentor]
             }
-        }).state('quizNew', {
-            url: '/quiz/new',
-            templateUrl: '../app/components/quiz/quiz.new.view.html',
-            controller: 'DashboardController',
-            data: {
-                authorizedRoles: [USER_ROLES.mentor]
-            }
         })
+
     $urlRouterProvider.otherwise("/");
 });
-
-angular.module('app').run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
-    $rootScope.$state = $state;
-    $rootScope.$stateParams = $stateParams;
-    $state.transitionTo('test.subs');
-}]);

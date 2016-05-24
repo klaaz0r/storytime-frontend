@@ -11,74 +11,79 @@ snd _)_/LI
 <html ng-app="app">
 
 <head>
-  <title>StoryTime</title>
-  <meta charset="utf-8">
-  <base href="/">
-  <meta name="theme-color" content="#2dafdf">
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="MobileOptimized" content="320" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!--bootstrap -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <!-- parrot theme-->
-  <link rel="stylesheet" type="text/css" href="assets/css/drunken-parrot.css">
+    <title>StoryTime</title>
+    <meta charset="utf-8">
+    <base href="/">
+    <meta name="theme-color" content="#2dafdf">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!-- parrot theme-->
+    <link rel="stylesheet" type="text/css" href="assets/css/drunken-parrot.css">
 
-  <!-- custom css-->
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- custom css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body ng-controller="MainController">
-  <div id="main-container">
-    <!-- navbar directive -->
-    <navbar></navbar>
-    <!--view-->
-    <div id="main-content">
-      <main ui-view></main>
-    </div>
-
-    <div ng-show="cookiesoke" class="cookiesok">
-      <div class="row">
-
-        <div class="col-sm-10">
-          <p>
-            Robin maakt gebruik van cookies voor de functionaliteit
-          </p>
+    <div id="main-container">
+        <!-- navbar directive -->
+        <navbar></navbar>
+        <!--view-->
+        <div id="main-content">
+            <main ui-view></main>
         </div>
-        <div class="col-sm-2">
-          <button type="button" ng-click="acceptCookies()" class="btn btn-success">Accepteer</button>
+
+        <div ng-show="cookiesoke" class="cookiesok">
+            <div class="row">
+
+                <div class="col-sm-10">
+                    <p>
+                        Robin maakt gebruik van cookies voor de functionaliteit
+                    </p>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" ng-click="acceptCookies()" class="btn btn-success">Accepteer</button>
+                </div>
+            </div>
         </div>
-      </div>
+        <!-- loading footer-->
+        <div id="footer">
+            <footer>
+            </footer>
+        </div>
     </div>
-    <!-- loading footer-->
-    <div id="footer">
-      <footer></footer>
-    </div>
-  </div>
 
-  <!-- vendor/cdn files-->
-  <script src="vendor/jquery/dist/jquery.min.js"></script>
-  <script src="vendor/angular/angular.min.js"></script>
-  <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script src="vendor/angular-cookies/angular-cookies.min.js"></script>
-  <script src="vendor/angular-animate/angular-animate.min.js"></script>
-  <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="vendor/atmosphere/atmosphere.min.js"></script>
-  <script src="vendor/flip/dist/jquery.flip.min.js"></script>
-  <!-- angular index-->
-  <script type="text/javascript" src="app/app.js"></script>
-  <!-- custom js for design -->
+    <!-- vendor/cdn files-->
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="vendor/angular-cookies/angular-cookies.min.js"></script>
+    <script src="vendor/angular-animate/angular-animate.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="vendor/atmosphere/atmosphere.min.js"></script>
+    <script src="vendor/flip/dist/jquery.flip.min.js"></script>
+    <script src="vendor/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <!-- <script src="vendor/angular-ui-router-tabs/src/ui-router-tabs.js"></script>
+    <script src="vendor/angular-sanitize/angular-sanitize.min.js"></script> -->
+    <!-- angular index-->
+    <script type="text/javascript" src="app/app.js"></script>
+    <!-- custom js for design -->
 
-  <script src="assets/js/checkbox.js"></script>
-  <script src="assets/js/radio.js"></script>
-  <script src="assets/js/bootstrap-switch.js"></script>
-  <script src="assets/js/toolbar.js"></script>
-  <script src="assets/js/classie.js"></script>
-  <script src="assets/js/application.js"></script>
-  <script src="assets/js/quiz.js"></script>
-  <script src="assets/js/base.js"></script>
+    <script src="assets/js/checkbox.js"></script>
+    <script src="assets/js/radio.js"></script>
+    <script src="assets/js/bootstrap-switch.js"></script>
+    <script src="assets/js/toolbar.js"></script>
+    <script src="assets/js/classie.js"></script>
+    <script src="assets/js/application.js"></script>
+    <script src="assets/js/quiz.js"></script>
+    <script src="assets/js/base.js"></script>
 
 
 </body>

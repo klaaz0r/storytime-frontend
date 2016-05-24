@@ -29,7 +29,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
             controller: 'DashboardController',
             data: {
                 authorizedRoles: [USER_ROLES.mentor, USER_ROLES.all]
-            }
+            },
         })
         .state('childNew', {
             url: '/child/new',
@@ -108,3 +108,9 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
         })
     $urlRouterProvider.otherwise("/");
 });
+
+angular.module('app').run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+    $state.transitionTo('test.subs');
+}]);

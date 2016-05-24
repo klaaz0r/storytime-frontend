@@ -1,24 +1,24 @@
-angular.module('app').controller('DashboardController' , function($scope, $rootScope, AuthService, ErrorFactory, $state) {
-  $scope.credentials = {
-    mentorname: $rootScope.userName
-  };
-  $scope.childs = {};
+angular.module('app').controller('DashboardController', function($scope, $rootScope, ChildService, ErrorFactory, $state) {
+    $scope.credentials = {
+        mentorname: $rootScope.userName
+    };
+    $scope.childs = {};
 
-  $scope.register = function(credentials) {
-    console.log(credentials);
-    AuthService.registerChild(credentials).then(function(data) {
-      console.log(data.STATE);
-      if (data.STATE === "SUCCEEDED") {
-        ErrorFactory.setSuccess(data.MESSAGE);
-      } else if (data.STATE === "ERROR") {
-        ErrorFactory.setError(data.MESSAGE);
-      }
-    })
-  };
+    $scope.register = function(credentials) {
+        console.log(credentials);
+        ChildService.registerChild(credentials).then(function(data) {
+            console.log(data.STATE);
+            if (data.STATE === "SUCCEEDED") {
+                ErrorFactory.setSuccess(data.MESSAGE);
+            } else if (data.STATE === "ERROR") {
+                ErrorFactory.setError(data.MESSAGE);
+            }
+        })
+    };
 
-  $scope.loadChilds = function() {
-    AuthService.loadChilds().then(function(data) {
-      $scope.childs = data;
-    })
-  };
+    $scope.loadChilds = function() {
+        ChildService.loadChilds().then(function(data) {
+            $scope.childs = data;
+        })
+    };
 });

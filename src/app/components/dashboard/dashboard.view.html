@@ -1,49 +1,19 @@
 <div class="container">
 	<ng-include src="'app/components/dashboard/dashboard-menu.view.html'"></ng-include>
 	<error></error>
-	<div style="padding-bottom: 20px;"
-		class="col-md-12 typography-container">
+	<div style="padding-bottom: 20px;" class="col-md-12 typography-container">
 		<p class="demo-type-heading">Dashboard</p>
-		<p>Welkom bij het dashboard van Robin. Hier kunt u uw gekoppelde
-			kinderen als begeleider vinden. binnenkort nieuwe functionaliteiten!
+		<p>Welkom bij het dashboard van Robin. Hier kunt u uw gekoppelde kinderen als begeleider vinden. binnenkort nieuwe functionaliteiten!
 		</p>
 
 		<h3>Kinderen</h3>
-		<div ng-app ng-controller="DashboardController" ng-init="loadChilds()"
-			class="list-group">
+		<div ng-app ng-controller="DashboardController" ng-init="loadChilds()" class="list-group">
 			<ul>
 				<li ng-repeat="child in childs">{{child.name}}</li>
 			</ul>
 		</div>
 
 		<h3>Quizzen</h3>
-		<div ng-controller="QuizController">
-			<div class="container quizes">
-				<div class="quizesOverview">
-					<ul class="list-group list-group-collapse">
-						<li class="list-group-item quizItem" ng-repeat="quiz in quizes">
-							<p onclick="toggleQuiz(this)">
-								{{quiz.name}} <a class="edit-link">Aanpassen</a>
-							</p>
-
-							<ul class="list-group">
-								<li class="list-group-item quizQuestion itemHidden"
-									ng-repeat="question in quiz.question">
-									<p class="question-text" onclick="toggleQuestion(this)">
-										{{question.name}}</p>
-
-									<ul class="list-group">
-										<li class="list-group-item questionAnswer itemHidden"
-											ng-repeat="answer in question.answer">
-											<p class="answer-text">{{answer.name}}</p>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<quiz-show-directive></quiz-show-directive>
 	</div>
 </div>

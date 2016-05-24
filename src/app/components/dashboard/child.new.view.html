@@ -1,11 +1,9 @@
 <div class="container">
-	<ng-include src="'app/components/dashboard/dashboard-menu.view.html'"></ng-include>
+	<dashboard-navbar></dashboard-navbar>
 	<error></error>
-	<div style="padding-bottom: 20px;"
-		class="col-md-12 typography-container">
+	<div style="padding-bottom: 20px;" class="col-md-12 typography-container">
 		<p class="demo-type-heading">Kind toevoegen</p>
-		<p>U kunt hier een account aanmaken voor het kind die gebruik gaat
-			maken van Robin de Robot. Vul de onderstaande gegevens in:</p>
+		<p>U kunt hier een account aanmaken voor het kind die gebruik gaat maken van Robin de Robot. Vul de onderstaande gegevens in:</p>
 	</div>
 
 	<form class="form-horizontal" role="form" novalidate>
@@ -13,9 +11,8 @@
 			<label class="col-sm-2 control-label">Naam</label>
 			<div class="col-sm-10">
 				<div class="input-icon">
-					<span class="ss-user"></span><input type="text"
-						class="form-control" ng-model="credentials.name"
-						placeholder="Mark" required />
+					<span class="ss-user"></span>
+					<input type="text" class="form-control" ng-model="credentials.name" placeholder="Mark" required />
 				</div>
 			</div>
 		</div>
@@ -24,9 +21,8 @@
 			<label class="col-sm-2 control-label">Gebruikersnaam</label>
 			<div class="col-sm-10">
 				<div class="input-icon">
-					<span class="ss-user"></span><input type="text"
-						class="form-control" ng-model="credentials.username"
-						placeholder="Mark" required />
+					<span class="ss-user"></span>
+					<input type="text" class="form-control" ng-model="credentials.username" placeholder="Mark" required />
 				</div>
 			</div>
 		</div>
@@ -35,9 +31,8 @@
 			<label class="col-sm-2 control-label">Wachtwoord</label>
 			<div class="col-sm-10">
 				<div class="input-icon">
-					<span class="ss-lock"></span><input type="password"
-						class="form-control" ng-model="credentials.password"
-						placeholder="&#9679;&#9679;&#9679;&#9679;" required>
+					<span class="ss-lock"></span>
+					<input type="password" class="form-control" ng-model="credentials.password" placeholder="&#9679;&#9679;&#9679;&#9679;" required>
 				</div>
 			</div>
 		</div>
@@ -46,9 +41,8 @@
 			<label class="col-sm-2 control-label">Geboortedatum</label>
 			<div class="col-sm-10">
 				<div class="input-icon">
-					<span class="ss-calendar"></span><input type="date"
-						class="form-control" ng-model="credentials.dateofbirth"
-						placeholder="13-05-2003" required>
+					<span class="ss-calendar"></span>
+					<input type="date" class="form-control" ng-model="credentials.dateofbirth" placeholder="13-05-2003" required>
 				</div>
 			</div>
 		</div>
@@ -57,9 +51,8 @@
 			<label class="col-sm-2 control-label">Geslacht</label>
 			<div class="col-sm-10">
 				<div class="input-icon">
-					<span class="ss-users"></span><select
-						ng-click="register(credentials)" class="form-control"
-						ng-model="credentials.gender" required>
+					<span class="ss-users"></span>
+					<select class="form-control" ng-model="credentials.gender" required>
 						<option selected="selected" value="m">Man</option>
 						<option value="v">Vrouw</option>
 					</select>
@@ -70,8 +63,7 @@
 		<div class="form-group">
 			<label class="col-sm-2 control-label"></label>
 			<div class="col-sm-10">
-				<a ng-click="register(credentials)"
-					class="btn btn-block btn-primary">Voeg toe</a>
+				<a ng-click="register(credentials)" class="btn btn-block btn-primary">Voeg toe</a>
 			</div>
 		</div>
 	</form>

@@ -51,6 +51,10 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                 'new-child@dashboard': {
                     templateUrl: '../app/components/dashboard/children/child.new.view.html',
                     controller: ''
+                },
+                'new-roadmap@dashboard': {
+                    templateUrl: '../app/components/dashboard/roadmaps/new.roadmap.view.html',
+                    controller: ''
                 }
             }
         })

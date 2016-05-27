@@ -29,13 +29,20 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
         })
     };
     
-    $scope.loadChilds = function() {
+    $scope.loadquizes = function() {
     	QuizService.loadQuizes().then(function(data) {
             $scope.quizes = data;
             console.log(data);
         })
     };
-   
+
+    $scope.loadChilds = function() {
+        ChildService.loadChilds().then(function(data) {
+            $scope.childs = data;
+            console.log(data);
+        })
+    };
+    
     $scope.loadRoadmaps = function() {
     	RoadmapService.loadRoadmaps().then(function(data) {
             $scope.roadmaps = data;

@@ -1,0 +1,11 @@
+<h3>Stappenplan</h3>
+<div ng-app ng-controller="DashboardController" ng-init="loadRoadmaps()" class="list-group">
+<a href="#fakeLink" class="list-group-item" ng-repeat="roadmap in roadmaps">
+            <div class="pull-left" >
+                <i class="ss-user"></i>
+            </div>
+            <div class="media-body" >
+                <p>{{roadmap}}</p>
+            </div>
+        </a>
+</div>

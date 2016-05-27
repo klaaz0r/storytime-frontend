@@ -55,6 +55,10 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                 'new-roadmap@dashboard': {
                     templateUrl: '../app/components/dashboard/roadmaps/new.roadmap.view.html',
                     controller: ''
+                },
+                'roadmap-overview@dashboard': {
+                    templateUrl: '../app/components/dashboard/roadmaps/roadmap.overview.view.html',
+                    controller: ''
                 }
             }
         })

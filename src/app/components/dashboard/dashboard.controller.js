@@ -1,8 +1,10 @@
-angular.module('app').controller('DashboardController', function($scope, $rootScope, ChildService, ErrorFactory, $state) {
+angular.module('app').controller('DashboardController', function($scope, $rootScope, ChildService, RoadmapService, QuizService, ErrorFactory, $state) {
     $scope.credentials = {
         mentorname: $rootScope.userName
     };
     $scope.childs = {};
+    $scope.roadmaps = {};
+    $scope.quizes = {};
 
     $scope.tabs = [{
         title: 'Nieuwe quiz',
@@ -26,10 +28,17 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
             }
         })
     };
-
+    
     $scope.loadChilds = function() {
-        ChildService.loadChilds().then(function(data) {
-            $scope.childs = data;
+    	QuizService.loadQuizes().then(function(data) {
+            $scope.quizes = data;
+            console.log(data);
+        })
+    };
+   
+    $scope.loadRoadmaps = function() {
+    	RoadmapService.loadRoadmaps().then(function(data) {
+            $scope.roadmaps = data;
             console.log(data);
         })
     };

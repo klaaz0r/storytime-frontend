@@ -11,7 +11,7 @@ app.run(function($rootScope, AuthService, $state, ErrorFactory, Session) {
             } else {
                 // User is not logged in
                 ErrorFactory.setError('U bent niet ingelogd');
-                $stateProvider.go("login");
+                $state.go("login");
             }
         }
     });

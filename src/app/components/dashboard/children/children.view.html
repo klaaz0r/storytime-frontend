@@ -1,6 +1,11 @@
 <h3>Kinderen</h3>
 <div ng-app ng-controller="DashboardController" ng-init="loadChilds()" class="list-group">
-    <ul>
-        <li ng-repeat="child in childs">{{child.name}}</li>
-    </ul>
+<a href="#fakeLink" class="list-group-item" ng-repeat="child in childs">
+            <div class="pull-left" >
+                <i class="ss-user"></i>
+            </div>
+            <div class="media-body" >
+                <p>{{child.name}}</p>
+            </div>
+        </a>
 </div>

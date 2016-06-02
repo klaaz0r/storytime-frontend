@@ -1,41 +1,14 @@
 <div class="quiz-container">
-    <div class="list-group">
-        <a href="#fakeLink" class="list-group-item">
-            <div class="pull-left">
-                <i class="ss-robot"></i>
-            </div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">15 men on a dead man’s chest</h4>
-                <p class="list-group-item-text">Fifteen men on the dead man’s chest – Yo-ho-ho and a bottle of rum!</p>
-            </div>
-        </a>
-        <a href="#fakeLink" class="list-group-item active">
-            <div class="pull-left"><i class="ss-robot"></i></div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Drink and the devil had done</h4>
-                <p class="list-group-item-text">For the rest – Yo-ho-ho and a bottle of rum! The mate was fixed by the bos’n's pike</p>
-            </div>
-        </a>
-        <a href="#fakeLink" class="list-group-item">
-            <div class="pull-left"><i class="ss-robot"></i></div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">The bos’n brained</h4>
-                <p class="list-group-item-text">With a marlinspike and Cookey’s throat was marked belike. It had been gripped</p>
-            </div>
-        </a>
-        <a href="#fakeLink" class="list-group-item">
-            <div class="pull-left"><i class="ss-robot"></i></div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">By fingers ten</h4>
-                <p class="list-group-item-text">And there they lay All good dead men, like break-o’-day in a boozing-ken</p>
-            </div>
-        </a>
-        <a href="#fakeLink" class="list-group-item">
-            <div class="pull-left"><i class="ss-robot"></i></div>
-            <div class="media-body">
-                <h4 class="list-group-item-heading">Yo-ho and a bottle of rum!</h4>
-                <p class="list-group-item-text">Fifteen men on the dead man’s chest – Yo-ho-ho and a bottle of rum!</p>
-            </div>
-        </a>
-    </div>
+	<p class="demo-type-heading">Quizzes</p>
+	<p>Overzicht van alle quizes</p>
+	<div ng-app ng-controller="QuizController" class="list-group">
+		<a class="list-group-item" ng-repeat="quiz in quizes">
+			<div class="pull-left">
+				<i class="ss-help"></i>
+			</div>
+			<div class="media-body">
+				<p onclick="toggleQuiz(this)">{{quiz.name}}</p>
+			</div>
+		</a>
+	</div>
 </div>

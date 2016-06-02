@@ -1,21 +1,17 @@
 <div class="container">
 	<h3 class="text-nav-helper">Home / login</h3>
-	<error></error>
+
 	<form novalidate>
 		<div class="login-box">
 			<div class="tile tile-login">
 				<h1 class="login-heading">Inloggen</h1>
 				<div class="input-icon">
-					<span class="ss-user"></span> <input type="text"
-						ng-model="credentials.username" class="form-control"
-						placeholder="Gebruikersnaam" required>
+					<span class="ss-user"></span>
+					<input type="text" ng-model="credentials.username" class="form-control" placeholder="Gebruikersnaam" required>
 				</div>
 				<div class="input-icon">
-					<span class="ss-lock"></span> <input ng-enter="login(credentials)"
-						type="password" ng-model="credentials.password"
-						class="form-control"
-						placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-						required>
+					<span class="ss-lock"></span>
+					<input ng-enter="login(credentials)" type="password" ng-model="credentials.password" class="form-control" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" required>
 				</div>
 
 				<a ng-click="login(credentials)" class="btn btn-block btn-primary">Login</a>
@@ -26,4 +22,5 @@
 			</div>
 		</div>
 	</form>
+	<error></error>
 </div>

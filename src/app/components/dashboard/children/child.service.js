@@ -26,7 +26,7 @@ angular.module('app').factory('ChildService', function($http, API_URL, CookieFac
 
     childService.loadChilds = function() {
         return $http({
-                method: 'POST',
+                method: 'GET',
                 url: API_URL + "/user/loadchilds",
                 dataType: "json",
                 headers: {

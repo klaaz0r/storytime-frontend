@@ -20,7 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
             templateUrl: '../app/components/chat/chat.view.html',
             controller: 'ChatController',
             data: {
-                authorizedRoles: [USER_ROLES.all]
+                authorizedRoles: [USER_ROLES.mentor, USER_ROLES.child]
             }
         })
         //nested views
@@ -28,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
             url: '/dashboard',
             controller: 'DashboardController',
             data: {
-                authorizedRoles: [USER_ROLES.mentor, USER_ROLES.all]
+                authorizedRoles: [USER_ROLES.mentor]
             },
             views: {
                 // the main template will be placed here (relatively named)
@@ -50,6 +50,14 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                 },
                 'new-child@dashboard': {
                     templateUrl: '../app/components/dashboard/children/child.new.view.html',
+                    controller: ''
+                },
+                'new-roadmap@dashboard': {
+                    templateUrl: '../app/components/dashboard/roadmaps/new.roadmap.view.html',
+                    controller: ''
+                },
+                'roadmap-overview@dashboard': {
+                    templateUrl: '../app/components/dashboard/roadmaps/roadmap.overview.view.html',
                     controller: ''
                 }
             }

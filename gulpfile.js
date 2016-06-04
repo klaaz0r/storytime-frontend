@@ -14,7 +14,8 @@ var gulp = require('gulp'),
     iife = require("gulp-iife"),
     addStream = require('add-stream'),
     gulpNgConfig = require('gulp-ng-config'),
-    ngmin = require('gulp-ngmin');
+    ngmin = require('gulp-ngmin'),
+    install = require("gulp-install");
 
 //input files to work with, this keeps everything organised
 input = {
@@ -52,7 +53,7 @@ input = {
 gulp.task('default', ['watch', 'start-server', 'angular']);
 
 /* this tasks runs on the server and creates all the files */
-gulp.task('build', ['bower', 'css', 'javascript', 'theme_fonts', 'theme_css', 'angular', 'html', 'images', 'angular_views']);
+gulp.task('build', ['bower', 'npm_install', 'css', 'javascript', 'theme_fonts', 'theme_css', 'angular', 'html', 'images', 'angular_views']);
 
 //starting express with the server.js file
 gulp.task('start-server', function() {
@@ -172,7 +173,14 @@ function config(state) {
         .pipe(gulpNgConfig('app.config', {
             environment: state
         }));
-}
+};
+
+//run npm install for missing modules
+gulp.task('npm_install', function() {
+    return gulp.src(['./package.json'])
+        .pipe(install());
+});
+
 /* Watch these files for changes and run the task on update */
 gulp.task('watch', function() {
     livereload.listen();

@@ -53,7 +53,7 @@ input = {
 gulp.task('default', ['watch', 'start-server', 'angular']);
 
 /* this tasks runs on the server and creates all the files */
-gulp.task('build', ['bower', 'npm_install', 'css', 'javascript', 'theme_fonts', 'theme_css', 'angular', 'html', 'images', 'angular_views']);
+gulp.task('build', ['bower', 'css', 'javascript', 'theme_fonts', 'theme_css', 'angular', 'html', 'images', 'angular_views']);
 
 //starting express with the server.js file
 gulp.task('start-server', function() {

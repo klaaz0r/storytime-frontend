@@ -23,6 +23,22 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
       $scope.quiz.questions.splice(lastItem);
     };
 
+    /**
+      Dynamic roadmap fields
+    **/
+    $scope.roadmap = {};
+    $scope.roadmap.steps = [];
+
+    $scope.addNewStep = function() {
+    var newItemNo = $scope.roadmap.steps.length+1;
+      $scope.roadmap.steps.push({'id':'step'+newItemNo});
+    };
+
+    $scope.removeStep = function() {
+      var lastItem = $scope.roadmap.steps.length-1;
+      $scope.roadmap.steps.splice(lastItem);
+    };
+
     $scope.tabs = [{
         title: 'Nieuwe quiz',
         route: 'dashboard.new-quiz'

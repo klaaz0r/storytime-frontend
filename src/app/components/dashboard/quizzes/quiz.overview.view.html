@@ -1,13 +1,13 @@
 <div class="quiz-container">
 	<p class="demo-type-heading">Quizzes</p>
 	<p>Overzicht van alle quizes</p>
-	<div ng-app ng-controller="QuizController" class="list-group">
+	<div ng-app ng-controller="DashboardController" ng-init="loadQuizes()" class="list-group">
 		<a class="list-group-item" ng-repeat="quiz in quizes">
 			<div class="pull-left">
 				<i class="ss-help"></i>
 			</div>
 			<div class="media-body">
-				<p onclick="toggleQuiz(this)">{{quiz.name}}</p>
+				<p>{{quiz.name}}</p>
 			</div>
 		</a>
 	</div>

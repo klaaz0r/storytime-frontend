@@ -9,10 +9,10 @@ angular.module('app').factory('RoadmapService', function($http, API_URL, CookieF
                 headers: {
                     'Content-Type': 'application/json',
                     'token': CookieFactory.getToken()
-                }                
+                }
             })
             .then(function(res) {
-                return res.data.MESSAGE;
+                return res.data;
             });
     };
     return roadmapService;

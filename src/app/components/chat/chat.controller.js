@@ -13,7 +13,7 @@ angular.module('app').controller('ChatController', ['$scope', function($scope, n
         "author": "child",
         "text": "met mij best goed"
     }, {
-        "author": "robin",
+    "author": "robin",
         "text": "waar mee kan ik je helpen?",
         "quiz": {
             "title": "Verjaardag feestje",
@@ -42,7 +42,7 @@ angular.module('app').controller('ChatController', ['$scope', function($scope, n
 
         ChatService.sendMessage(message);
 
-        //
+
         updateScroll();
     };
 

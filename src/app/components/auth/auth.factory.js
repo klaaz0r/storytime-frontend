@@ -1,4 +1,4 @@
-angular.module('app').factory('AuthService', function($http, Session, API_URL, CookieFactory) {
+angular.module('app').factory('AuthService', function($http, Session, API_URL, CookieFactory, $rootScope) {
     var authService = {};
 
     authService.login = function(credentials) {
@@ -39,11 +39,17 @@ angular.module('app').factory('AuthService', function($http, Session, API_URL, C
                 data: {}
             })
             .then(function(res) {
+                console.log(res);
                 if (res.data.STATE === "SUCCEEDED") {
                     //setting the token
                     CookieFactory.setToken(res.data.MESSAGE.Token);
                     //creating the sesion
                     Session.create(res.data.MESSAGE.Username, res.data.MESSAGE.Type.toUpperCase());
+
+                    $rootScope.userRole = res.data.MESSAGE.Type.toUpperCase();
+                    $rootScope.userName = res.data.MESSAGE.Username;
+                    $rootScope.name = res.data.MESSAGE.Name;
+
                     return true;
                 } else {
                     return false;

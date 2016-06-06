@@ -14,13 +14,15 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.quiz.questions = [];
 
     $scope.addNewQuestion = function() {
-    var newItemNo = $scope.quiz.questions.length+1;
-      $scope.quiz.questions.push({'id':'question'+newItemNo});
+        var newItemNo = $scope.quiz.questions.length + 1;
+        $scope.quiz.questions.push({
+            'id': 'question' + newItemNo
+        });
     };
 
     $scope.removeQuestion = function() {
-      var lastItem = $scope.quiz.questions.length-1;
-      $scope.quiz.questions.splice(lastItem);
+        var lastItem = $scope.quiz.questions.length - 1;
+        $scope.quiz.questions.splice(lastItem);
     };
 
     $scope.tabs = [{
@@ -45,7 +47,7 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     };
 
     $scope.loadQuizes = function() {
-    	QuizService.loadQuizes().then(function(data) {
+        QuizService.loadQuizes().then(function(data) {
             $scope.quizes = data;
         })
     };
@@ -57,13 +59,13 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     };
 
     $scope.loadRoadmaps = function() {
-    	RoadmapService.loadRoadmaps().then(function(data) {
+        RoadmapService.loadRoadmaps().then(function(data) {
             $scope.roadmaps = data;
         })
     };
 
     $scope.loadAchievements = function() {
-    	AchievementService.loadAchievements().then(function(data) {
+        AchievementService.loadAchievements().then(function(data) {
             $scope.achievements = data;
         })
     };

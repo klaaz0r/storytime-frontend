@@ -1,12 +1,14 @@
 app.run(function($rootScope, AuthService, $state, ErrorFactory, Session) {
     $rootScope.$on('$stateChangeStart', function(event, next) {
         var authorizedRoles = next.data.authorizedRoles;
+
+        if (Session.userName === "guest") {
+            console.log('geen session meer');
+            AuthService.reAuthUser()
+        };
+
         if (!AuthService.isAuthorized(authorizedRoles)) {
             event.preventDefault();
-            if (AuthService.reAuthUser()) {
-                $state.go(next.name);
-                console.log("reaut the user!");
-            }
             if (AuthService.isAuthenticated()) {
                 // User is not allowed
                 console.log("auth false");
@@ -17,6 +19,6 @@ app.run(function($rootScope, AuthService, $state, ErrorFactory, Session) {
                 ErrorFactory.setError('U bent niet ingelogd');
                 $state.go("login");
             }
-        }
+        };
     });
 });

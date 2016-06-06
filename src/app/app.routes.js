@@ -41,23 +41,23 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                     controller: ''
                 },
                 'new-quiz@dashboard': {
-                    templateUrl: '../app/components/dashboard/quizzes/new.quiz.view.html',
+                    templateUrl: '../app/components/dashboard/quizzes/quiz.new.view.html',
                     controller: ''
                 },
                 'children-overview@dashboard': {
-                    templateUrl: '../app/components/dashboard/children/children.view.html',
+                    templateUrl: '../app/components/dashboard/children/child.overview.view.html',
                     controller: ''
                 },
                 'new-child@dashboard': {
                     templateUrl: '../app/components/dashboard/children/child.new.view.html',
                     controller: ''
                 },
-                'new-roadmap@dashboard': {
-                    templateUrl: '../app/components/dashboard/roadmaps/new.roadmap.view.html',
-                    controller: ''
-                },
                 'roadmap-overview@dashboard': {
-                    templateUrl: '../app/components/dashboard/roadmaps/roadmap.overview.view.html',
+                	templateUrl: '../app/components/dashboard/roadmaps/roadmap.overview.view.html',
+                	controller: ''
+                },
+                'new-roadmap@dashboard': {
+                    templateUrl: '../app/components/dashboard/roadmaps/roadmap.new.view.html',
                     controller: ''
                 }
             }

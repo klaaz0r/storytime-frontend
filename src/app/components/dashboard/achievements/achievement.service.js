@@ -15,4 +15,5 @@ angular.module('app').factory('AchievementService', function($http, API_URL, Coo
 			return res.data;
 		});
 	};
+	return achievementService;
 });

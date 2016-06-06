@@ -4,7 +4,7 @@
 	<p>Hier kan een stappenplan worden toegevoegd.</p>
 </div>
 
-<div ng-app ng-controller="DashboardController" ng-init="loadAchievemnts()" class="col-md-12 create-roadmap" >
+<div ng-app ng-controller="DashboardController" ng-init="initRoadmap()" class="col-md-12 create-roadmap" >
 	<form class="form-horizontal roamap-maken-form" role="form" novalidate>
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Stappenplan</label>
@@ -38,7 +38,7 @@
 				<div class="input-icon">
 					<span class="ss-list"></span>
 					<select ng-model="roadmap.category" class="form-control"required>
-					<option>keuze 1</option>
+					<option ng-repeat="category in categories">{{category.name}}</option>
 					</select>
 				</div>
 			</div>

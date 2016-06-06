@@ -1,18 +1,20 @@
-angular.module('app').controller('DashboardController', function($scope, $rootScope, ChildService, RoadmapService, QuizService, ErrorFactory, $state) {
-    $scope.credentials = {
-        mentorname: $rootScope.userName
-    };
-    $scope.childs = {};
-    $scope.roadmaps = {};
-    $scope.quizes = {};
-    $scope.achievements = {};
+angular.module('app').controller('DashboardController', function($scope, $rootScope, ChildService, RoadmapService, AchievementService, CategoryService, QuizService, ErrorFactory, $state) {
+		$scope.credentials = {
+			mentorname : $rootScope.userName
+		};
+		$scope.childs = {};
+		$scope.roadmaps = {};
+		$scope.quizes = {};
+		$scope.achievements = {};
+		$scope.categories = {};
 
-    /**
-      Dynamic quiz fields
-    **/
-    $scope.quiz = {};
-    $scope.quiz.questions = [];
+		/**
+		 * Dynamic quiz fields
+		 */
+		$scope.quiz = {};
+		$scope.quiz.questions = [];
 
+<<<<<<< HEAD
     $scope.addNewQuestion = function() {
         var newItemNo = $scope.quiz.questions.length + 1;
         $scope.quiz.questions.push({
@@ -24,40 +26,58 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
         var lastItem = $scope.quiz.questions.length - 1;
         $scope.quiz.questions.splice(lastItem);
     };
+=======
+		$scope.addNewQuestion = function() {
+			var newItemNo = $scope.quiz.questions.length + 1;
+			$scope.quiz.questions.push({
+				'id' : 'question' + newItemNo
+			});
+		};
 
-    $scope.tabs = [{
-        title: 'Nieuwe quiz',
-        route: 'dashboard.new-quiz'
-    }, {
-        title: 'Quizzen',
-        content: 'Dynamic content 2'
-    }, {
-        title: 'Stappenplan',
-        content: 'Dynamic content 2'
-    }];
+		$scope.removeQuestion = function() {
+			var lastItem = $scope.quiz.questions.length - 1;
+			$scope.quiz.questions.splice(lastItem);
+		};
+>>>>>>> a4dacdd6b57d65af52dd7673bf759a65af0d6c9f
 
-    $scope.register = function(credentials) {
-        ChildService.registerChild(credentials).then(function(data) {
-            if (data.STATE === "SUCCEEDED") {
-                ErrorFactory.setSuccess(data.MESSAGE);
-            } else if (data.STATE === "ERROR") {
-                ErrorFactory.setError(data.MESSAGE);
-            }
-        })
-    };
+		/**
+		 * Dynamic roadmap fields
+		 */
+		$scope.roadmap = {};
+		$scope.roadmap.steps = [];
 
+		$scope.addNewStep = function() {
+			var newItemNo = $scope.roadmap.steps.length + 1;
+			$scope.roadmap.steps.push({
+				'id' : 'step' + newItemNo
+			});
+		};
+
+<<<<<<< HEAD
     $scope.loadQuizes = function() {
         QuizService.loadQuizes().then(function(data) {
             $scope.quizes = data;
         })
     };
+=======
+		$scope.removeStep = function() {
+			var lastItem = $scope.roadmap.steps.length - 1;
+			$scope.roadmap.steps.splice(lastItem);
+		};
+>>>>>>> a4dacdd6b57d65af52dd7673bf759a65af0d6c9f
 
-    $scope.loadChilds = function() {
-        ChildService.loadChilds().then(function(data) {
-            $scope.childs = data;
-        })
-    };
+		$scope.tabs = [ {
+			title : 'Nieuwe quiz',
+			route : 'dashboard.new-quiz'
+		}, {
+			title : 'Quizzen',
+			content : 'Dynamic content 2'
+		}, {
+			title : 'Stappenplan',
+			content : 'Dynamic content 2'
+		} ];
 
+<<<<<<< HEAD
     $scope.loadRoadmaps = function() {
         RoadmapService.loadRoadmaps().then(function(data) {
             $scope.roadmaps = data;
@@ -70,3 +90,50 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
         })
     };
 });
+=======
+		$scope.register = function(credentials) {
+			ChildService.registerChild(credentials).then(function(data) {
+				if (data.STATE === "SUCCEEDED") {
+					ErrorFactory.setSuccess(data.MESSAGE);
+				} else if (data.STATE === "ERROR") {
+					ErrorFactory.setError(data.MESSAGE);
+				}
+			})
+		};
+
+		$scope.loadQuizes = function() {
+			QuizService.loadQuizes().then(function(data) {
+				$scope.quizes = data;
+			})
+		};
+
+		$scope.loadChilds = function() {
+			ChildService.loadChilds().then(function(data) {
+				$scope.childs = data;
+			})
+		};
+
+		$scope.loadRoadmaps = function() {
+			RoadmapService.loadRoadmaps().then(function(data) {
+				$scope.roadmaps = data;
+			})
+		};
+		
+		$scope.loadAchievements = function() {
+			AchievementService.loadAchievements().then(function(data) {
+				$scope.achievements = data;
+			})
+		};
+		
+		$scope.loadCategories = function() {
+			CategoryService.loadCategories().then(function(data) {
+				$scope.categories = data;
+			})
+		};
+
+		$scope.initRoadmap = function() {
+			$scope.loadAchievements()
+			$scope.loadCategories()
+		};
+	});
+>>>>>>> a4dacdd6b57d65af52dd7673bf759a65af0d6c9f

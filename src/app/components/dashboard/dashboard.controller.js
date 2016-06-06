@@ -10,16 +10,17 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     /**
       Dynamic quiz fields
     **/
-    $scope.questions = [];
+    $scope.quiz = {};
+    $scope.quiz.questions = [];
 
     $scope.addNewQuestion = function() {
-    var newItemNo = $scope.questions.length+1;
-      $scope.questions.push({'id':'question'+newItemNo});
+    var newItemNo = $scope.quiz.questions.length+1;
+      $scope.quiz.questions.push({'id':'question'+newItemNo});
     };
 
     $scope.removeQuestion = function() {
-      var lastItem = $scope.questions.length-1;
-      $scope.questions.splice(lastItem);
+      var lastItem = $scope.quiz.questions.length-1;
+      $scope.quiz.questions.splice(lastItem);
     };
 
     $scope.tabs = [{

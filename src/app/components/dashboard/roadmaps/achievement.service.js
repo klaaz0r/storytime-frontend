@@ -2,10 +2,9 @@ angular.module('app').factory('AchievementService', function($http, API_URL, Coo
 	var achievementService = {};
 
 	achievementService.loadAchievements = function() {
-		console.log("IK zit hier");
 		return $http({
 			method : 'GET',
-			url : API_URL + "/achievement/achievements/all",
+			url : API_URL + "/achievement/all",
 			dataType : "json",
 			headers : {
 				'Content-Type' : 'application/json',
@@ -13,10 +12,7 @@ angular.module('app').factory('AchievementService', function($http, API_URL, Coo
 			},
 			data : {}
 		}).then(function(res) {
-			console.log('Hier staat de data: ');
-			console.log(res.data);
 			return res.data;
 		});
 	};
-	return achievementService;
 });

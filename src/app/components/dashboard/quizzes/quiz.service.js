@@ -1,4 +1,5 @@
-angular.module('app').factory('QuizService', function($http, API_URL, CookieFactory) {
+angular.module('app').factory('QuizService',
+		function($http, API_URL, CookieFactory) {
 			var quizService = {};
 
 			quizService.loadQuizes = function() {

@@ -5,6 +5,7 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.childs = {};
     $scope.roadmaps = {};
     $scope.quizes = {};
+    $spoce.achievements = {};
 
     $scope.tabs = [{
         title: 'Nieuwe quiz',
@@ -44,6 +45,12 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.loadRoadmaps = function() {
     	RoadmapService.loadRoadmaps().then(function(data) {
             $scope.roadmaps = data;
+        })
+    };
+    
+    $scope.loadAchievements = function() {
+    	AchievementService.loadAchievements().then(function(data) {
+            $scope.achievements = data;
         })
     };
 });

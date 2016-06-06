@@ -41,7 +41,7 @@
 						<div class="input-group">
 							<input type="text" ng-model="text" class="form-control" ng-enter="sendMessage(text)">
 							<span class="input-group-btn">
-								<button class="btn btn-default" ng-click="sendMessage(text)"
+								<button class="btn btn-default" ng-disabled="!text" ng-click="sendMessage(text)"
 								type="button">Send</button>
 							</span>
 						</div>

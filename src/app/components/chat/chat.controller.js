@@ -1,4 +1,4 @@
-angular.module('app').controller('ChatController', ['$scope', function($scope, ngEnter) {
+angular.module('app').controller('ChatController', ['$scope', function($scope, ngEnter, ChatService) {
 
     //init van een message, wat het kind stuurt is altijd basic plain tekst
     $scope.message = {
@@ -29,27 +29,21 @@ angular.module('app').controller('ChatController', ['$scope', function($scope, n
     }];
 
     $scope.sendMessage = function(text) {
-        //message object maken
         var message = {
             author: '',
             text: ''
         };
-
-        // dit maakt de text balk leeg na het versturen!
         $scope.text = "";
 
-        //setten van de values
         message.text = text;
         message.author = 'child';
 
-        //hier tussen moet nog een service komen voor het versturen naar de server
-        //push de message in de array zodat hij ook op het scherm getoond word
         $scope.messages.push(message);
 
-        // Deze moet pas aangeroepen worden nadat de DOM is geupdate.
-        // Hoe kan dat?
+        ChatService.sendMessage(message);
+
+        //
         updateScroll();
-        console.log("update scroll");
     };
 
     var scrolled = false;
@@ -77,5 +71,4 @@ angular.module('app').controller('ChatController', ['$scope', function($scope, n
         }
     })
 
-    // setInterval(function(){ updateScroll() }, 1000);
 }]);

@@ -5,7 +5,7 @@ angular.module('app').factory('QuizService',
 			quizService.loadQuizes = function() {
 				return $http({
 					method : 'GET',
-					url : API_URL + "/quiz/quizes/all",
+					url : API_URL + "/quiz/all",
 					dataType : "json",
 					headers : {
 						'Content-Type' : 'application/json',

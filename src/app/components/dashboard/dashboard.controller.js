@@ -7,6 +7,21 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.quizes = {};
     $scope.achievements = {};
 
+    /**
+      Dynamic quiz fields
+    **/
+    $scope.questions = [];
+
+    $scope.addNewQuestion = function() {
+    var newItemNo = $scope.questions.length+1;
+      $scope.questions.push({'id':'question'+newItemNo});
+    };
+
+    $scope.removeQuestion = function() {
+      var lastItem = $scope.questions.length-1;
+      $scope.questions.splice(lastItem);
+    };
+
     $scope.tabs = [{
         title: 'Nieuwe quiz',
         route: 'dashboard.new-quiz'
@@ -27,7 +42,7 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
             }
         })
     };
-    
+
     $scope.loadQuizes = function() {
     	QuizService.loadQuizes().then(function(data) {
             $scope.quizes = data;
@@ -39,13 +54,13 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
             $scope.childs = data;
         })
     };
-    
+
     $scope.loadRoadmaps = function() {
     	RoadmapService.loadRoadmaps().then(function(data) {
             $scope.roadmaps = data;
         })
     };
-    
+
     $scope.loadAchievements = function() {
     	AchievementService.loadAchievements().then(function(data) {
             $scope.achievements = data;

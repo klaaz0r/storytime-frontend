@@ -5,7 +5,7 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.childs = {};
     $scope.roadmaps = {};
     $scope.quizes = {};
-    $spoce.achievements = {};
+    $scope.achievements = {};
 
     $scope.tabs = [{
         title: 'Nieuwe quiz',

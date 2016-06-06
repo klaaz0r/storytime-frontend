@@ -4,7 +4,7 @@ angular.module('app').factory('RoadmapService', function($http, API_URL, CookieF
     roadmapService.loadRoadmaps = function() {
         return $http({
                 method: 'GET',
-                url: API_URL + "/roadmap/roadmaps/all",
+                url: API_URL + "/roadmap/all",
                 dataType: "json",
                 headers: {
                     'Content-Type': 'application/json',

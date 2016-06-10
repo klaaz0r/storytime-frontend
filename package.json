@@ -11,7 +11,7 @@
     "dev:serve": "gulp dev"
   },
   "engines": {
-    "node": "*"
+    "node": "5.9.1"
   },
   "repository": {
     "type": "git",

@@ -5,3 +5,4 @@ src/assets/libs/
 public/
 .tags*
 .DS_Store
+coverage/

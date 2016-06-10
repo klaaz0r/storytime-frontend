@@ -17,6 +17,7 @@ var gulp = require('gulp'),
     ngmin = require('gulp-ngmin'),
     install = require("gulp-install");
 
+var Server = require('karma').Server;
 //input files to work with, this keeps everything organised
 input = {
         // **/*.extension gets all nested files
@@ -179,6 +180,13 @@ function config(state) {
 gulp.task('npm_install', function() {
     return gulp.src(['./package.json'])
         .pipe(install());
+});
+
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
 });
 
 /* Watch these files for changes and run the task on update */

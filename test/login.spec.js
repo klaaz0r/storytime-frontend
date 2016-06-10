@@ -1,4 +1,4 @@
-describe('RegisterController test:', function() {
+describe('LoginController test:', function() {
     var scope;
     var controller;
 
@@ -6,13 +6,13 @@ describe('RegisterController test:', function() {
 
     beforeEach(inject(function($controller, $rootScope) {
         scope = $rootScope.$new();
-        controller = $controller('RegisterController', {
+        controller = $controller('LoginController', {
             $scope: scope
         });
     }));
 
     it('Register function should be defined:', function() {
-        expect(scope.register).toBeDefined();
+        expect(scope.login).toBeDefined();
         expect(scope.credentials).toBeDefined();
     });
 });

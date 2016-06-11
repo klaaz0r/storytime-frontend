@@ -10,7 +10,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/blackbox/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -121,7 +121,7 @@ exports.config = {
        //
        // If you are using the "xunit" reporter you should define the directory where
        // WebdriverIO should save all unit reports.
-       outputDir: './test_output'
+       outputDir: './test/output'
    },
 
     //

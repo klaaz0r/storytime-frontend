@@ -25,7 +25,7 @@ module.exports = function(config) {
             'bower_components/angular-bootstrap/ui-bootstrap.js',
             'bower_components/angular-mocks/angular-mocks.js',
             'public/app/app.js',
-            'test/specs/*.js'
+            'test/whitebox/*.js'
         ],
 
 
@@ -41,7 +41,7 @@ module.exports = function(config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage'],
+        reporters: ['progress'],
 
 
         // web server port

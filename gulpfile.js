@@ -15,7 +15,9 @@ var gulp = require('gulp'),
     addStream = require('add-stream'),
     gulpNgConfig = require('gulp-ng-config'),
     ngmin = require('gulp-ngmin'),
-    install = require("gulp-install");
+    install = require("gulp-install"),
+    jshint = require('gulp-jshint'),
+    tylish = require('jshint-stylish');
 
 var Server = require('karma').Server;
 //input files to work with, this keeps everything organised
@@ -182,11 +184,17 @@ gulp.task('npm_install', function() {
         .pipe(install());
 });
 
-gulp.task('test', function (done) {
-  new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done).start();
+gulp.task('test', function(done) {
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done).start();
+});
+
+gulp.task('jshint', function() {
+  return gulp.src('./src/app/**/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
 });
 
 /* Watch these files for changes and run the task on update */

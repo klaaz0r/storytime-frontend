@@ -1,9 +1,9 @@
 {
   "name": "storytime",
-  "description": "Social story time application",
+  "description": "SocialStory application",
   "main": "server.js",
   "authors": [
-    "klaas <klaas.foppen@gmail.com>"
+    "StoryTime <info@story.social>"
   ],
   "license": "GPL-3.0",
   "homepage": "https://github.com/klaaz0r/storytime-frontend",
@@ -31,6 +31,7 @@
     "angular-mocks": "^1.5.6"
   },
   "resolutions": {
-    "jquery": "^2.2.3"
+    "jquery": "^2.2.3",
+    "angular": ">1.2.0"
   }
 }

@@ -5,10 +5,11 @@
 
 	<a href="#fakeLink" class="list-group-item" ng-repeat="child in childs">
 		<div class="pull-left">
-			<i class="ss-user"></i>
+			<i class="ss-user" ng-if="child.gender === 'm'"></i>
+			<i class="ss-femaleuser" ng-if="child.gender === 'v'"></i>
 		</div>
 		<div class="media-body">
-			<p>{{child.name}} {{child.gender}}</p>
+			<p>{{child.name}}</p>
 		</div>
 	</a>
 </div>

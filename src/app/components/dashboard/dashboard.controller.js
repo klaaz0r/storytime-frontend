@@ -39,7 +39,11 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
             'id': 'step' + newItemNo
         });
     };
-
+    
+    $scope.removeStep = function() {
+        var lastItem = $scope.roadmap.steps.length - 1;
+        $scope.roadmap.steps.splice(lastItem);
+    };
 
     $scope.loadQuizes = function() {
         QuizService.loadQuizes().then(function(data) {

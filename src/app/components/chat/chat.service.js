@@ -2,10 +2,10 @@ angular.module('app').factory('ChatService', function($http, API_URL) {
     var childService = {};
 
     //TODO endpoints van chat
-    chatService.sendMessage = function(message) {
+    chatService.getRoadmap = function(message) {
         return $http({
             method: 'POST',
-            url: API_URL + "/chat",
+            url: API_URL + "/chat/suggest",
             dataType: "json",
             headers: {
                 'Content-Type': 'application/json',

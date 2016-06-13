@@ -5,27 +5,10 @@ angular.module('app').controller('ChatController', ['$scope', function($scope, n
         text: ''
     };
 
-    //dit is even snel een demo
+    //init
     $scope.messages = [{
         "author": "robin",
-        "text": "hee! hoe gaat het"
-    }, {
-        "author": "child",
-        "text": "met mij best goed"
-    }, {
-    "author": "robin",
-        "text": "waar mee kan ik je helpen?",
-        "quiz": {
-            "title": "Verjaardag feestje",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quam est, ultrices ac tellus consequat",
-            "image": "https://s-media-cache-ak0.pinimg.com/736x/70/cc/40/70cc40437e3b042d26fa826a16482600.jpg"
-        }
-    }, {
-        "author": "robin",
-        "text": "waar mee kan ik je helpen?"
-    }, {
-        "author": "robin",
-        "text": "waar mee kan ik je helpen?"
+        "text": "hee! hoe gaat het?"
     }];
 
     $scope.sendMessage = function(text) {
@@ -33,15 +16,24 @@ angular.module('app').controller('ChatController', ['$scope', function($scope, n
             author: '',
             text: ''
         };
+        //leeg maken veld
         $scope.text = "";
-
+        ChatService.getRoadmap(message);
         message.text = text;
         message.author = 'child';
 
         $scope.messages.push(message);
-
-        ChatService.sendMessage(message);
-
+        console.log(message);
+        if ($scope.messages.length == 2) {
+            $scope.messages.push({
+                author: 'robin',
+                text: 'kan ik je ergens mee helpen vandaag?'
+            });
+        } else if ($scope.messages.length > 3) {
+            ChatService.getRoadmap(message).then(function(res){
+              console.log(res);
+            });
+        }
 
         updateScroll();
     };

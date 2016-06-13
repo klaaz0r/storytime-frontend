@@ -1,14 +1,14 @@
-<div class="quiz-container">
-	<p class="demo-type-heading">Quizzes</p>
-	<p>Overzicht van alle quizes</p>
-	<div ng-app ng-controller="DashboardController" ng-init="loadQuizes()" class="list-group">
-		<a class="list-group-item" ng-repeat="quiz in quizes">
-			<div class="pull-left">
-				<i class="ss-help"></i>
-			</div>
-			<div class="media-body">
-				<p>{{quiz.name}}</p>
-			</div>
-		</a>
-	</div>
+<div ng-app ng-controller="DashboardController" ng-init="loadQuizes()"
+	class="list-group">
+
+	<p class="demo-type-heading">Quiz overzicht</p>
+
+	<a class="list-group-item" ng-repeat="quiz in quizes">
+		<div class="pull-left">
+			<i class="ss-help"></i>
+		</div>
+		<div class="media-body">
+			<p>{{quiz.name}}</p>
+		</div>
+	</a>
 </div>

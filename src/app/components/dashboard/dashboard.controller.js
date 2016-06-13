@@ -51,19 +51,6 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
         })
     };
 
-
-    $scope.tabs = [{
-        title: 'Nieuwe quiz',
-        route: 'dashboard.new-quiz'
-    }, {
-        title: 'Quizzen',
-        content: 'Dynamic content 2'
-    }, {
-        title: 'Stappenplan',
-        content: 'Dynamic content 2'
-    }];
-
-
     $scope.loadRoadmaps = function() {
         RoadmapService.loadRoadmaps().then(function(data) {
             $scope.roadmaps = data;

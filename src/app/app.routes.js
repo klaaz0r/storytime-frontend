@@ -40,15 +40,15 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                     templateUrl: '../app/components/dashboard/quizzes/quiz.overview.view.html',
                     controller: ''
                 },
-                'new-quiz@dashboard': {
+                'quiz-new@dashboard': {
                     templateUrl: '../app/components/dashboard/quizzes/quiz.new.view.html',
                     controller: ''
                 },
-                'children-overview@dashboard': {
+                'child-overview@dashboard': {
                     templateUrl: '../app/components/dashboard/children/child.overview.view.html',
                     controller: ''
                 },
-                'new-child@dashboard': {
+                'child-new@dashboard': {
                     templateUrl: '../app/components/dashboard/children/child.new.view.html',
                     controller: ''
                 },
@@ -56,7 +56,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                 	templateUrl: '../app/components/dashboard/roadmaps/roadmap.overview.view.html',
                 	controller: ''
                 },
-                'new-roadmap@dashboard': {
+                'roadmap-new@dashboard': {
                     templateUrl: '../app/components/dashboard/roadmaps/roadmap.new.view.html',
                     controller: ''
                 }

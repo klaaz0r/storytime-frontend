@@ -155,7 +155,7 @@ gulp.task('theme_fonts', function() {
 /* moving all the images to public*/
 gulp.task('images', function() {
     return gulp.src(input.images)
-        .pipe(image())
+        .pipe(process.env.NODE_ENV === 'production' ? image() : util.noop())
         .pipe(gulp.dest(output.images))
         .pipe(livereload());
 });

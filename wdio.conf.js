@@ -64,11 +64,11 @@ exports.config = {
     coloredLogs: true,
     //
     // Saves a screenshot to a given path if a command fails.
-    screenshotPath: './errorShots/',
+    screenshotPath: './test/output/errorShots/',
     //
     // Set a base URL in order to shorten url command calls. If your url parameter starts
     // with "/", then the base url gets prepended.
-    // baseUrl: 'http://www.google.com/',
+    //  baseUrl: '',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,

@@ -17,7 +17,10 @@ var gulp = require('gulp'),
     ngmin = require('gulp-ngmin'),
     install = require("gulp-install"),
     jshint = require('gulp-jshint'),
-    tylish = require('jshint-stylish');
+    tylish = require('jshint-stylish'),
+    strip = require('gulp-strip-comments'),
+    stripDebug = require('gulp-strip-debug'),
+    util = require('gulp-util');
 
 var Server = require('karma').Server;
 //input files to work with, this keeps everything organised
@@ -125,7 +128,7 @@ WARNING: minify and uglify do not work atm! ONLY CONCAT TO ONE FILE!
 */
 gulp.task('angular', function() {
     return gulp.src(input.angular)
-        .pipe(process.env.NODE_ENV === 'production' ? addStream.obj(config('production')) : addStream.obj(config('development')))
+        .pipe(process.env.NODE_ENV === 'production' ? stripDebug() : util.noop())
         .pipe(concat('app.js'))
         .pipe(iife())
         .pipe(gulp.dest(output.app))

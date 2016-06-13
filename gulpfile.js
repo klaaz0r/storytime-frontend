@@ -128,6 +128,7 @@ WARNING: minify and uglify do not work atm! ONLY CONCAT TO ONE FILE!
 */
 gulp.task('angular', function() {
     return gulp.src(input.angular)
+        .pipe(process.env.NODE_ENV === 'production' ? addStream.obj(config('production')) : addStream.obj(config('development')))
         .pipe(process.env.NODE_ENV === 'production' ? stripDebug() : util.noop())
         .pipe(concat('app.js'))
         .pipe(iife())
@@ -195,9 +196,9 @@ gulp.task('test', function(done) {
 });
 
 gulp.task('jshint', function() {
-  return gulp.src('./src/app/**/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
+    return gulp.src('./src/app/**/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'));
 });
 
 /* Watch these files for changes and run the task on update */

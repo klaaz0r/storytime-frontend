@@ -7,3 +7,4 @@ public/
 .DS_Store
 coverage/
 selenium-server-standalone-2.53.0.jar
+test/output/

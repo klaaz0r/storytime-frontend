@@ -17,6 +17,7 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
      */
     $scope.quiz = {};
     $scope.quiz.questions = [];
+    $scope.quiz.questions.answers = [];
 
     $scope.addNewQuestion = function() {
         var newItemNo = $scope.quiz.questions.length + 1;
@@ -39,7 +40,7 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.addNewStep = function() {
         var newItemNo = $scope.roadmap.steps.length + 1;
         $scope.roadmap.steps.push({
-            'id': 'step' + newItemNo
+            'orderId': newItemNo
         });
     };
     
@@ -69,6 +70,26 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
 
     $scope.registerChild = function(credentials) {
         ChildService.registerChild(credentials).then(function(data) {
+            if (data.STATE === "SUCCEEDED") {
+                ErrorFactory.setSuccess(data.MESSAGE);
+            } else if (data.STATE === "ERROR") {
+                ErrorFactory.setError(data.MESSAGE);
+            }
+        })
+    };
+    
+    $scope.addNewQuiz = function(quiz) {
+        QuizService.addNewQuiz(quiz).then(function(data) {
+            if (data.STATE === "SUCCEEDED") {
+                ErrorFactory.setSuccess(data.MESSAGE);
+            } else if (data.STATE === "ERROR") {
+                ErrorFactory.setError(data.MESSAGE);
+            }
+        })
+    };
+    
+    $scope.addNewRoadmap = function(roadmap) {
+        RoadmapService.addNewRoadmap(roadmap).then(function(data) {
             if (data.STATE === "SUCCEEDED") {
                 ErrorFactory.setSuccess(data.MESSAGE);
             } else if (data.STATE === "ERROR") {

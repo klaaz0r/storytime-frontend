@@ -28,10 +28,9 @@
 			<label class="col-sm-2 control-label">Achievement</label>
 			<div class="col-sm-10">
 				<div class="input-icon">
-					<span class="ss-star"></span> <select
-						ng-model="roadmap.achievement" class="form-control" required>
-						<option ng-repeat="achievement in achievements">{{achievement.name}}
-							- {{achievement.points}}</option>
+					<span class="ss-star"></span> 
+					<select ng-model="roadmap.achievement" class="form-control" required
+						ng-options="achievement as achievement.name for achievement in achievements">
 					</select>
 				</div>
 			</div>
@@ -54,12 +53,20 @@
 				<label class="col-sm-2 control-label">Stap</label>
 				<div class="col-sm-10">
 					<div class="input-icon">
-						<span class="ss-bookmark"></span> <input ng-model="theStep.step"
+						<span class="ss-bookmark"></span> <input ng-model="theStep.name"
 							type="text" class="form-control"
 							placeholder="Wat betekent de appel valt niet ver van de boom?"
 							required />
 					</div>
 				</div>
+			</div>
+			
+			<div class="form-group">
+			<label class="col-sm-2 control-label">Omschrijving</label>
+			<div class="col-sm-10">
+				<textarea ng-model="theStep.description" type="text"
+					class="form-control" placeholder="Omschrijving van de stap" required />
+			</div>
 			</div>
 
 			<button class="btn-orange delete-step" ng-show="$last"
@@ -73,7 +80,8 @@
 				<span></span>
 			</div>
 			<div class="col-sm-5">
-				<button class="btn btn-block btn-primary">Roadmap opslaan</button>
+				<button ng-click="addNewRoadmap(roadmap)"
+					class="btn btn-block btn-primary">Roadmap opslaan</button>
 				<span></span>
 			</div>
 		</div>

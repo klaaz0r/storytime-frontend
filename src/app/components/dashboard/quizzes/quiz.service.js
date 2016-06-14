@@ -16,8 +16,9 @@ angular.module('app').factory('QuizService',
 				return res.data;
 			});
 		};
-		
+
 		quizService.addNewQuiz = function(quiz) {
+			quiz.questions[0].theAnswers[0].correct = true; // dirty, yes.
 			return $http({
 				method : 'POST',
 				url : API_URL + "/quiz/add",

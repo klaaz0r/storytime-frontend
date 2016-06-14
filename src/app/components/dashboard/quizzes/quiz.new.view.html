@@ -38,12 +38,15 @@
 					</div>
 				</div>
 			</div>
+			<!--
+				@TODO: Fieldset in fieldset has problems, so hardcoded index arrays
+			-->
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Correct antwoord</label>
 				<div class="col-sm-10">
 					<div class="input-icon">
 						<span class="ss-check"></span> <input
-							ng-model="theQuestion.correct" type="text" class="form-control"
+							ng-model="theQuestion.theAnswers[0].answer" type="text" class="form-control"
 							placeholder="Je lijkt op je vader en/of moeder." required>
 					</div>
 				</div>
@@ -54,7 +57,7 @@
 				<div class="col-sm-10">
 					<div class="input-icon">
 						<span class="ss-delete"></span> <input
-							ng-model="theQuestion.incorrect1" type="text"
+							ng-model="theQuestion.theAnswers[1].answer" type="text"
 							class="form-control" required
 							placeholder="Een appel ligt altijd dicht bij de boom." required>
 						<span></span>
@@ -67,7 +70,7 @@
 				<div class="col-sm-10">
 					<div class="input-icon">
 						<span class="ss-delete"></span> <input
-							ng-model="theQuestion.incorrect2" type="text"
+							ng-model="theQuestion.theAnswers[2].answer" type="text"
 							class="form-control" required
 							placeholder="De appel kan niet weg rollen van de boom." required>
 						<span></span>
@@ -80,7 +83,7 @@
 				<div class="col-sm-10">
 					<div class="input-icon">
 						<span class="ss-delete"></span> <input
-							ng-model="theQuestion.incorrect3" type="text"
+							ng-model="theQuestion.theAnswers[3].answer" type="text"
 							class="form-control" required
 							placeholder="Alle mensen lijken op elkaar." required> <span></span>
 					</div>

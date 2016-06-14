@@ -59,6 +59,14 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
                 'roadmap-new@dashboard': {
                     templateUrl: '../app/components/dashboard/roadmaps/roadmap.new.view.html',
                     controller: ''
+                },
+                'achievement-new@dashboard': {
+                    templateUrl: '../app/components/dashboard/achievements/achievement.new.view.html',
+                    controller: ''
+                },
+                'achievement-overview@dashboard': {
+                    templateUrl: '../app/components/dashboard/achievements/achievement.overview.view.html',
+                    controller: ''
                 }
             }
         })

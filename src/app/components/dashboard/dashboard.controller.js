@@ -2,18 +2,21 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.credentials = {
         mentorname: $rootScope.userName
     };
+    $scope.achievement = {
+    	name: '',
+        points: ''
+    };
     $scope.childs = {};
     $scope.roadmaps = {};
     $scope.quizes = {};
     $scope.achievements = {};
     $scope.categories = {};
-
+    
     /**
      * Dynamic quiz fields
      */
     $scope.quiz = {};
     $scope.quiz.questions = [];
-
 
     $scope.addNewQuestion = function() {
         var newItemNo = $scope.quiz.questions.length + 1;
@@ -107,5 +110,11 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.initRoadmap = function() {
         $scope.loadAchievements()
         $scope.loadCategories()
+    };
+    
+    $scope.addAchievement = function(achievement) {
+    	AchievementService.addAchievement(achievement).then(function(data) {
+            //$scope.achievements = data;
+        })
     };
 });

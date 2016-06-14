@@ -64,7 +64,7 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     };
 
 
-    $scope.register = function(credentials) {
+    $scope.registerChild = function(credentials) {
         ChildService.registerChild(credentials).then(function(data) {
             if (data.STATE === "SUCCEEDED") {
                 ErrorFactory.setSuccess(data.MESSAGE);

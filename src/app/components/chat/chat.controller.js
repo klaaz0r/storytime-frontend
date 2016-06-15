@@ -1,10 +1,10 @@
-angular.module('app').controller('ChatController', ['$scope', function($scope, ngEnter, ChatService) {
+angular.module('app').controller('ChatController', function($scope, ChatService) {
 
     //init van een message, wat het kind stuurt is altijd basic plain tekst
     $scope.message = {
         text: ''
     };
-
+    console.log(ChatService);
     //init
     $scope.messages = [{
         "author": "robin",
@@ -18,20 +18,21 @@ angular.module('app').controller('ChatController', ['$scope', function($scope, n
         };
         //leeg maken veld
         $scope.text = "";
-        ChatService.getRoadmap(message);
+
         message.text = text;
         message.author = 'child';
 
         $scope.messages.push(message);
-        console.log(message);
+
         if ($scope.messages.length == 2) {
             $scope.messages.push({
                 author: 'robin',
                 text: 'kan ik je ergens mee helpen vandaag?'
             });
         } else if ($scope.messages.length > 3) {
-            ChatService.getRoadmap(message).then(function(res){
-              console.log(res);
+            console.log(message);
+            ChatService.getRoadmap(message).then(function(res) {
+                console.log(res);
             });
         }
 
@@ -63,4 +64,4 @@ angular.module('app').controller('ChatController', ['$scope', function($scope, n
         }
     })
 
-}]);
+});

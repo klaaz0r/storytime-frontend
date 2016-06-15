@@ -1,5 +1,5 @@
-angular.module('app').factory('ChatService', function($http, API_URL) {
-    var childService = {};
+angular.module('app').factory('ChatService', function($http, API_URL, CookieFactory) {
+    var chatService = {};
 
     //TODO endpoints van chat
     chatService.getRoadmap = function(message) {
@@ -12,9 +12,10 @@ angular.module('app').factory('ChatService', function($http, API_URL) {
                 'token': CookieFactory.getToken()
             },
             data: {
-                message: message.text
+                answer: message.text
             }
         }).then(function(res) {
+            console.log(res);
             return res.data;
         });
     };

@@ -20,7 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider, USER_ROLES) {
             templateUrl: '../app/components/chat/chat.view.html',
             controller: 'ChatController',
             data: {
-                authorizedRoles: [USER_ROLES.mentor, USER_ROLES.child]
+                authorizedRoles: [USER_ROLES.mentor, USER_ROLES.child, USER_ROLES.all]
             }
         })
         //nested views

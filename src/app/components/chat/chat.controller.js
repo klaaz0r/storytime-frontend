@@ -71,7 +71,7 @@ angular.module('app').controller('ChatController', function($scope, ChatService,
 
     $scope.nextStep = function() {
         $scope.direction = 'right';
-        if ($scope.currentIndex === $scope.roadmap.steps) {
+        if ($scope.currentIndex === $scope.roadmap.steps.length) {
             console.log("einde");
         }
         $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.roadmap.steps.length - 1;

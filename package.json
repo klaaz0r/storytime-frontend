@@ -8,7 +8,7 @@
         "postinstall": "gulp deploy",
         "test-whitebox": "gulp test",
         "test-blackbox": "gulp && wdio",
-        "dev": "gulp clean && gulp build"
+        "dev": "gulp clean && gulp build && gulp"
     },
     "engines": {
         "node": "5.9.1"

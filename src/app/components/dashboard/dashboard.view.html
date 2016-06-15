@@ -1,36 +1,72 @@
 <div class="container dashboard-container">
-    <uib-tabset active="active">
-        <uib-tab index="0" heading="Quiz toevoegen">
-            <div ui-view="quiz-new"></div>
-        </uib-tab>
+	<uib-tabset active="active">
+	
+		<uib-tab index="0" heading="Quiz">
+			<uib-tabset active="active">
+				
+				<div class="col-md-12">
+					<div class="container">
+					</div>
+				</div>
 
-        <uib-tab index="1" heading="Quiz overzicht">
-            <div ui-view="quiz-overview"></div>
-        </uib-tab>
-
-        <uib-tab index="2" heading="Kind toevoegen">
-            <div ui-view="child-new"></div>
-        </uib-tab>
-
-        <uib-tab index="3" heading="Kind overzicht">
-            <div ui-view="child-overview"></div>
-        </uib-tab>
-
-        <uib-tab index="4" heading="Stappenplan toevoegen">
-            <div ui-view="roadmap-new"></div>
-        </uib-tab>
-
-        <uib-tab index="5" heading="Stappenplan overzicht">
-            <div ui-view="roadmap-overview"></div>
-        </uib-tab>
-
-        <uib-tab index="6" heading="Achievement toevoegen">
-            <div ui-view="achievement-new"></div>
-        </uib-tab>
-
-        <uib-tab index="7" heading="Achievement  overzicht">
-            <div ui-view="achievement-overview"></div>
-        </uib-tab>
-
-    </uib-tabset>
+				<uib-tab index="1" heading="Toevoegen">
+					<div ui-view="quiz-new"></div>
+				</uib-tab>
+				<uib-tab index="2" heading="Overzicht">
+					<div ui-view="quiz-overview"></div>
+				</uib-tab>
+			</uib-tabset>
+		</uib-tab>
+		
+		<uib-tab index="1" heading="Kind">
+			<uib-tabset active="active">
+			
+				<div class="col-md-12">
+					<div class="container">
+					</div>
+				</div>
+				
+				<uib-tab index="1" heading="Toevoegen">
+					<div ui-view="child-new"></div>
+				</uib-tab>
+				<uib-tab index="2" heading="Overzicht">
+					<div ui-view="child-overview"></div>
+				</uib-tab>
+			</uib-tabset>
+		</uib-tab>
+		
+		<uib-tab index="2" heading="Stappenplan">
+			<uib-tabset active="active">
+			
+				<div class="col-md-12">
+					<div class="container">
+					</div>
+				</div>
+				
+				<uib-tab index="1" heading="Toevoegen">
+					<div ui-view="roadmap-new"></div>
+				</uib-tab>
+				<uib-tab index="2" heading="Overzicht">
+					<div ui-view="roadmap-overview"></div>
+				</uib-tab>
+			</uib-tabset>
+		</uib-tab>
+		
+		<uib-tab index="3" heading="Achievement">
+			<uib-tabset active="active">
+			
+				<div class="col-md-12">
+					<div class="container">
+					</div>
+				</div>
+				
+				<uib-tab index="1" heading="Toevoegen">
+					<div ui-view="achievement-new"></div>
+				</uib-tab>
+				<uib-tab index="2" heading="Overzicht">
+					<div ui-view="achievement-overview"></div>
+				</uib-tab>
+			</uib-tabset>
+		</uib-tab>
+	</uib-tabset>
 </div>

@@ -2,10 +2,7 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
     $scope.credentials = {
         mentorname: $rootScope.userName
     };
-    $scope.achievement = {
-    	name: '',
-        points: ''
-    };
+    $scope.achievement = {};
     $scope.childs = {};
     $scope.roadmaps = {};
     $scope.quizes = {};
@@ -136,7 +133,11 @@ angular.module('app').controller('DashboardController', function($scope, $rootSc
 
     $scope.addAchievement = function(achievement) {
     	AchievementService.addAchievement(achievement).then(function(data) {
-            //$scope.achievements = data;
+    		if (data.STATE === "SUCCEEDED") {
+                ErrorFactory.setSuccess(data.MESSAGE);
+            } else if (data.STATE === "ERROR") {
+                ErrorFactory.setError(data.MESSAGE);
+            }
         })
     };
 });

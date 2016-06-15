@@ -3,7 +3,7 @@ angular.module('app').factory('AchievementService', function($http, API_URL, Coo
 	
 	achievementService.addAchievement = function(achievement) {
 		return $http({
-			method : 'GET',
+			method : 'POST',
 			url : API_URL + "/achievement/add",
 			dataType : "json",
 			headers : {

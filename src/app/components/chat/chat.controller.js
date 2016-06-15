@@ -11,7 +11,7 @@ angular.module('app').controller('ChatController', function($scope, ChatService,
         "text": "hee! hoe gaat het " + $rootScope.name + "?"
     }];
 
-    $scope.inputMessage = "";
+    $scope.chat = {};
     //bools for views
     $scope.chatActive = true;
     $scope.roadmapssent = false;
@@ -27,7 +27,7 @@ angular.module('app').controller('ChatController', function($scope, ChatService,
             text: ''
         };
         //leeg maken veld
-        $scope.inputMessage = "";
+        $scope.chat.message = null;
 
         message.text = text;
         message.author = 'child';

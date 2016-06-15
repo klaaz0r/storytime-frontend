@@ -56,9 +56,9 @@
                     <div class="form-group">
                         <div class="col-sm-12">
                             <div class="input-group">
-                                <input type="text" ng-model="inputMessage" class="form-control" ng-enter="sendMessage(inputMessage)">
+                                <input type="text" ng-model="chat.message" class="form-control" ng-enter="sendMessage(chat.message)">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" ng-disabled="!inputMessage" ng-click="sendMessage(inputMessage)" type="button">Send</button>
+                                    <button class="btn btn-default" ng-disabled="!chat.message" ng-click="sendMessage(chat.message)" type="button">Send</button>
                                 </span>
                             </div>
                             <!-- /input-group -->

@@ -30,13 +30,25 @@
                 <!-- end -->
 
             </div>
+
+            <!-- show selecter roadmap -->
             <div class="roadmap" ng-if="roadmapActive">
-                {{roadmap.name}}
-                <div class="step" ng-repeat="item in roadmap">
-                    {{item.step}}
+
+                <div class="title">
+                    {{roadmap.name}}
                 </div>
-                <div class="roadmap-next" ng-click="nextStep()">
-                    Volgende
+                <div class="step" ng-repeat="step in roadmap.steps">
+                    <div ng-class="{'active':isCurrentSlideIndex($index)}">
+                        <div class="name">
+                            {{step.name}}
+                        </div>
+                        <div class="description">
+                            {{step.description}}
+                        </div>
+                        <div class="roadmap-next" ng-click="setCurrentSlideIndex($index);">
+                            Volgende
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

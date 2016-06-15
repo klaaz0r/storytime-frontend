@@ -65,14 +65,9 @@ angular.module('app').controller('ChatController', function($scope, ChatService)
         return $scope.currentIndex === index;
     };
 
-    $scope.prevSlide = function() {
-        $scope.direction = 'left';
-        $scope.currentIndex = ($scope.currentIndex < $scope.slides.length - 1) ? ++$scope.currentIndex : 0;
-    };
-
-    $scope.nextSlide = function() {
+    $scope.nextStep = function() {
         $scope.direction = 'right';
-        $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.slides.length - 1;
+        $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.roadmap.steps.length - 1;
     };
 
     var scrolled = false;

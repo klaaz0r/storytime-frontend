@@ -4,7 +4,15 @@
     color: white;
     padding: 25px;
     .title {
-      font-size: 35px;
+        font-size: 35px;
+        color: green;
+    }
+    .name {
+        font-size: 25px;
+        color: green;
+    }
+    .description {
+        font-size: 20px;
     }
     .roadmap-next {
         margin-top: 25px;

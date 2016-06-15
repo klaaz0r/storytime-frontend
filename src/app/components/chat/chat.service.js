@@ -20,5 +20,21 @@ angular.module('app').factory('ChatService', function($http, API_URL, CookieFact
         });
     };
 
+    chatService.getToken = function() {
+        return $http({
+            method: 'POST',
+            url: API_URL + "/chat",
+            dataType: "json",
+            headers: {
+                'Content-Type': 'application/json',
+                'token': CookieFactory.getToken()
+            },
+            data: {}
+        }).then(function(res) {
+            console.log(res);
+            return res.data;
+        });
+    };
+
     return chatService;
 });

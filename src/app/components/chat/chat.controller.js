@@ -1,4 +1,4 @@
-angular.module('app').controller('ChatController', function($scope, ChatService) {
+angular.module('app').controller('ChatController', function($scope, ChatService, $rootScope) {
 
     //init van een message, wat het kind stuurt is altijd basic plain tekst
     $scope.message = {
@@ -8,12 +8,18 @@ angular.module('app').controller('ChatController', function($scope, ChatService)
     //init
     $scope.messages = [{
         "author": "robin",
-        "text": "hee! hoe gaat het?"
+        "text": "hee! hoe gaat het " + $rootScope.name + "?"
     }];
 
+    $scope.inputMessage = "";
+    //bools for views
     $scope.chatActive = true;
     $scope.roadmapssent = false;
     $scope.roadmapActive = false;
+
+
+    // get chattoken
+    // $scope.chatToken = ChatService.getToken();
 
     $scope.sendMessage = function(text) {
         var message = {
@@ -49,9 +55,7 @@ angular.module('app').controller('ChatController', function($scope, ChatService)
         console.log(roadmap)
     };
 
-    $scope.nextStep = function(step) {
 
-    };
 
     $scope.direction = 'left';
     $scope.currentIndex = 0;
@@ -67,6 +71,9 @@ angular.module('app').controller('ChatController', function($scope, ChatService)
 
     $scope.nextStep = function() {
         $scope.direction = 'right';
+        if ($scope.currentIndex === $scope.roadmap.steps) {
+            console.log("einde");
+        }
         $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.roadmap.steps.length - 1;
     };
 

@@ -1,8 +1,25 @@
 .roadmap {
-
+    background-color: #5fcf80;
+    width: 100%;
+    color: white;
+    padding: 25px;
+    .roadmap-next {
+        margin-top: 25px;
+        font-weight: bold;
+        font-size: 25px;
+        width: 100%;
+        text-align: center;
+        background-color: lightgreen;
+        padding: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        &:hover {
+            background-color: #3ac162;
+        }
+    }
 }
 .roadmap-holder {
-  background-color: green;
+    background-color: green;
 }
 .robotcontainer {
     margin-top: 50%;
@@ -30,9 +47,9 @@
     clear: both;
 }
 .quiz-bubble {
-    background-color: white;
-    color: black;
-    border: 3px solid #54be3f;
+    background-color: #5fcf80;
+    color: white;
+    border: 3px solid #5fcf80;
     width: 54%;
     border-radius: 5px;
     display: inline-block;

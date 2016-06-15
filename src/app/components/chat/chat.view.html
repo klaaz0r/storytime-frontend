@@ -1,54 +1,59 @@
 <div class="container chat-container">
 
-	<div class="row">
-		<div class="col-md-4">
-			<div class="robotcontainer">
-				<div>
-					<robot></robot>
-				</div>
-			</div>
-		</div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="robotcontainer">
+                <div>
+                    <robot></robot>
+                </div>
+            </div>
+        </div>
 
-		<div class="col-md-8">
-			<div class="chat">
-				<div class="chat-holder" ng-repeat="message in messages">
-					<div ng-if="message.author=='robin'" class="bubble me">{{message.text}}</div>
-					<div ng-if="message.author=='child'" class="bubble you">{{message.text}}</div>
-					<div ng-if="message.quiz">
-						<div class="quiz-bubble me">
-							<div class="quiz-info">
-								<h1>{{message.quiz.title}}</h1>
-								<p>
-									{{message.quiz.description}}
-								</p>
-							</div>
-							<img src="{{message.quiz.image}}" />
+        <div class="col-md-8">
+            <div class="chat" ng-if="chatActive">
+                <div class="chat-holder" ng-repeat="message in messages">
+                    <div ng-if="message.author=='robin'" class="bubble me">{{message.text}}</div>
+                    <div ng-if="message.author=='child'" class="bubble you">{{message.text}}</div>
+                </div>
+                <!-- start if roadmaps are send -->
+                <div class="roadmap-holder" ng-if="roadmaps">
+                    <div ng-repeat="roadmap in roadmaps">
+                        <div class="quiz-bubble me">
+                            <div class="quiz-info" ng-click="startRoadmap(roadmap)">
+                                <div class="roadmap">
+                                    <div>{{roadmap.name}}</div>
+                                    <div>{{roadmap.description}}</div>
+                                </div>
+                            </div>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end -->
 
+            </div>
+            <div class="roadmap" ng-if="roadmapActive">
+                roadmap:
+                {{roadmap.name}}
+            </div>
+        </div>
 
-	<div class="row">
-		<div class="col-md-4"></div>
-		<div class="col-md-8">
-			<div class="chat-input">
-				<div class="form-group">
-					<div class="col-sm-12">
-						<div class="input-group">
-							<input type="text" ng-model="text" class="form-control" ng-enter="sendMessage(text)">
-							<span class="input-group-btn">
-								<button class="btn btn-default" ng-disabled="!text" ng-click="sendMessage(text)"
-								type="button">Send</button>
-							</span>
-						</div>
-						<!-- /input-group -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+        <div class="row" ng-if="chatActive">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <div class="chat-input">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <input type="text" ng-model="inputMessage" class="form-control" ng-enter="sendMessage(inputMessage)">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" ng-disabled="!inputMessage" ng-click="sendMessage(inputMessage)" type="button">Send</button>
+                                </span>
+                            </div>
+                            <!-- /input-group -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

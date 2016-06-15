@@ -34,17 +34,30 @@ angular.module('app').controller('ChatController', function($scope, ChatService,
 
         $scope.messages.push(message);
 
-        if ($scope.messages.length == 2) {
-            $scope.messages.push({
-                author: 'robin',
-                text: 'kan ik je ergens mee helpen vandaag?'
-            });
-        } else if ($scope.messages.length > 3) {
-            ChatService.getRoadmap(message).then(function(roadmaps) {
-                $scope.roadmaps = roadmaps;
-                $scope.roadmapssent = true;
-            });
-        };
+        ChatService.sendMessage(message).then(function(message) {
+            console.log(message);
+            if (message.type === "CHAT") {
+                $scope.messages.push({
+                    "author": "robin",
+                    "text": message.answer
+                });
+            } else if (message.type === "ROADMAP") {
+                $scope.roadmaps = message.roadmap;
+            }
+        });
+
+
+        // if ($scope.messages.length == 2) {
+        //     $scope.messages.push({
+        //         author: 'robin',
+        //         text: 'kan ik je ergens mee helpen vandaag?'
+        //     });
+        // } else if ($scope.messages.length > 3) {
+        //     ChatService.getRoadmap(message).then(function(roadmaps) {
+        //         $scope.roadmaps = roadmaps;
+        //         $scope.roadmapssent = true;
+        //     });
+        // };
         updateScroll();
     };
 

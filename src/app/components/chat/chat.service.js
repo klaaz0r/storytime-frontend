@@ -20,7 +20,7 @@ angular.module('app').factory('ChatService', function($http, API_URL, CookieFact
         });
     };
 
-    chatService.getToken = function() {
+    chatService.sendMessage = function(message) {
         return $http({
             method: 'POST',
             url: API_URL + "/chat",
@@ -29,7 +29,9 @@ angular.module('app').factory('ChatService', function($http, API_URL, CookieFact
                 'Content-Type': 'application/json',
                 'token': CookieFactory.getToken()
             },
-            data: {}
+            data: {
+                answer: message.text
+            }
         }).then(function(res) {
             console.log(res);
             return res.data;

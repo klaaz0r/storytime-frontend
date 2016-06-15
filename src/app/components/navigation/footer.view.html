@@ -1,5 +1,9 @@
 <div id="footer">
-  <div class="container">
-    <p class="text-muted credit">Ontwikkelt door team <a href="https://tweakers.net/acties/projectb/StoryTime">StoryTime</a></p>
-  </div>
+	<div class="container">
+		<p ng-show="$root.userRole!='Child'" class="text-muted credit">
+			Ontwikkelt door team <a
+				href="https://tweakers.net/acties/projectb/StoryTime">StoryTime</a>
+		</p>
+		<p ng-show="$root.userRole=='Child'" class="text-muted credit">Groetjes van Robin</p>
+	</div>
 </div>

@@ -84,10 +84,11 @@ angular.module('app').controller('ChatController', function($scope, ChatService,
 
     $scope.nextStep = function() {
         $scope.direction = 'right';
-        if ($scope.currentIndex === $scope.roadmap.steps.length) {
+        if (($scope.currentIndex + 1) === $scope.roadmap.steps.length) {
             console.log("einde");
+        } else {
+            $scope.currentIndex = $scope.currentIndex + 1;
         }
-        $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.roadmap.steps.length - 1;
     };
 
     var scrolled = false;
